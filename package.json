@@ -1,13 +1,13 @@
 {
-  "name": "photos_downloader",
+  "name": "picferry",
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Public website and user guides for Photos Downloader",
-  "homepage": "https://photos-downloader.jqknono.com",
+  "description": "Public website and user guides for PicFerry",
+  "homepage": "https://picferry.jqknono.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/photos-downloader/photos_downloader"
+    "url": "https://github.com/picferry/picferry"
   },
   "license": "MIT",
   "scripts": {

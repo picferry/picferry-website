@@ -11,7 +11,7 @@ This project is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR prod
 
 - Apple ID / cloud passwords
 - Browser cookies and `cookies.json`
-- Session files (default `~/.photos_downloader/`)
+- Session files (default `~/.picferry/`)
 - Signed or time-limited media URLs
 - Real account identifiers or device IDs
 

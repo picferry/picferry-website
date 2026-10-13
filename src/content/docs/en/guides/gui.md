@@ -3,7 +3,7 @@ title: GUI
 description: Use the Flutter UI to pick a vendor and download.
 ---
 
-The Photos Downloader GUI is a Flutter app that depends directly on the Dart vendor packages in [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core). **No installer is published yet**; follow [Build from source](/en/install/) to run locally.
+The PicFerry GUI is a Flutter app that depends directly on the Dart vendor packages in [`picferry_core`](https://github.com/picferry/picferry_core). **No installer is published yet**; follow [Build from source](/en/install/) to run locally.
 
 ## Capabilities
 

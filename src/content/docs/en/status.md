@@ -6,8 +6,8 @@ description: Current release scope and next steps.
 ## Available now
 
 - This documentation site is public.
-- Core and vendor implementations live in the Dart monorepo [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core).
-- GUI: Flutter app [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui); no installer is published yet.
+- Core and vendor implementations live in the Dart monorepo [`picferry_core`](https://github.com/picferry/picferry_core).
+- GUI: Flutter app [`picferry_gui`](https://github.com/picferry/picferry_gui); no installer is published yet.
 
 ## Next
 

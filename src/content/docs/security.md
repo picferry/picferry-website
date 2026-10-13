@@ -11,7 +11,7 @@ description: 非官方状态、凭据处理，以及不要把 cookie 提交到 G
 
 - Apple ID / 云账号密码
 - 浏览器 cookie 与 `cookies.json`
-- session 文件（默认在 `~/.photos_downloader/`）
+- session 文件（默认在 `~/.picferry/`）
 - 带签名或有时效的媒体 URL
 - 真实账号标识、设备 ID
 

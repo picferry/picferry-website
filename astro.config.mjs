@@ -44,12 +44,12 @@ const sidebar = [
 ];
 
 export default defineConfig({
-	site: 'https://photos-downloader.jqknono.com',
+	site: 'https://picferry.jqknono.com',
 	integrations: [
 		starlight({
 			title: {
-				'zh-CN': 'Photos Downloader',
-				en: 'Photos Downloader',
+				'zh-CN': 'PicFerry',
+				en: 'PicFerry',
 			},
 			description: '多厂商云相册下载器：iCloud、华为、小米、vivo、OPPO、荣耀。',
 			defaultLocale: 'root',
@@ -61,11 +61,11 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/photos-downloader/photos_downloader',
+					href: 'https://github.com/picferry/picferry',
 				},
 			],
 			editLink: {
-				baseUrl: 'https://github.com/photos-downloader/photos_downloader/edit/main/',
+				baseUrl: 'https://github.com/picferry/picferry/edit/main/',
 			},
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],

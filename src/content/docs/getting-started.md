@@ -1,13 +1,13 @@
 ---
 title: 简介
-description: Photos Downloader 是什么、支持哪些厂商、当前能用什么。
+description: PicFerry 是什么、支持哪些厂商、当前能用什么。
 ---
 
-Photos Downloader 是一套非官方工具，用于把云相册里的照片和视频下载到本地磁盘。
+PicFerry 是一套非官方工具，用于把云相册里的照片和视频下载到本地磁盘。
 
 它包含：
 
-- 各厂商独立 CLI（Dart，见 photos_downloader_core）
+- 各厂商独立 CLI（Dart，见 picferry_core）
 - 共享核心 `CloudDownloader`
 - Flutter 图形界面（聚合层）
 

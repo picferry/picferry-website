@@ -3,7 +3,7 @@ title: iCloud
 description: 使用 icloud_photos_downloader 认证、列出并下载 iCloud 照片。
 ---
 
-`icloud_photos_downloader` 是 Dart library/CLI，位于 monorepo [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) 的 `packages/icloud_photos_downloader`。语义参考 [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader)。预编译二进制尚未随本站发布。
+`icloud_photos_downloader` 是 Dart library/CLI，位于 monorepo [`picferry_core`](https://github.com/picferry/picferry_core) 的 `packages/icloud_photos_downloader`。语义参考 [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader)。预编译二进制尚未随本站发布。
 
 ## 账号前提
 
@@ -16,10 +16,10 @@ ADP 与 FIDO 不受支持。
 
 ## 认证
 
-首次登录需要 Apple ID 密码和 2FA（设备推送或短信）。成功后 session 会写到 `~/.photos_downloader/icloud/`（Windows 为 `%USERPROFILE%\.photos_downloader\icloud\`）。
+首次登录需要 Apple ID 密码和 2FA（设备推送或短信）。成功后 session 会写到 `~/.picferry/icloud/`（Windows 为 `%USERPROFILE%\.picferry\icloud\`）。
 
 ```sh
-cd photos_downloader_core/packages/icloud_photos_downloader
+cd picferry_core/packages/icloud_photos_downloader
 dart run bin/icloud_photos_downloader.dart --auth-only
 dart run bin/icloud_photos_downloader.dart --username you@example.com --auth-only
 dart run bin/icloud_photos_downloader.dart --mfa-method device --auth-only

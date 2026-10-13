@@ -1,11 +1,11 @@
-# Photos Downloader
+# PicFerry
 
-Public website and user guides for [Photos Downloader](https://photos-downloader.jqknono.com): unofficial tools that download photos and videos from iCloud, HUAWEI, Xiaomi, vivo, OPPO, and HONOR cloud galleries.
+Public website and user guides for [PicFerry](https://picferry.jqknono.com): unofficial tools that download photos and videos from iCloud, HUAWEI, Xiaomi, vivo, OPPO, and HONOR cloud galleries.
 
 CLI and GUI source live in sibling repositories:
 
-- [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) — shared Dart core + vendor packages (Melos monorepo)
-- [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui) — Flutter desktop GUI
+- [`picferry_core`](https://github.com/picferry/picferry_core) — shared Dart core + vendor packages (Melos monorepo)
+- [`picferry_gui`](https://github.com/picferry/picferry_gui) — Flutter desktop GUI
 
 This repository hosts the public website and guides only. Download pages remain placeholders until GitHub Releases ship installers.
 
@@ -31,17 +31,17 @@ The static site is written to `dist/`.
 
 ## Deploy
 
-Hosted on Alibaba Cloud ESA Pages. Public site: [https://photos-downloader.jqknono.com](https://photos-downloader.jqknono.com). Staging remains available for preview; production currently serves version `1787580081861957043`.
+Hosted on Alibaba Cloud ESA Pages. Target public host: [https://picferry.jqknono.com](https://picferry.jqknono.com). Configure the ESA custom domain and public DNS before switching production traffic; until cutover, the previous host may remain active.
 
 ```sh
 npm run build
 esa-cli commit --name photos-downloader --assets dist --description "docs site" --no-bundle
 esa-cli deploy --name photos-downloader --environment staging --no-bundle
 esa-cli deploy --name photos-downloader --environment production --version <version>
-esa-cli domain add photos-downloader.jqknono.com
+esa-cli domain add picferry.jqknono.com
 ```
 
-Public DNS for `photos-downloader.jqknono.com` is a CNAME to the ESA record `photos-downloader.jqknono.com.a1.initbb.com`. Custom-domain cutover and DNS verification follow the jqknono ESA Pages runbook; this README does not duplicate it.
+The ESA project remains named `photos-downloader` until it is explicitly renamed in the hosting account. Resolve the new custom-domain CNAME from ESA and configure public DNS before cutover; the new domain's production routing has not been verified.
 
 ## License
 

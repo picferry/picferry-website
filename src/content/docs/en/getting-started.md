@@ -1,13 +1,13 @@
 ---
 title: Overview
-description: What Photos Downloader is, which vendors work, and what ships in this first public release.
+description: What PicFerry is, which vendors work, and what ships in this first public release.
 ---
 
-Photos Downloader is an unofficial toolkit for downloading photos and videos from cloud galleries to local disks.
+PicFerry is an unofficial toolkit for downloading photos and videos from cloud galleries to local disks.
 
 It consists of:
 
-- Per-vendor CLIs (Dart; see photos_downloader_core)
+- Per-vendor CLIs (Dart; see picferry_core)
 - A shared `CloudDownloader` core
 - A Flutter GUI that aggregates the vendors
 

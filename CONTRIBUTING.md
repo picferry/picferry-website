@@ -1,6 +1,6 @@
 # Contributing
 
-This public repository contains the Photos Downloader website and user guides only.
+This public repository contains the PicFerry website and user guides only.
 
 ## Scope
 

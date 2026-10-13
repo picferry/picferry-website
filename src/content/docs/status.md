@@ -6,8 +6,8 @@ description: 当前发布范围与后续计划。
 ## 现在有什么
 
 - 文档站（本仓库）已公开。
-- 核心与厂商实现：Dart monorepo [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core)。
-- GUI：Flutter 应用 [`photos_downloader_gui`](https://github.com/photos-downloader/photos_downloader_gui)，安装包未发布。
+- 核心与厂商实现：Dart monorepo [`picferry_core`](https://github.com/picferry/picferry_core)。
+- GUI：Flutter 应用 [`picferry_gui`](https://github.com/picferry/picferry_gui)，安装包未发布。
 
 ## 后续
 

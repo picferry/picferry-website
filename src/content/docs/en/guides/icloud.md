@@ -3,7 +3,7 @@ title: iCloud
 description: Authenticate, list, and download iCloud photos with icloud_photos_downloader.
 ---
 
-`icloud_photos_downloader` is a Dart library/CLI in the [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) monorepo under `packages/icloud_photos_downloader`. Semantics follow [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader). Prebuilt binaries are not published with this site yet.
+`icloud_photos_downloader` is a Dart library/CLI in the [`picferry_core`](https://github.com/picferry/picferry_core) monorepo under `packages/icloud_photos_downloader`. Semantics follow [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader). Prebuilt binaries are not published with this site yet.
 
 ## Account prerequisites
 
@@ -16,10 +16,10 @@ ADP and FIDO are unsupported.
 
 ## Authentication
 
-First sign-in needs the Apple ID password and 2FA (device push or SMS). Sessions are stored under `~/.photos_downloader/icloud/` (Windows: `%USERPROFILE%\.photos_downloader\icloud\`).
+First sign-in needs the Apple ID password and 2FA (device push or SMS). Sessions are stored under `~/.picferry/icloud/` (Windows: `%USERPROFILE%\.picferry\icloud\`).
 
 ```sh
-cd photos_downloader_core/packages/icloud_photos_downloader
+cd picferry_core/packages/icloud_photos_downloader
 dart run bin/icloud_photos_downloader.dart --auth-only
 dart run bin/icloud_photos_downloader.dart --username you@example.com --auth-only
 dart run bin/icloud_photos_downloader.dart --mfa-method device --auth-only

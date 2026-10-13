@@ -6,10 +6,10 @@ description: Recommended sibling checkout for core and GUI.
 Clone the three repositories as siblings under one parent directory:
 
 ```sh
-mkdir -p photos_downloader-org && cd photos_downloader-org
-git clone https://github.com/photos-downloader/photos_downloader_core.git
-git clone https://github.com/photos-downloader/photos_downloader_gui.git
-git clone https://github.com/photos-downloader/photos_downloader.git   # optional docs site
+mkdir -p picferry-org && cd picferry-org
+git clone https://github.com/picferry/picferry_core.git
+git clone https://github.com/picferry/picferry_gui.git
+git clone https://github.com/picferry/picferry.git   # optional docs site
 ```
 
 ### Core (vendor CLIs + shared library)
@@ -17,7 +17,7 @@ git clone https://github.com/photos-downloader/photos_downloader.git   # optiona
 Requires Dart SDK `>=3.3.0`.
 
 ```sh
-cd photos_downloader_core
+cd picferry_core
 dart pub get
 dart pub global activate melos
 melos bootstrap
@@ -36,9 +36,9 @@ dart run bin/icloud_photos_downloader.dart --help
 Requires Flutter `>=3.10`.
 
 ```sh
-cd photos_downloader_gui
+cd picferry_gui
 flutter pub get
 flutter run -d windows   # or macos / linux
 ```
 
-This docs repository does not ship installers. When binaries are published they will appear on [GitHub Releases](https://github.com/photos-downloader/photos_downloader/releases).
+This docs repository does not ship installers. When binaries are published they will appear on [GitHub Releases](https://github.com/picferry/picferry/releases).

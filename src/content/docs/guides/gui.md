@@ -3,7 +3,7 @@ title: GUI
 description: 使用 Flutter 图形界面选择厂商并下载。
 ---
 
-Photos Downloader GUI 是 Flutter 应用，直接依赖 [`photos_downloader_core`](https://github.com/photos-downloader/photos_downloader_core) 中的 Dart 厂商包。安装包**尚未发布**；可按 [从源码构建](/install/) 本地运行。
+PicFerry GUI 是 Flutter 应用，直接依赖 [`picferry_core`](https://github.com/picferry/picferry_core) 中的 Dart 厂商包。安装包**尚未发布**；可按 [从源码构建](/install/) 本地运行。
 
 ## 能力概览
 

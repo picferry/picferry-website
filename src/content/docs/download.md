@@ -1,6 +1,6 @@
 ---
 title: 下载
-description: Photos Downloader 预编译二进制即将发布。当前没有可下载的安装包。
+description: PicFerry 预编译二进制即将发布。当前没有可下载的安装包。
 ---
 
 预编译二进制**尚未发布**。下面是计划中的 GitHub Releases 产物，按钮会在首个 tag 出现后启用。
@@ -13,6 +13,6 @@ description: Photos Downloader 预编译二进制即将发布。当前没有可�
 | macOS | Intel (x64) | `*-macos-x64.tar.gz` |
 | macOS | Apple Silicon (arm64) | `*-macos-arm64.tar.gz` |
 
-发布后会放在 [GitHub Releases](https://github.com/photos-downloader/photos_downloader/releases)。在此之前请不要从第三方镜像下载所谓安装包。
+发布后会放在 [GitHub Releases](https://github.com/picferry/picferry/releases)。在此之前请不要从第三方镜像下载所谓安装包。
 
 GUI 安装包（Windows / macOS / Linux）也尚未提供。概念说明见 [图形界面](/guides/gui/)。
