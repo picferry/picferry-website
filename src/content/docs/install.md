@@ -9,7 +9,7 @@ description: 本地检出 core 与 GUI 的推荐方式。
 mkdir -p picferry-org && cd picferry-org
 git clone https://github.com/picferry/picferry_core.git
 git clone https://github.com/picferry/picferry_gui.git
-git clone https://github.com/picferry/picferry.git   # 可选，本站
+git clone https://github.com/picferry/picferry-website.git   # 可选，本站
 ```
 
 ### Core（厂商 CLI + 共享库）
@@ -41,4 +41,4 @@ flutter pub get
 flutter run -d windows   # 或 macos / linux
 ```
 
-本站仓库仅包含文档，不包含可执行安装包。安装包发布后会在 [GitHub Releases](https://github.com/picferry/picferry/releases) 提供。
+本站仓库仅包含文档，不包含可执行安装包。安装包发布后会在 [GitHub Releases](https://github.com/picferry/picferry-website/releases) 提供。

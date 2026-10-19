@@ -12,7 +12,7 @@ This repository is the public docs site only. Do not copy ESA runbooks here.
 
 - ESA project name: `photos-downloader` (rename separately in the hosting account)
 - Target public host: `picferry.jqknono.com` (configure custom domain and DNS before production cutover)
-- Work from this directory (`picferry/`), not the parent workspace root
+- Work from this directory (`picferry-website/`), not the parent workspace root
 - Canonical URL lives in `astro.config.mjs` `site` and `package.json` `homepage`
 - Deploy and custom-domain steps: jqknono skill `jqknono-esa`, especially `references/pages-custom-domain.md`
 - Public DNS (`alidns` CNAME, no `CreateRecord`): `jqknono-aliyun`

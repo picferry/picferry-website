@@ -1,5 +1,5 @@
 {
-  "name": "picferry",
+  "name": "picferry-website",
   "type": "module",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +7,7 @@
   "homepage": "https://picferry.jqknono.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/picferry/picferry"
+    "url": "https://github.com/picferry/picferry-website"
   },
   "license": "MIT",
   "scripts": {

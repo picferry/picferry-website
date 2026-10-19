@@ -9,7 +9,7 @@ Clone the three repositories as siblings under one parent directory:
 mkdir -p picferry-org && cd picferry-org
 git clone https://github.com/picferry/picferry_core.git
 git clone https://github.com/picferry/picferry_gui.git
-git clone https://github.com/picferry/picferry.git   # optional docs site
+git clone https://github.com/picferry/picferry-website.git   # optional docs site
 ```
 
 ### Core (vendor CLIs + shared library)
@@ -41,4 +41,4 @@ flutter pub get
 flutter run -d windows   # or macos / linux
 ```
 
-This docs repository does not ship installers. When binaries are published they will appear on [GitHub Releases](https://github.com/picferry/picferry/releases).
+This docs repository does not ship installers. When binaries are published they will appear on [GitHub Releases](https://github.com/picferry/picferry-website/releases).

@@ -61,11 +61,11 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/picferry/picferry',
+					href: 'https://github.com/picferry/picferry-website',
 				},
 			],
 			editLink: {
-				baseUrl: 'https://github.com/picferry/picferry/edit/main/',
+				baseUrl: 'https://github.com/picferry/picferry-website/edit/main/',
 			},
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],

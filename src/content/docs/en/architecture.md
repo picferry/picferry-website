@@ -23,4 +23,4 @@ flowchart LR
 
 Every vendor implements the `CloudDownloader` interface. The GUI calls Dart packages directly (path or git dependencies); there is no Rust FFI bridge.
 
-Public discussion and documentation PRs go to [picferry/picferry](https://github.com/picferry/picferry).
+Public discussion and documentation PRs go to [picferry/picferry-website](https://github.com/picferry/picferry-website).

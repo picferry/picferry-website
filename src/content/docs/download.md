@@ -13,6 +13,6 @@ description: PicFerry 预编译二进制即将发布。当前没有可下载的�
 | macOS | Intel (x64) | `*-macos-x64.tar.gz` |
 | macOS | Apple Silicon (arm64) | `*-macos-arm64.tar.gz` |
 
-发布后会放在 [GitHub Releases](https://github.com/picferry/picferry/releases)。在此之前请不要从第三方镜像下载所谓安装包。
+发布后会放在 [GitHub Releases](https://github.com/picferry/picferry-website/releases)。在此之前请不要从第三方镜像下载所谓安装包。
 
 GUI 安装包（Windows / macOS / Linux）也尚未提供。概念说明见 [图形界面](/guides/gui/)。

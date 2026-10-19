@@ -13,6 +13,6 @@ Prebuilt binaries are **not published yet**. The table below is the planned GitH
 | macOS | Intel (x64) | `*-macos-x64.tar.gz` |
 | macOS | Apple Silicon (arm64) | `*-macos-arm64.tar.gz` |
 
-Releases will appear at [GitHub Releases](https://github.com/picferry/picferry/releases). Do not download installers from third-party mirrors.
+Releases will appear at [GitHub Releases](https://github.com/picferry/picferry-website/releases). Do not download installers from third-party mirrors.
 
 GUI packages (Windows / macOS / Linux) are also unpublished. See the [GUI guide](/en/guides/gui/).

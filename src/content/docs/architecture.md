@@ -23,4 +23,4 @@ flowchart LR
 
 厂商实现统一实现 `CloudDownloader` 接口；GUI 通过 path/git 依赖直接调用 Dart 包，不再使用 Rust FFI。
 
-公开讨论与文档 PR 请走 [picferry/picferry](https://github.com/picferry/picferry)。
+公开讨论与文档 PR 请走 [picferry/picferry-website](https://github.com/picferry/picferry-website)。
