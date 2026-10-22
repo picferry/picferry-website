@@ -1,0 +1,37 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Astro: 启动开发服务器",
+			"type": "shell",
+			"command": "npm run dev && npm exec -- astro dev logs --follow",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "astro",
+				"pattern": {
+					"regexp": "^(.*)$",
+					"file": 1,
+					"location": 1,
+					"message": 1
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".",
+					"endsPattern": "(Dev server running at http://localhost:\\d+|Local\\s+http://localhost:\\d+)"
+				}
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"focus": false
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
