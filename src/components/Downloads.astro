@@ -1,0 +1,65 @@
+---
+import { downloadCopy } from '../lib/download-copy.js';
+import { RELEASE_BASE } from '../lib/release-manifest.js';
+
+interface Props { locale?: 'zh-CN' | 'en' }
+const { locale = 'zh-CN' } = Astro.props;
+const text = downloadCopy(locale);
+---
+
+<section class="downloads not-content" data-downloads data-locale={locale} aria-label={text.title}>
+  <h2>{text.title}</h2>
+  <p data-status role="status" aria-live="polite" aria-atomic="true">{text.loading}</p>
+  <div class="download-controls">
+    <button type="button" hidden>{text.retry}</button>
+    <a href={RELEASE_BASE}>{text.releases}</a>
+  </div>
+  <noscript><p>{text.noScript}</p></noscript>
+  <div data-release aria-busy="false"></div>
+  <p class="integrity-note">{text.integrity}</p>
+</section>
+
+<script>
+  import { mountDownloads } from '../scripts/downloads.js';
+  function mount() {
+    document.querySelectorAll('[data-downloads]').forEach(mountDownloads);
+  }
+  mount();
+  document.addEventListener('astro:page-load', mount);
+</script>
+
+<style>
+  .downloads {
+    margin-block: 2rem;
+    --download-border: var(--sl-color-gray-5);
+  }
+  .downloads :global(h2), .downloads :global(h3), .downloads :global(p) { margin: 0; }
+  .downloads h2 { font-size: 1.5rem; }
+  .downloads [data-status] { margin-block: 1rem; }
+  .download-controls, .downloads :global(.download-actions) {
+    display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem;
+  }
+  .downloads :global(a) { color: var(--sl-color-text-accent); text-underline-offset: .25em; }
+  .downloads :global(a), .downloads button { padding-block: .625rem; }
+  .downloads button, .downloads :global(.download-primary) {
+    border: 1px solid var(--sl-color-text-accent); border-radius: .5rem;
+    padding: .625rem 1rem; font: inherit; font-weight: 600;
+    background: var(--sl-color-accent-low); color: var(--sl-color-text-accent);
+    cursor: pointer;
+  }
+  .downloads button[aria-disabled='true'] { cursor: progress; }
+  .downloads :global(a:focus-visible), .downloads button:focus-visible {
+    outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px;
+  }
+  .downloads :global(.release-meta) { display: grid; gap: .5rem; margin-block: 1.5rem; }
+  .downloads :global(.download-list) { display: grid; gap: 1rem; list-style: none; padding: 0; }
+  .downloads :global(.download-card) {
+    min-width: 0; display: grid; gap: .75rem; padding: 1.25rem;
+    border: 1px solid var(--download-border); border-radius: .875rem;
+    background: var(--sl-color-bg-nav);
+  }
+  .downloads :global(h3) { font-size: 1.125rem; }
+  .downloads :global(code) { overflow-wrap: anywhere; white-space: normal; font-size: .875rem; }
+  .downloads :global(.download-card p), .integrity-note { color: var(--sl-color-gray-2); }
+  .downloads .integrity-note { margin-top: 1.5rem; font-size: .875rem; }
+</style>

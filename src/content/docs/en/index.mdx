@@ -1,65 +1,23 @@
 ---
 title: PicFerry
-description: Unofficial multi-vendor cloud photo downloader for iCloud, HUAWEI, Xiaomi, vivo, OPPO, and HONOR.
+description: Connect iCloud, Xiaomi and vivo with PicFerry, an unofficial cloud photo tool. Browse photos and videos and save them to local folders or your phone's media library.
 template: splash
 hero:
-  tagline: Back up cloud galleries to your own disk. Guides ship first; binaries are coming.
+  tagline: Bring your cloud photos and videos back to your own devices. Connect iCloud, Xiaomi and vivo, browse your galleries, and save to local folders or your phone's media library.
   actions:
     - text: Get started
       link: /en/getting-started/
       icon: right-arrow
-    - text: Download (coming soon)
+    - text: Downloads & platforms
       link: /en/download/
       icon: download
       variant: minimal
 ---
 
-import { Card, CardGrid, Aside } from '@astrojs/starlight/components';
+import HomeOverview from '../../../components/HomeOverview.astro';
 
-<Aside type="caution" title="Unofficial">
-PicFerry is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product. Never commit passwords, cookies, sessions, or signed media URLs.
-</Aside>
+## Connect your cloud gallery
 
-<div class="vendor-grid">
-  <a class="vendor-card" href="/en/guides/icloud/" style="--vendor-color: var(--pd-icloud)">
-    <div class="name">iCloud <span class="badge ready">Ready</span></div>
-    <p class="meta">SRP + 2FA, Copy / Sync / Move, China accounts via <code>--domain cn</code>.</p>
-  </a>
-  <a class="vendor-card" href="/en/guides/huawei/" style="--vendor-color: var(--pd-huawei)">
-    <div class="name">HUAWEI Cloud <span class="badge ready">Ready</span></div>
-    <p class="meta">Export <code>cookies.json</code> from a logged-in browser, then download.</p>
-  </a>
-  <a class="vendor-card" href="/en/guides/xiaomi/" style="--vendor-color: var(--pd-xiaomi)">
-    <div class="name">Xiaomi Cloud <span class="badge wip">WIP</span></div>
-    <p class="meta">Protocol work in progress. Not usable yet.</p>
-  </a>
-  <a class="vendor-card" href="/en/guides/vivo/" style="--vendor-color: var(--pd-vivo)">
-    <div class="name">vivo Cloud <span class="badge wip">WIP</span></div>
-    <p class="meta">Protocol work in progress. Not usable yet.</p>
-  </a>
-  <a class="vendor-card" href="/en/guides/oppo/" style="--vendor-color: var(--pd-oppo)">
-    <div class="name">OPPO Cloud <span class="badge wip">WIP</span></div>
-    <p class="meta">Protocol work in progress. Not usable yet.</p>
-  </a>
-  <a class="vendor-card" href="/en/guides/honor/" style="--vendor-color: var(--pd-honor)">
-    <div class="name">HONOR Cloud <span class="badge wip">WIP</span></div>
-    <p class="meta">No live requests until the Gallery API is verified.</p>
-  </a>
-</div>
+Choose a service by integration status. See [downloads](/en/download/) for releases and [feature status](/en/status/) for platform support. PicFerry is an independently developed, unofficial tool.
 
-## What you can do now
-
-<CardGrid>
-	<Card title="Read the guides" icon="open-book">
-		iCloud and HUAWEI authentication, filters, and run modes are documented.
-	</Card>
-	<Card title="Binaries coming soon" icon="download">
-		Windows / Linux / macOS, x64 and arm64. No installers are published yet.
-	</Card>
-	<Card title="GUI" icon="puzzle">
-		A Flutter app will wrap the vendor downloaders. No GUI packages yet.
-	</Card>
-	<Card title="Stay safe" icon="warning">
-		Do not commit cookies or passwords. Destructive deletes need <code>--dry-run</code> first.
-	</Card>
-</CardGrid>
+<HomeOverview locale="en" />

@@ -1,57 +1,35 @@
 ---
 title: iCloud
-description: 使用 icloud_photos_downloader 认证、列出并下载 iCloud 照片。
+description: 在 PicFerry 中登录 iCloud、完成双重认证并保存照片和视频。
 ---
 
-`icloud_photos_downloader` 是 Dart library/CLI，位于 monorepo [`picferry_core`](https://github.com/picferry/picferry_core) 的 `packages/icloud_photos_downloader`。语义参考 [icloudpd](https://github.com/icloud-photos-downloader/icloud_photos_downloader)。预编译二进制尚未随本站发布。
+PicFerry 支持在应用内登录 iCloud，浏览照片和相册，并将媒体保存到本机。安装包与发布说明见 [下载页](/download/)。
 
-## 账号前提
+## 连接账号
 
-在 iPhone / iPad 上确认：
+1. 确认 Apple 账号允许通过网页访问 iCloud 数据。高级数据保护（ADP）开启时，当前下载器的网页访问方式不受支持；请先了解 Apple 的安全设置及其影响。
+2. 在 PicFerry 中「添加账号」→「iCloud」，设置账号名称与区域。中国大陆账号选择中国大陆区，其他账号选择全球区。
+3. 打开账号连接页，输入 **Apple ID 和主账号密码**，点击登录；应用专用密码不适用于此网页认证流程。
+4. 按界面提示完成双重认证：输入受信任设备收到的验证码，或使用可用的短信验证选项。
+5. 认证成功后进入「照片」。应用复用已保存会话；会话失效时重新认证，密码不作为账号配置保存。
 
-- 已开启「允许通过网页访问 iCloud 数据」
-- **未**开启 Advanced Data Protection（ADP）
+登录失败时，先检查账号区域、网页访问设置和验证码状态。会话文件同样是敏感凭据，请保持私密。
 
-ADP 与 FIDO 不受支持。
+## 浏览与保存
 
-## 认证
+先预览或单项下载几张照片，再进入批量下载，保持默认「仅下载」。按需选择媒体类型与新增下载数量，确认保存目标后开始。
 
-首次登录需要 Apple ID 密码和 2FA（设备推送或短信）。成功后 session 会写到 `~/.picferry/icloud/`（Windows 为 `%USERPROFILE%\.picferry\icloud\`）。
+- 桌面保存到账号目录，批量下载默认按 UTC 年/月/日归档；单项下载直接保存到账号目录。
+- Android、iOS、OHOS 默认保存到系统图库；iOS 需要完整照片权限，OHOS 需在前台确认保存，每批最多 100 项。详见 [GUI 使用指南](/guides/gui/)。
+- 支持图片预览；视频只有在 iCloud 提供 `small_video` 时才能内联播放。
+- 浏览云端相册不代表批量下载会按相册归档；移动端不会重建云端相册。Live Photo 也不保证在系统图库中成对还原。
 
-```sh
-cd picferry_core/packages/icloud_photos_downloader
-dart run bin/icloud_photos_downloader.dart --auth-only
-dart run bin/icloud_photos_downloader.dart --username you@example.com --auth-only
-dart run bin/icloud_photos_downloader.dart --mfa-method device --auth-only
-dart run bin/icloud_photos_downloader.dart --domain cn --auth-only
-```
+## 迁移与删除
 
-中国区账号使用 `--domain cn`。不要使用 app-specific password。
+「下载并删除云原件」是可选迁移模式。它依据所选资源组的完成状态及 iCloud 规则处理，移动端还需确认系统图库保存成功；不能把任意已有文件当作可删除云原件的依据。先核对备份，再阅读确认信息并执行。云端删除可能同步影响其他 Apple 设备，恢复规则以 Apple 为准。
 
-## 两种模式
+图库中的显式删除是另一项独立操作，不要求先备份，也不经过批量迁移的前置验证。请仔细核对选择。
 
-| 模式 | 行为 | 参数 |
-| --- | --- | --- |
-| 仅下载（默认） | 只下载本地没有的文件 | 无额外参数 |
-| 下载并删除云原件 | 下载成功后从 iCloud 删除（可保留最近 N 天） | `--keep-icloud-recent-days N` |
+取消保留已保存媒体，之后重新开始；当前没有断点续传、自动同步或定时任务。增量模式遇到第一个已存在目标即停止，补齐旧文件时请关闭它。
 
-破坏性操作先加 `--dry-run`。
-
-## 常用命令
-
-```sh
-dart run bin/icloud_photos_downloader.dart --directory /photos --recent 10
-dart run bin/icloud_photos_downloader.dart --list-libraries
-dart run bin/icloud_photos_downloader.dart --list-albums
-dart run bin/icloud_photos_downloader.dart --album Favorites --directory /photos
-dart run bin/icloud_photos_downloader.dart --recent 5 --dry-run --directory ./tmp-icloud --folder-structure none
-dart run bin/icloud_photos_downloader.dart --keep-icloud-recent-days 0 --directory /photos --dry-run
-```
-
-默认目录结构是 `{:%Y/%m/%d}`。`--folder-structure none` 会平铺到目标目录。
-
-部分旧版 CLI 能力（watch、通知、RAW 对齐等）仍在移植中，详见 core 包内 `docs/porting-plan.md`。
-
-## 配置文件
-
-可把非密钥默认值放在工作目录 `.env`。命令行 flag 覆盖环境变量。不要提交 `.env`。
+需要 CLI 或开发调试时，参阅 [从源码构建](/install/) 及 Core 包内说明；源码需要相应仓库访问权限，CLI 参数不等同于 GUI 功能。

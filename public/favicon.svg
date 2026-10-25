@@ -1,1 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" d="M81 36 64 0 47 36l-1 2-9-10a6 6 0 0 0-9 9l10 10h-2L0 64l36 17h2L28 91a6 6 0 1 0 9 9l9-10 1 2 17 36 17-36v-2l9 10a6 6 0 1 0 9-9l-9-9 2-1 36-17-36-17-2-1 9-9a6 6 0 1 0-9-9l-9 10v-2Zm-17 2-2 5c-4 8-11 15-19 19l-5 2 5 2c8 4 15 11 19 19l2 5 2-5c4-8 11-15 19-19l5-2-5-2c-8-4-15-11-19-19l-2-5Z" clip-rule="evenodd"/><path d="M118 19a6 6 0 0 0-9-9l-3 3a6 6 0 1 0 9 9l3-3Zm-96 4c-2 2-6 2-9 0l-3-3a6 6 0 1 1 9-9l3 3c3 2 3 6 0 9Zm0 82c-2-2-6-2-9 0l-3 3a6 6 0 1 0 9 9l3-3c3-2 3-6 0-9Zm96 4a6 6 0 0 1-9 9l-3-3a6 6 0 1 1 9-9l3 3Z"/><style>path{fill:#000}@media (prefers-color-scheme:dark){path{fill:#fff}}</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PicFerry — Three photo albums aboard</title>
+  <desc id="desc">Three colorful photo albums ride together on a teal ferry, representing photos gathered from multiple cloud galleries.</desc>
+  <defs>
+    <linearGradient id="front-sky" x1="184" y1="159" x2="333" y2="278" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#91EFFF"/>
+      <stop offset="1" stop-color="#4A91EF"/>
+    </linearGradient>
+    <linearGradient id="ferry" x1="132" y1="316" x2="380" y2="382" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3DDBC2"/>
+      <stop offset="1" stop-color="#13AFAF"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(256 256) scale(1.16) translate(-256 -256)">
+    <!-- Three distinct album covers, fanned like cargo on a little ferry. -->
+    <g transform="rotate(-13 177 236)">
+      <rect x="102" y="166" width="150" height="152" rx="27" fill="#FF6F8E" stroke="#183C5A" stroke-width="7"/>
+      <rect x="116" y="181" width="122" height="105" rx="16" fill="#FFF7F3"/>
+      <path d="M120 279L154 239L177 261L198 237L234 279Z" fill="#F2A09C"/>
+      <circle cx="211" cy="202" r="10" fill="#FFC85A"/>
+      <path d="M131 301H190" stroke="#FFF7F3" stroke-width="7" stroke-linecap="round"/>
+    </g>
+
+    <g transform="rotate(13 335 236)">
+      <rect x="260" y="166" width="150" height="152" rx="27" fill="#FFD166" stroke="#183C5A" stroke-width="7"/>
+      <rect x="274" y="181" width="122" height="105" rx="16" fill="#F1FFFA"/>
+      <path d="M278 279L311 241L335 262L361 235L392 279Z" fill="#50C9B1"/>
+      <circle cx="369" cy="202" r="10" fill="#FF9C70"/>
+      <path d="M289 301H348" stroke="#F1FFFA" stroke-width="7" stroke-linecap="round"/>
+    </g>
+
+    <!-- The bright central photo leads the eye while keeping both other albums visible. -->
+    <rect x="170" y="124" width="172" height="196" rx="31" fill="#FFFFFF" stroke="#183C5A" stroke-width="8"/>
+    <rect x="187" y="142" width="138" height="145" rx="20" fill="url(#front-sky)"/>
+    <circle cx="292" cy="174" r="14" fill="#FFE16D"/>
+    <path d="M187 287L226 226L250 253L271 230L325 287Z" fill="#2763C4"/>
+    <path d="M187 287L234 252L255 269L283 245L325 287Z" fill="#1B4E9A"/>
+    <path d="M212 302H300" stroke="#DCE9EF" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Ferry hull: a common ride for albums from different sources. -->
+    <path d="M111 319H401L366 374C337 394 299 405 256 405S175 394 146 374Z" fill="url(#ferry)" stroke="#183C5A" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M143 350H369" stroke="#E8FFFA" stroke-width="9" stroke-linecap="round"/>
+    <path d="M165 374C194 389 224 396 256 396S318 389 347 374" fill="none" stroke="#168D98" stroke-width="6" stroke-linecap="round" opacity=".55"/>
+  </g>
+</svg>

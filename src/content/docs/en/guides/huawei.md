@@ -1,25 +1,18 @@
 ---
 title: HUAWEI
-description: Download HUAWEI Cloud Gallery using a browser-exported cookies.json.
+description: Current GUI account restrictions and Core copy-download capabilities for HUAWEI Cloud Gallery.
 ---
 
-`huawei-photos-downloader` talks to the HUAWEI Cloud Gallery web API with cookies exported from a logged-in browser. Binaries are not published with this site yet.
+**Adding HUAWEI accounts is not currently enabled in the GUI.** This is separate from the underlying implementation: the Core HUAWEI provider has real Cookie-based authentication, media listing, and copy downloads. It is not a scaffold.
 
-## Export cookies
+## Current usage
 
-1. Sign in at [https://cloud.huawei.com](https://cloud.huawei.com).
-2. Open the **Gallery** page.
-3. Export cookies as JSON (Cookie-Editor or EditThisCookie).
-4. Save as `cookies.json`. Do not commit that file to Git, issues, or chat logs.
+- For new accounts, use the providers currently enabled in the app and follow the [GUI guide](/en/guides/gui/). This page does not provide a workaround for the disabled account-creation entry.
+- If you already have a configured HUAWEI account, use the connection and copy-download actions available in the current interface. Cloud deletion and batch moves are not enabled.
+- If you have source access and need the CLI, start with [Build from source](/en/install/), then follow the `huawei_photos_downloader` package documentation. Authentication uses valid cookies from your own signed-in [HUAWEI Cloud](https://cloud.huawei.com) session. Verify copying with a small sample first.
 
-## Run
+## Limits and credentials
 
-```sh
-huawei-photos-downloader --directory /photos --cookie-file cookies.json
-huawei-photos-downloader --auth-only --cookie-file cookies.json
-huawei-photos-downloader --recent 20 --dry-run --cookie-file cookies.json
-```
+Core copy support does not mean GUI account creation, image previews, inline video, or moves are enabled. It also does not imply automatic sync, scheduling, or resumable downloading. Check the saved local files after downloading.
 
-Useful flags: `--recent`, `--until-found`, `--skip-videos`, `--skip-photos`, `--filename-pattern`, `--watch-interval`, `--concurrency`.
-
-When cookies expire, export a fresh file. Never paste reusable cookie values in public channels.
+When cookies expire, sign in again and export a fresh file. Keep credential files in trusted storage. See [Downloads](/en/download/) for package availability and release notes; GUI/Core source access requires repository permission.

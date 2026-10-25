@@ -1,0 +1,32 @@
+---
+title: 下载
+description: 实时读取官方发布清单，选择 R2 主下载或 GitHub 备用下载，核对版本、架构和 SHA256。
+---
+
+import Downloads from '../../components/Downloads.astro';
+
+## 官方发布渠道
+
+**截至 2026-10-24，首个正式版本尚未发布。** 下方列表在浏览器中实时读取官方清单；发布后刷新列表即可获取新版本，无需重新构建官网。只有清单通过校验并列出安装包时，才显示对应下载链接。
+
+官方编译包由私有 GUI 仓库自动构建，同一份文件分别存放于 **R2 downloads 桶**和公开的 [picferry/picferry-website Releases](https://github.com/picferry/picferry-website/releases)。R2 为主下载，GitHub 为备用；GUI/Core 源码访问受限不影响官方编译包的公开分发。
+
+<Downloads locale="zh-CN" />
+
+## 平台与架构
+
+当前受控发布流水线面向 **Linux x64（tar.gz）、Windows x64（zip）、Android universal APK**。这是构建目标，不表示已经有包可下载；实际可用版本、文件名、大小和 SHA256 以上方清单为准。
+
+- **x64**：Intel / AMD 64 位处理器，不能当作原生 ARM64 包。
+- **arm64**：ARM 64 位处理器；当前首发构建目标中没有独立 arm64 包。
+- **universal APK**：包含多种 Android ABI，不表示适用于所有系统版本或设备。
+- iOS、OHOS 当前不在这一发布流水线内；macOS 尚无原生工程，Web 仅供 UI 预览。完整能力见 [状态页](/status/)。
+
+下载后核对 SHA256：Linux 可运行 `sha256sum <文件名>`，Windows PowerShell 可运行 `Get-FileHash <文件名> -Algorithm SHA256`。两个渠道应得到相同文件；哈希核对用于检查完整性，不能替代来源确认或数字签名。本站当前不推荐任何未经核实的商店入口。
+
+## 接下来怎么做
+
+- **普通使用者**：阅读 [应用简介](/getting-started/) 和 [GUI 指南](/guides/gui/)。清单返回 404 时等待首发；网络、超时或校验问题请刷新重试，也可直接查看官方 Releases 页面，这些错误不等于没有版本。
+- **已有源码访问权限的开发者**：按 [从源码构建](/install/) 准备并排的 GUI/Core 目录及平台工具链。源码权限仅是自行构建的前提，不是下载官方编译包的前提。
+
+连接真实账号之前，请阅读 [安全说明](/security/)。

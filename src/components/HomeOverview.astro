@@ -1,0 +1,216 @@
+---
+interface Props {
+  locale?: 'zh-CN' | 'en';
+}
+
+const { locale = 'zh-CN' } = Astro.props;
+const en = locale === 'en';
+const base = en ? '/en/' : '/';
+const text = en ? {
+  connected: 'App integrated',
+  connectedNote: 'Connect an account to browse and save your media.',
+  core: 'Core implemented',
+  coreNote: 'Sessions are unstable. Adding accounts in the App is not enabled yet.',
+  unstable: 'Unstable sessions',
+  capabilities: 'From cloud gallery to your device',
+  introduction: 'Start with a few items. Keep cloud originals until you have checked your local copies.',
+  preference: 'Your language. Your view.',
+  preferenceNote: 'Chinese and English · System, light or dark theme · Gallery density · Download defaults',
+  manual: 'Tasks run manually; this is not an automatic sync service.',
+  guide: 'Read the App guide',
+  status: 'Full feature status',
+} : {
+  connected: 'App 已接入',
+  connectedNote: '连接账号，即可浏览并保存云端媒体。',
+  core: '核心已实现',
+  coreNote: '会话稳定性仍待改善，App 暂未开放新增账号。',
+  unstable: '会话不稳定',
+  capabilities: '从云端浏览，到本机保存',
+  introduction: '先试存少量照片和视频，确认本地副本可用，再决定是否释放云空间。',
+  preference: '按你的习惯使用',
+  preferenceNote: '中英文界面 · 跟随系统 / 浅色 / 深色 · 图库密度 · 默认下载设置',
+  manual: '任务由你手动发起，当前不提供自动同步。',
+  guide: '查看完整操作指南',
+  status: '查看完整功能状态',
+};
+
+// 厂商顺序与开放状态共用，文案按语言切换。
+const groups = [
+  {
+    id: 'connected-services',
+    title: text.connected,
+    note: text.connectedNote,
+    connected: true,
+    vendors: [
+      { id: 'icloud', name: 'iCloud', description: en ? 'Sign in with Apple ID and two-factor authentication. Supports mainland China accounts, browsing, downloads and verified migration.' : 'Apple ID 与双重认证，支持中国大陆区；浏览、下载及通过校验后的迁移。' },
+      { id: 'xiaomi', name: 'Xiaomi Cloud', description: en ? 'Browse albums, save originals and migrate media. Web login or cookie import depends on your OS.' : '浏览云相册、保存原件与迁移媒体；按系统使用网页登录或 Cookie 导入。' },
+      { id: 'vivo', name: 'vivo Cloud', description: en ? 'Browse and save cloud media. Suite sessions support migration; legacy sessions use copy mode.' : '浏览并保存云端媒体；suite 会话支持迁移，legacy 会话使用复制模式。' },
+    ],
+  },
+  {
+    id: 'core-services',
+    title: text.core,
+    note: text.coreNote,
+    connected: false,
+    vendors: [
+      { id: 'huawei', name: 'HUAWEI Cloud', description: en ? 'The core implements media listing and copy downloads. New App accounts are not enabled yet.' : '核心已实现媒体列举与复制下载，App 暂未开放新增账号。' },
+      { id: 'oppo', name: 'OPPO Cloud', description: en ? 'The core implements media listing and copy downloads. New App accounts are not enabled yet.' : '核心已实现媒体列举与复制下载，App 暂未开放新增账号。' },
+      { id: 'honor', name: 'HONOR Cloud', description: en ? 'The core connects to real album and download services. New App accounts are not enabled yet.' : '核心已接入真实相册与下载服务，App 暂未开放新增账号。' },
+    ],
+  },
+];
+
+const steps = en ? [
+  { title: 'Browse your gallery', description: 'Connect an account, explore albums and preview images. Save a few items first to check the result.', link: 'getting-started/', action: 'Get started' },
+  { title: 'Save to your device', description: 'Keep originals in the cloud with copy mode. Save to desktop folders or the system media library on Android, iOS and OHOS.', link: 'guides/gui/', action: 'Choose how to save' },
+  { title: 'Migrate when ready', description: 'Migration deletes cloud items only after its checks pass. Direct gallery deletion is separate and does not require a backup.', link: 'security/', action: 'Understand deletion' },
+] : [
+  { title: '浏览云端相册', description: '连接账号，浏览相册与图片预览。先试存少量媒体，确认内容和保存位置符合预期。', link: 'getting-started/', action: '开始使用' },
+  { title: '保存到自己的设备', description: '默认“仅下载”，保留云端原件。桌面保存到本地目录，Android、iOS 和 OHOS 保存到系统图库。', link: 'guides/gui/', action: '了解保存方式' },
+  { title: '确认后，按需迁移', description: '迁移通过校验后才删除对应云端内容。图库直接删除是独立操作，不要求先备份，请谨慎确认。', link: 'security/', action: '了解删除边界' },
+];
+---
+
+<div class="home-overview not-content">
+  <div class="service-columns">
+    {groups.map((group) => (
+      <section class="service-group" aria-labelledby={group.id}>
+        <header class="service-group-heading">
+          <h3 id={group.id}>{group.title}</h3>
+          <p>{group.note}</p>
+        </header>
+        <ul class="service-list" role="list">
+          {group.vendors.map((vendor) => (
+            <li>
+              <a class="service-card" href={`${base}guides/${vendor.id}/`}>
+                <span class="service-name">{vendor.name}</span>
+                <span class="service-badges">
+                  <span class:list={['service-badge', group.connected ? 'integrated' : 'implemented']}>{group.title}</span>
+                  {!group.connected && <span class="service-badge unstable">{text.unstable}</span>}
+                </span>
+                <p>{vendor.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+
+  <section class="capabilities" aria-labelledby="capabilities-heading">
+    <header class="capabilities-heading">
+      <h2 id="capabilities-heading">{text.capabilities}</h2>
+      <p>{text.introduction}</p>
+    </header>
+    <ol class="workflow" role="list">
+      {steps.map((step, index) => (
+        <li class="workflow-step">
+          <span class="step-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+          <a href={`${base}${step.link}`}>{step.action}<span aria-hidden="true"> →</span></a>
+        </li>
+      ))}
+    </ol>
+    <aside class="preferences" aria-labelledby="preferences-heading">
+      <div>
+        <h3 id="preferences-heading">{text.preference}</h3>
+        <p>{text.preferenceNote}</p>
+        <p>{text.manual}</p>
+      </div>
+      <div class="overview-links">
+        <a href={`${base}guides/gui/`}>{text.guide}<span aria-hidden="true"> →</span></a>
+        <a href={`${base}status/`}>{text.status}<span aria-hidden="true"> →</span></a>
+      </div>
+    </aside>
+  </section>
+</div>
+
+<style>
+  .home-overview {
+    --overview-surface: var(--sl-color-bg-nav);
+    --overview-muted: var(--sl-color-gray-2);
+    margin-block: 1.5rem 2.5rem;
+  }
+  .home-overview :is(h2, h3, p, ul, ol) { margin: 0; }
+  .service-columns { display: grid; gap: 2rem; }
+  .service-group { min-width: 0; }
+  .service-group-heading { margin-bottom: 1rem; }
+  h3 { font-size: 1.125rem; line-height: 1.5; }
+  .service-group-heading p, .capabilities-heading p { margin-top: .5rem; color: var(--overview-muted); }
+  .service-list, .workflow { padding: 0; list-style: none; display: grid; gap: 1rem; }
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .75rem;
+    padding: 1.25rem;
+    height: 100%;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: .875rem;
+    background: var(--overview-surface);
+    color: var(--sl-color-text);
+    text-decoration: none;
+    transition: border-color 160ms ease;
+  }
+  .service-card:hover { border-color: var(--sl-color-text-accent); }
+  .service-name { font-weight: 600; font-size: 1.125rem; }
+  .service-badges { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .service-badge {
+    display: inline-flex;
+    padding: .125rem .625rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    line-height: 1.75;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .integrated { color: #14532d; background: #dcfce7; }
+  .implemented { color: #1e3a8a; background: #dbeafe; }
+  .unstable { color: #78350f; background: #fef3c7; }
+  :global([data-theme='dark']) .integrated { color: #bbf7d0; background: #14532d; }
+  :global([data-theme='dark']) .implemented { color: #bfdbfe; background: #1e3a8a; }
+  :global([data-theme='dark']) .unstable { color: #fde68a; background: #78350f; }
+  .service-card p, .workflow-step p, .preferences p {
+    color: var(--overview-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+  .capabilities { margin-top: 3.5rem; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.3; text-wrap: balance; }
+  .capabilities-heading { margin-bottom: 1.5rem; max-width: 65ch; }
+  .workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: .875rem;
+  }
+  .step-number { color: var(--sl-color-text-accent); font-size: 1.5rem; font-weight: 700; }
+  .workflow-step h3 { text-wrap: balance; }
+  .workflow-step a { margin-top: auto; }
+  .home-overview a:not(.service-card) {
+    color: var(--sl-color-text-accent);
+    text-underline-offset: .25em;
+    padding-block: .5rem;
+  }
+  .home-overview a:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px; }
+  .preferences { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-top: 1.5rem; padding: 1.5rem; border-radius: .875rem; background: var(--overview-surface); }
+  .preferences p { margin-top: .5rem; }
+  .overview-links { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  @media (min-width: 50rem) {
+    .service-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-group { display: grid; grid-template-rows: auto 1fr; }
+    .service-group-heading { min-height: 6rem; }
+    .service-list { grid-auto-rows: 1fr; }
+  }
+  @media (min-width: 64rem) {
+    .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .service-card { transition: none; }
+  }
+</style>

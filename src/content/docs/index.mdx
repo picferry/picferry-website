@@ -1,61 +1,23 @@
 ---
 title: PicFerry
-description: 非官方多厂商云相册下载器。把 iCloud、华为、小米、vivo、OPPO、荣耀图库备份到本地。
+description: PicFerry 非官方云相册工具：连接 iCloud、小米和 vivo，浏览照片与视频，保存到本地目录或手机系统图库。
 template: splash
 hero:
-  tagline: 把云相册备份到你自己的磁盘。第一期先提供使用指南，二进制即将发布。
+  tagline: 把云端的照片与视频，带回自己的设备。连接 iCloud、小米和 vivo，浏览云相册，保存到本地目录或手机系统图库。
   actions:
     - text: 使用指南
       link: /getting-started/
       icon: right-arrow
-    - text: 下载（即将发布）
+    - text: 下载与平台说明
       link: /download/
       icon: download
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import HomeOverview from '../../components/HomeOverview.astro';
 
-<div class="vendor-grid">
-  <a class="vendor-card" href="/guides/icloud/" style="--vendor-color: var(--pd-icloud)">
-    <div class="name">iCloud <span class="badge ready">可用</span></div>
-    <p class="meta">SRP + 2FA，Copy / Sync / Move，支持中国区 <code>--domain cn</code>。</p>
-  </a>
-  <a class="vendor-card" href="/guides/huawei/" style="--vendor-color: var(--pd-huawei)">
-    <div class="name">HUAWEI Cloud <span class="badge ready">可用</span></div>
-    <p class="meta">浏览器导出 <code>cookies.json</code> 后下载云相册。</p>
-  </a>
-  <a class="vendor-card" href="/guides/xiaomi/" style="--vendor-color: var(--pd-xiaomi)">
-    <div class="name">Xiaomi Cloud <span class="badge wip">开发中</span></div>
-    <p class="meta">协议对接进行中，当前不可用。</p>
-  </a>
-  <a class="vendor-card" href="/guides/vivo/" style="--vendor-color: var(--pd-vivo)">
-    <div class="name">vivo Cloud <span class="badge wip">开发中</span></div>
-    <p class="meta">协议对接进行中，当前不可用。</p>
-  </a>
-  <a class="vendor-card" href="/guides/oppo/" style="--vendor-color: var(--pd-oppo)">
-    <div class="name">OPPO Cloud <span class="badge wip">开发中</span></div>
-    <p class="meta">协议对接进行中，当前不可用。</p>
-  </a>
-  <a class="vendor-card" href="/guides/honor/" style="--vendor-color: var(--pd-honor)">
-    <div class="name">HONOR Cloud <span class="badge wip">开发中</span></div>
-    <p class="meta">Gallery API 未验证前不会发真实请求。</p>
-  </a>
-</div>
+## 连接你的云相册
 
-## 现在能做什么
+按接入状态选择服务。安装包发布情况见[下载页](/download/)，各平台能力见[功能状态](/status/)。PicFerry 是独立开发的非官方工具。
 
-<CardGrid>
-<Card title="阅读指南" icon="open-book">
-iCloud 与华为云相册的认证、过滤和三种运行模式已整理成文档。
-</Card>
-<Card title="即将发布二进制" icon="download">
-计划覆盖 Windows / Linux / macOS 的 x64 与 arm64。当前没有可下载的安装包。
-</Card>
-<Card title="图形界面" icon="puzzle">
-Flutter GUI 会聚合各厂商下载器。安装包同样尚未发布。
-</Card>
-<Card title="安全边界" icon="warning">
-不要提交 cookie 或账号。破坏性删除请先 <code>--dry-run</code>。
-</Card>
-</CardGrid>
+<HomeOverview locale="zh-CN" />

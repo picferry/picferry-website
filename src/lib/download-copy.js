@@ -1,0 +1,46 @@
+// 静态壳与浏览器状态共用同一份双语文案。
+export function downloadCopy(locale) {
+  return locale === 'en' ? {
+    title: 'Official app downloads',
+    loading: 'Checking the official release manifest…',
+    waiting: 'Waiting for the first release: latest.json is not published yet (HTTP 404). No package links are available from the manifest.',
+    empty: 'The release manifest is available, but it does not list any packages yet.',
+    ready: 'Release manifest loaded. Choose your platform and architecture below.',
+    network: 'Unable to read the release manifest. Check your connection; the download host may also need CORS configuration. This does not mean no release exists.',
+    timeout: 'The release manifest request timed out after 10 seconds. Try again or check GitHub Releases.',
+    http: 'The download host could not serve the release manifest. Try again or check GitHub Releases.',
+    invalid: 'The release manifest could not be validated. Package links are hidden; check GitHub Releases or try again later.',
+    retry: 'Refresh download list',
+    releases: 'Browse official GitHub Releases',
+    noScript: 'Enable JavaScript to load the current download list, or browse official GitHub Releases. This static page does not assume any packages exist.',
+    version: 'Version', published: 'Published (UTC)', release: 'Release notes', size: 'Size', bytes: 'bytes',
+    primary: 'Download from R2', backup: 'GitHub backup',
+    architectures: {
+      x64: 'x64 · Intel / AMD 64-bit; not a native ARM64 package.',
+      arm64: 'arm64 · ARM 64-bit; not an Intel / AMD x64 package.',
+      universal: 'universal · Android APK containing multiple ABIs; compatibility still depends on your device and OS.',
+    },
+    integrity: 'Compare the downloaded file’s SHA256 with the value below. Both channels distribute the same file; a hash checks integrity, not an independent signature.',
+  } : {
+    title: '官方应用下载',
+    loading: '正在读取官方发布清单…',
+    waiting: '等待首发：latest.json 尚未发布（HTTP 404），暂时没有来自清单的安装包链接。',
+    empty: '已读取发布清单，但清单暂未列出安装包。',
+    ready: '已读取发布清单，请按平台和架构选择下载。',
+    network: '无法读取发布清单。请检查网络；下载域名也可能需要配置 CORS。这不表示没有已发布版本。',
+    timeout: '读取发布清单超过 10 秒，请重试或查看 GitHub Releases。',
+    http: '下载服务暂时无法提供发布清单，请重试或查看 GitHub Releases。',
+    invalid: '发布清单未通过格式或安全校验，已隐藏安装包链接；请查看 GitHub Releases 或稍后重试。',
+    retry: '刷新下载列表',
+    releases: '查看官方 GitHub Releases',
+    noScript: '启用 JavaScript 可读取当前下载列表，也可查看官方 GitHub Releases。静态页面不会假定安装包已经存在。',
+    version: '版本', published: '发布时间（UTC）', release: '版本说明', size: '大小', bytes: '字节',
+    primary: 'R2 主下载', backup: 'GitHub 备用下载',
+    architectures: {
+      x64: 'x64 · Intel / AMD 64 位处理器；不是原生 ARM64 包。',
+      arm64: 'arm64 · ARM 64 位处理器；不是 Intel / AMD x64 包。',
+      universal: 'universal · 包含多种 ABI 的 Android APK；仍需确认设备和系统兼容性。',
+    },
+    integrity: '下载后将文件的 SHA256 与下方值比较。两个渠道分发同一文件；哈希用于完整性核对，不是独立数字签名。',
+  };
+}

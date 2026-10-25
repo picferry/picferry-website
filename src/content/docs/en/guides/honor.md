@@ -1,17 +1,20 @@
 ---
 title: HONOR
-description: The HONOR scaffold accepts cookies but will not send live requests until the Gallery API is verified.
+description: GUI account restrictions and real Core copy-download capabilities for HONOR Cloud.
 ---
 
-The HONOR provider is a scaffold: it can accept browser-exported session cookies, but it **will not send live requests** until the Gallery API is verified from a sanitized authenticated network trace.
+**Adding HONOR accounts is not currently enabled in the GUI.** The Core HONOR provider implements real Cookie authentication, media listing, and copy downloads. It sends actual cloud-service requests rather than merely accepting cookies as a scaffold.
 
-## Safety
+## Current usage path
 
-Do not put any of the following in fixtures, issues, PRs, or this repository:
+- For new accounts, use a provider currently enabled in the GUI and follow the [GUI guide](/en/guides/gui/).
+- Existing configured HONOR accounts can use the connection and copy actions available in the interface. Cloud deletion and batch moves are not enabled.
+- For CLI use, first confirm that you have source repository access, then read [Build from source](/en/install/) and the `honor_photos_downloader` package documentation. Use valid cookies from your own official cloud-service session, copy a small sample, and check the results.
 
-- Passwords
-- Reusable cookie values
-- Account identifiers
-- Signed media URLs
+Real Core downloads do not mean GUI account creation or media previews are enabled, nor do they imply automatic sync, scheduling, or resumable downloading.
 
-Treat HONOR as unavailable until that verification is done.
+## Credentials and release information
+
+Keep Cookie files, saved sessions, account identifiers, and signed media URLs private. Share only sanitized information when reporting problems. Sign in again to obtain valid cookies when authentication expires.
+
+See [Downloads](/en/download/) for package availability and release notes. GUI/Core source access requires repository permission.

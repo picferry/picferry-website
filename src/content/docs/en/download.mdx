@@ -1,0 +1,32 @@
+---
+title: Download
+description: Load the official release manifest live, choose R2 or the GitHub backup, and check version, architecture, and SHA256.
+---
+
+import Downloads from '../../../components/Downloads.astro';
+
+## Official distribution channels
+
+**As of 2026-10-24, the first official release has not been published.** The list below reads the official manifest in your browser. Refresh it after a release to see new packages without a website rebuild. Package links appear only when a validated manifest lists them.
+
+The private GUI repository automatically builds official packages. The same files are stored in the **R2 downloads bucket** and public [picferry/picferry-website Releases](https://github.com/picferry/picferry-website/releases). R2 is the primary download and GitHub is the backup. Restricted GUI/Core source access does not prevent public distribution of official compiled packages.
+
+<Downloads locale="en" />
+
+## Platforms and architectures
+
+The controlled release pipeline currently targets **Linux x64 (tar.gz), Windows x64 (zip), and Android universal APK**. These are build targets, not a claim that packages are available. Use the live list above for available versions, filenames, sizes, and SHA256 values.
+
+- **x64**: Intel / AMD 64-bit processors; not a native ARM64 package.
+- **arm64**: ARM 64-bit processors; a separate arm64 package is not part of the current first-release build targets.
+- **universal APK**: contains multiple Android ABIs; it does not guarantee compatibility with every device or OS version.
+- iOS and OHOS are outside this release pipeline. macOS has no native project yet, and Web is a UI preview only. See [Status](/en/status/) for capabilities.
+
+After downloading, check SHA256 with `sha256sum <filename>` on Linux or `Get-FileHash <filename> -Algorithm SHA256` in Windows PowerShell. Both channels should deliver identical files. Hash comparison checks integrity; it does not replace source verification or a digital signature. This site currently recommends no unverified store listings.
+
+## What to do next
+
+- **App users**: read the [Overview](/en/getting-started/) and [GUI guide](/en/guides/gui/). A manifest HTTP 404 means waiting for the first release. For network, timeout, or validation problems, refresh or inspect official Releases directly; those errors do not mean no release exists.
+- **Developers who already have source access**: follow [Build from source](/en/install/) to arrange sibling GUI/Core directories and platform toolchains. Source access is required only for building from source, not for downloading official compiled packages.
+
+Read [Security](/en/security/) before connecting a real account.

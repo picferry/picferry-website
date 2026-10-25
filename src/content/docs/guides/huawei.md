@@ -1,25 +1,18 @@
 ---
 title: HUAWEI
-description: 用浏览器导出的 cookies.json 下载华为云相册。
+description: 华为云相册的当前 GUI 入口限制与 Core 复制下载能力。
 ---
 
-`huawei-photos-downloader` 通过华为云相册网页 API 工作，使用你从已登录浏览器导出的 cookie。二进制尚未随本站发布。
+**当前 GUI 暂未开放新增华为账号。** 这与底层能力不同：Core 的华为提供方已有基于登录 Cookie 的真实认证、媒体列举与复制下载实现，并非脚手架。
 
-## 导出 cookie
+## 当前如何使用
 
-1. 在浏览器登录 [https://cloud.huawei.com](https://cloud.huawei.com)。
-2. 打开**图库 / Gallery** 页面。
-3. 用 Cookie-Editor 或 EditThisCookie 把 cookie 导出为 JSON。
-4. 保存为 `cookies.json`。不要把该文件提交到 Git、issue 或聊天记录。
+- 新用户请以应用实际开放的账号入口为准，常规操作见 [GUI 使用指南](/guides/gui/)。本页不提供绕过新增入口的步骤。
+- 如果已有配置的华为账号，可按当前界面提供的连接与复制下载能力使用；云端删除和批量迁移未开放。
+- 已取得源码访问权限、需要 CLI 的用户，可先阅读 [从源码构建](/install/)，再按 `huawei_photos_downloader` 包内说明操作。认证材料来自本人在 [华为云空间](https://cloud.huawei.com) 登录后的有效 Cookie，先用少量媒体验证复制结果。
 
-## 运行
+## 边界与凭据
 
-```sh
-huawei-photos-downloader --directory /photos --cookie-file cookies.json
-huawei-photos-downloader --auth-only --cookie-file cookies.json
-huawei-photos-downloader --recent 20 --dry-run --cookie-file cookies.json
-```
+Core 支持复制不代表 GUI 的新增账号、图片预览、内联视频或迁移已开放，也不代表提供自动同步、定时任务或断点续传。下载成功后请自行核对本地文件。
 
-常用参数：`--recent`、`--until-found`、`--skip-videos`、`--skip-photos`、`--filename-pattern`、`--watch-interval`、`--concurrency`。
-
-Cookie 过期后重新导出即可，不要把可复用的 cookie 值贴到公开渠道。
+Cookie 过期后重新登录并导出，凭据文件仅在受信任的位置保存。安装包与发布说明见 [下载页](/download/)；GUI/Core 源码需要相应仓库访问权限。
