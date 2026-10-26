@@ -70,9 +70,6 @@ export default defineConfig({
 					href: 'https://github.com/picferry/picferry-website',
 				},
 			],
-			editLink: {
-				baseUrl: 'https://github.com/picferry/picferry-website/edit/main/',
-			},
 			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],
 			sidebar,
