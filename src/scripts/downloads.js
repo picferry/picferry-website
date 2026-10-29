@@ -1,7 +1,7 @@
 import { fetchManifest, ManifestError } from '../lib/release-manifest.js';
 import { downloadCopy } from '../lib/download-copy.js';
 
-const PLATFORMS = { linux: 'Linux', windows: 'Windows', android: 'Android' };
+const PLATFORMS = { linux: 'Linux', windows: 'Windows', android: 'Android', macos: 'macOS (Apple Silicon)' };
 
 export function mountDownloads(root) {
   if (root.dataset.mounted) return;
@@ -42,6 +42,7 @@ export function mountDownloads(root) {
       const card = element('li', undefined, 'download-card');
       const platform = `${PLATFORMS[asset.platform]} ${asset.arch}`;
       card.append(element('h3', platform), element('p', text.architectures[asset.arch]));
+      if (asset.platform === 'macos') card.append(element('p', text.macosPreview));
       card.append(element('code', asset.name, 'asset-name'));
       const size = new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(asset.size / 1024 ** 2);
       const bytes = new Intl.NumberFormat(locale).format(asset.size);

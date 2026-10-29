@@ -15,12 +15,13 @@ import Downloads from '../../components/Downloads.astro';
 
 ## 平台与架构
 
-当前受控发布流水线面向 **Linux x64（tar.gz）、Windows x64（zip）、Android universal APK**。这是构建目标，不表示已经有包可下载；实际可用版本、文件名、大小和 SHA256 以上方清单为准。
+当前受控发布流水线面向 **Linux x64 / ARM64（tar.gz）、Windows x64 / ARM64（zip）、macOS Apple Silicon ARM64（zip）、Android universal APK**，共六个目标。这是构建目标，不表示已经有包可下载；实际可用版本、文件名、大小和 SHA256 以上方清单为准。
 
 - **x64**：Intel / AMD 64 位处理器，不能当作原生 ARM64 包。
-- **arm64**：ARM 64 位处理器；当前首发构建目标中没有独立 arm64 包。
+- **arm64**：ARM 64 位处理器；Windows ARM、Linux ARM 和 Apple Silicon 分别使用对应系统的包。
 - **universal APK**：包含多种 Android ABI，不表示适用于所有系统版本或设备。
-- iOS、OHOS 当前不在这一发布流水线内；macOS 尚无原生工程，Web 仅供 UI 预览。完整能力见 [状态页](/status/)。
+- **macOS 验证包**：最低 macOS 12，完整解压后打开 `picferry/PicFerry.app`。采用 ad-hoc 签名，尚未配置 Developer ID 签名与 Apple 公证，系统可能提示无法验证开发者；真实设备兼容性仍需验收。
+- iOS、OHOS 当前不在这一发布流水线内；Web 仅供 UI 预览。完整能力见 [状态页](/status/)。
 
 下载后核对 SHA256：Linux 可运行 `sha256sum <文件名>`，Windows PowerShell 可运行 `Get-FileHash <文件名> -Algorithm SHA256`。两个渠道应得到相同文件；哈希核对用于检查完整性，不能替代来源确认或数字签名。本站当前不推荐任何未经核实的商店入口。
 

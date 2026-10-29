@@ -5,7 +5,7 @@ export const MANIFEST_URL = `${R2_PREFIX}latest.json`;
 export const FETCH_TIMEOUT_MS = 10000;
 
 const TAG = /^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-([a-z][a-z0-9]*(?:\.(?:0|[1-9][0-9]*|[a-z][a-z0-9]*))*))?$/;
-const EXTENSIONS = new Map([['linux', 'tar.gz'], ['windows', 'zip'], ['android', 'apk']]);
+const EXTENSIONS = new Map([['linux', 'tar.gz'], ['windows', 'zip'], ['android', 'apk'], ['macos', 'zip']]);
 const ARCHITECTURES = new Set(['x64', 'arm64', 'universal']);
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})$/;
 

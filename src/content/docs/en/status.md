@@ -7,7 +7,7 @@ This page is the reference capability matrix, distinguishing **GUI entry points,
 
 ## Verified public availability
 
-**As of 2026-10-24, the first official release has not been published.** Official compiled packages will be publicly distributed through R2 as the primary channel and the website repository's GitHub Releases as the backup. The controlled automatic build targets are Linux x64, Windows x64, and Android universal APK; a build target does not mean a package has been published.
+**As of 2026-10-24, the first official release has not been published.** Official compiled packages will be publicly distributed through R2 as the primary channel and the website repository's GitHub Releases as the backup. The controlled automatic build targets are Linux x64 / ARM64, Windows x64 / ARM64, macOS Apple Silicon ARM64 validation builds, and Android universal APK; a build target does not mean a package has been published.
 
 Checks through the public GitHub API that day returned 200 for `picferry/picferry-website` and 404 for its latest release. Both the repository and latest-release endpoints for `picferry/picferry_gui` and `picferry/picferry_core` returned 404. These results describe only the public endpoints checked; they do not establish that no packages exist anywhere or reveal the contents of restricted repositories.
 
@@ -37,7 +37,7 @@ For authentication, see [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi
 | Android | Native project exists | System photo library, with permissions required by the OS |
 | iOS | Native project exists | System photo library; requires full photo-library access and an Apple build/signing environment |
 | OHOS | Native project exists | System photo library; keep the app in the foreground and confirm the system save dialog, with at most 100 items per batch; use an isolated OHOS build environment |
-| macOS | Dart platform branches exist, but there is currently no native `macos/` project | Not listed as a currently deliverable platform |
+| macOS | Apple Silicon ARM64 native project and release build target configured | Local-folder saving; ad-hoc validation build without Developer ID / notarization, pending device validation |
 | Web | UI preview only | No real cloud-service connection or download capability |
 
 Desktop batch downloads default to **UTC year/month/day (`YYYY/MM/DD`)** folders within the account directory. Single-item gallery downloads go directly into the account directory. Mobile saves use **PicFerry** archiving and do not recreate cloud album structures. Project status and public package availability are verified separately.

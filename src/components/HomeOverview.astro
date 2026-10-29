@@ -14,11 +14,6 @@ const text = en ? {
   unstable: 'Unstable sessions',
   capabilities: 'From cloud gallery to your device',
   introduction: 'Start with a few items. Keep cloud originals until you have checked your local copies.',
-  preference: 'Your language. Your view.',
-  preferenceNote: 'Chinese and English · System, light or dark theme · Gallery density · Download defaults',
-  manual: 'Tasks run manually; this is not an automatic sync service.',
-  guide: 'Read the App guide',
-  status: 'Full feature status',
 } : {
   connected: 'App 已接入',
   connectedNote: '连接账号，即可浏览并保存云端媒体。',
@@ -27,11 +22,6 @@ const text = en ? {
   unstable: '会话不稳定',
   capabilities: '从云端浏览，到本机保存',
   introduction: '先试存少量照片和视频，确认本地副本可用，再决定是否释放云空间。',
-  preference: '按你的习惯使用',
-  preferenceNote: '中英文界面 · 跟随系统 / 浅色 / 深色 · 图库密度 · 默认下载设置',
-  manual: '任务由你手动发起，当前不提供自动同步。',
-  guide: '查看完整操作指南',
-  status: '查看完整功能状态',
 };
 
 // 厂商顺序与开放状态共用，文案按语言切换。
@@ -44,7 +34,7 @@ const groups = [
     vendors: [
       { id: 'icloud', name: 'iCloud', description: en ? 'Sign in with Apple ID and two-factor authentication. Supports mainland China accounts, browsing, downloads and verified migration.' : 'Apple ID 与双重认证，支持中国大陆区；浏览、下载及通过校验后的迁移。' },
       { id: 'xiaomi', name: 'Xiaomi Cloud', description: en ? 'Browse albums, save originals and migrate media. Web login or cookie import depends on your OS.' : '浏览云相册、保存原件与迁移媒体；按系统使用网页登录或 Cookie 导入。' },
-      { id: 'vivo', name: 'vivo Cloud', description: en ? 'Browse and save cloud media. Suite sessions support migration; legacy sessions use copy mode.' : '浏览并保存云端媒体；suite 会话支持迁移，legacy 会话使用复制模式。' },
+      { id: 'vivo', name: 'vivo Cloud', description: en ? 'Browse and save cloud media.' : '浏览并保存云端媒体。' },
     ],
   },
   {
@@ -53,9 +43,9 @@ const groups = [
     note: text.coreNote,
     connected: false,
     vendors: [
-      { id: 'huawei', name: 'HUAWEI Cloud', description: en ? 'The core implements media listing and copy downloads. New App accounts are not enabled yet.' : '核心已实现媒体列举与复制下载，App 暂未开放新增账号。' },
-      { id: 'oppo', name: 'OPPO Cloud', description: en ? 'The core implements media listing and copy downloads. New App accounts are not enabled yet.' : '核心已实现媒体列举与复制下载，App 暂未开放新增账号。' },
-      { id: 'honor', name: 'HONOR Cloud', description: en ? 'The core connects to real album and download services. New App accounts are not enabled yet.' : '核心已接入真实相册与下载服务，App 暂未开放新增账号。' },
+      { id: 'huawei', name: 'HUAWEI Cloud' },
+      { id: 'oppo', name: 'OPPO Cloud' },
+      { id: 'honor', name: 'HONOR Cloud' },
     ],
   },
 ];
@@ -88,7 +78,7 @@ const steps = en ? [
                   <span class:list={['service-badge', group.connected ? 'integrated' : 'implemented']}>{group.title}</span>
                   {!group.connected && <span class="service-badge unstable">{text.unstable}</span>}
                 </span>
-                <p>{vendor.description}</p>
+                {vendor.description && <p>{vendor.description}</p>}
               </a>
             </li>
           ))}
@@ -112,17 +102,6 @@ const steps = en ? [
         </li>
       ))}
     </ol>
-    <aside class="preferences" aria-labelledby="preferences-heading">
-      <div>
-        <h3 id="preferences-heading">{text.preference}</h3>
-        <p>{text.preferenceNote}</p>
-        <p>{text.manual}</p>
-      </div>
-      <div class="overview-links">
-        <a href={`${base}guides/gui/`}>{text.guide}<span aria-hidden="true"> →</span></a>
-        <a href={`${base}status/`}>{text.status}<span aria-hidden="true"> →</span></a>
-      </div>
-    </aside>
   </section>
 </div>
 
@@ -171,7 +150,7 @@ const steps = en ? [
   :global([data-theme='dark']) .integrated { color: #bbf7d0; background: #14532d; }
   :global([data-theme='dark']) .implemented { color: #bfdbfe; background: #1e3a8a; }
   :global([data-theme='dark']) .unstable { color: #fde68a; background: #78350f; }
-  .service-card p, .workflow-step p, .preferences p {
+  .service-card p, .workflow-step p {
     color: var(--overview-muted);
     font-size: 1rem;
     line-height: 1.7;
@@ -198,9 +177,6 @@ const steps = en ? [
     padding-block: .5rem;
   }
   .home-overview a:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px; }
-  .preferences { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; margin-top: 1.5rem; padding: 1.5rem; border-radius: .875rem; background: var(--overview-surface); }
-  .preferences p { margin-top: .5rem; }
-  .overview-links { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
   @media (min-width: 50rem) {
     .service-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .service-group { display: grid; grid-template-rows: auto 1fr; }

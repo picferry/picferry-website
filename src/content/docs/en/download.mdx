@@ -15,12 +15,13 @@ The private GUI repository automatically builds official packages. The same file
 
 ## Platforms and architectures
 
-The controlled release pipeline currently targets **Linux x64 (tar.gz), Windows x64 (zip), and Android universal APK**. These are build targets, not a claim that packages are available. Use the live list above for available versions, filenames, sizes, and SHA256 values.
+The controlled release pipeline targets **Linux x64 / ARM64 (tar.gz), Windows x64 / ARM64 (zip), macOS Apple Silicon ARM64 (zip), and Android universal APK**: six targets. These are build targets, not a claim that packages are available. Use the live list above for available versions, filenames, sizes, and SHA256 values.
 
 - **x64**: Intel / AMD 64-bit processors; not a native ARM64 package.
-- **arm64**: ARM 64-bit processors; a separate arm64 package is not part of the current first-release build targets.
+- **arm64**: ARM 64-bit processors; choose the package for your operating system: Windows ARM, Linux ARM, or Apple Silicon macOS.
 - **universal APK**: contains multiple Android ABIs; it does not guarantee compatibility with every device or OS version.
-- iOS and OHOS are outside this release pipeline. macOS has no native project yet, and Web is a UI preview only. See [Status](/en/status/) for capabilities.
+- **macOS validation build**: requires macOS 12 or later. Extract the complete archive and open `picferry/PicFerry.app`. It uses ad-hoc signing without Developer ID signing or Apple notarization; macOS may display a security warning. Device validation is still required.
+- iOS and OHOS are outside this release pipeline. Web is a UI preview only. See [Status](/en/status/) for capabilities.
 
 After downloading, check SHA256 with `sha256sum <filename>` on Linux or `Get-FileHash <filename> -Algorithm SHA256` in Windows PowerShell. Both channels should deliver identical files. Hash comparison checks integrity; it does not replace source verification or a digital signature. This site currently recommends no unverified store listings.
 

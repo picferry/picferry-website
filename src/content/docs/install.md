@@ -5,7 +5,7 @@ description: 面向已有源码访问权限的开发者，准备标准 Flutter �
 
 本页面向**已取得 `picferry_gui` 和 `picferry_core` 源码访问权限**的开发者。网站仓库的代码树承载网站与文档，其公开 Releases 允许存放官方编译包，并在 R2 保存同一份文件。源码访问受限不影响公开包下载；普通使用者请先查看 [下载页](/download/) 的 R2 主下载与 GitHub 备用清单，核对版本、架构和 SHA256。
 
-截至 2026-10-24，首个正式版本尚未发布。Linux x64、Windows x64、Android universal APK 是当前自动构建目标，实际可用包以实时清单为准；iOS/OHOS 不在此发布流水线中。GUI/Core 的源码访问核实结果见 [状态页](/status/)，自行构建仍需先取得源码权限。
+截至 2026-10-24，首个正式版本尚未发布。Linux x64 / ARM64、Windows x64 / ARM64、macOS Apple Silicon ARM64 验证包、Android universal APK 是当前自动构建目标，实际可用包以实时清单为准；iOS/OHOS 不在此发布流水线中。GUI/Core 的源码访问核实结果见 [状态页](/status/)，自行构建仍需先取得源码权限。
 
 ## 目录与 SDK 前提
 
@@ -61,7 +61,7 @@ flutter run -d linux
 | iOS | 在 macOS 主机配置 Xcode、依赖及签名环境；系统图库保存需要完整照片访问权限。macOS 构建主机不等于支持 macOS 应用目标 |
 | OHOS | 使用兼容的 OHOS Flutter SDK、原生工具链、设备与签名配置，并按下节隔离依赖 |
 
-当前没有 `macos/` 原生工程，不能直接沿用桌面命令生成 macOS 应用；Web 仅供 UI 预览，不连接真实云服务。完整平台与认证矩阵见 [状态页](/status/)。
+macOS 已有 `macos/` 原生工程，使用 Apple Silicon 主机、Xcode 和 CocoaPods。先按 GUI `RELEASING.md` 准备固定 MDK podspec，再执行 macOS ARM64 构建；当前为 ad-hoc 签名验证包，Developer ID / 公证和实机验收另行完成。Web 仅供 UI 预览，不连接真实云服务。完整平台与认证矩阵见 [状态页](/status/)。
 
 ## OHOS：隔离准备
 

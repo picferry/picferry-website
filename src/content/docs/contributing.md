@@ -9,7 +9,7 @@ description: 公开网站的贡献方式、中英文文档核对，以及 GUI/Co
 
 GUI/Core 源码访问和公开发布状态以 [状态页](/status/) 的日期与核实范围为准。实现贡献需要先取得对应仓库访问权限，并遵循其协作约定。官网仓库的 **Releases 允许受控发布流程上传官方编译产物**，R2 保存同一份文件；PR 保持网站源码、文档和测试范围，二进制通过官方 Release 发布流程交付，不随 PR 提交。公开包下载与 GUI/Core 源码权限分别管理。
 
-截至 2026-10-24，首个正式版本尚未发布。当前自动构建目标是 Linux x64、Windows x64 和 Android universal APK；[下载页](/download/) 在客户端校验实时清单后显示 R2 主下载、GitHub 备用、版本、大小和 SHA256，新增发布无需重建网站。
+截至 2026-10-24，首个正式版本尚未发布。当前自动构建目标是 Linux x64 / ARM64、Windows x64 / ARM64、macOS Apple Silicon ARM64 验证包和 Android universal APK；[下载页](/download/) 在客户端校验实时清单后显示 R2 主下载、GitHub 备用、版本、大小和 SHA256，新增发布无需重建网站。
 
 ## 文档修改原则
 

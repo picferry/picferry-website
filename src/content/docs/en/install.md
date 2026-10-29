@@ -5,7 +5,7 @@ description: Standard Flutter and isolated OHOS setup for developers who already
 
 This page is for developers who **already have access to the `picferry_gui` and `picferry_core` source code**. The website repository's source tree contains the site and documentation; its public Releases may host official compiled packages, with identical copies stored in R2. Restricted source access does not prevent public package downloads. App users should start with the R2 primary and GitHub backup list on [Download](/en/download/) and check version, architecture, and SHA256.
 
-As of 2026-10-24, the first official release has not been published. Linux x64, Windows x64, and Android universal APK are the current automatic build targets; actual availability depends on the live manifest. iOS/OHOS are outside this release pipeline. See [Status](/en/status/) for GUI/Core source-access checks; building from source still requires permission.
+As of 2026-10-24, the first official release has not been published. Linux x64 / ARM64, Windows x64 / ARM64, macOS Apple Silicon ARM64 validation builds, and Android universal APK are the current automatic build targets; actual availability depends on the live manifest. iOS/OHOS are outside this release pipeline. See [Status](/en/status/) for GUI/Core source-access checks; building from source still requires permission.
 
 ## Directory and SDK prerequisites
 
@@ -61,7 +61,7 @@ flutter run -d linux
 | iOS | Configure Xcode, dependencies, and signing on a macOS host. System-library saving needs full photo-library access; a macOS build host does not imply a supported macOS app target |
 | OHOS | Use a compatible OHOS Flutter SDK, native toolchain, device, and signing configuration, with dependency isolation as described below |
 
-There is currently no native `macos/` project, so desktop commands cannot simply be reused to produce a macOS app. Web is a UI preview without real cloud-service connections. See [Status](/en/status/) for the complete platform and authentication matrices.
+The native `macos/` project uses an Apple Silicon host, Xcode, and CocoaPods. Prepare the pinned MDK podspec following the GUI repository's `RELEASING.md` before building. Current packages use ad-hoc signing; Developer ID / notarization and device validation remain separate steps. Web is a UI preview without real cloud-service connections. See [Status](/en/status/) for the complete platform and authentication matrices.
 
 ## OHOS: isolated preparation
 

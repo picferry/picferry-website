@@ -70,7 +70,6 @@ export default defineConfig({
 					href: 'https://github.com/picferry/picferry-website',
 				},
 			],
-			lastUpdated: true,
 			customCss: ['./src/styles/custom.css'],
 			sidebar,
 			head: [

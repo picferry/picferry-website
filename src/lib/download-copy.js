@@ -15,6 +15,7 @@ export function downloadCopy(locale) {
     noScript: 'Enable JavaScript to load the current download list, or browse official GitHub Releases. This static page does not assume any packages exist.',
     version: 'Version', published: 'Published (UTC)', release: 'Release notes', size: 'Size', bytes: 'bytes',
     primary: 'Download from R2', backup: 'GitHub backup',
+    macosPreview: 'Apple Silicon validation build with ad-hoc signing; Developer ID signing and Apple notarization are not configured. macOS may display a security warning.',
     architectures: {
       x64: 'x64 · Intel / AMD 64-bit; not a native ARM64 package.',
       arm64: 'arm64 · ARM 64-bit; not an Intel / AMD x64 package.',
@@ -36,6 +37,7 @@ export function downloadCopy(locale) {
     noScript: '启用 JavaScript 可读取当前下载列表，也可查看官方 GitHub Releases。静态页面不会假定安装包已经存在。',
     version: '版本', published: '发布时间（UTC）', release: '版本说明', size: '大小', bytes: '字节',
     primary: 'R2 主下载', backup: 'GitHub 备用下载',
+    macosPreview: 'Apple Silicon 验证包采用 ad-hoc 签名，尚未配置 Developer ID 签名与 Apple 公证；macOS 可能显示安全提示。',
     architectures: {
       x64: 'x64 · Intel / AMD 64 位处理器；不是原生 ARM64 包。',
       arm64: 'arm64 · ARM 64 位处理器；不是 Intel / AMD x64 包。',

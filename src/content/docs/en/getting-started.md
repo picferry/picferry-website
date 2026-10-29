@@ -17,7 +17,7 @@ The [Status page](/en/status/) is the reference for authentication methods, nati
 ## Get started
 
 1. Read [Security](/en/security/) for authentication, local storage, and cloud-deletion boundaries.
-2. Check the live manifest on [Download](/en/download/), choose R2 or the GitHub backup, and compare SHA256. As of 2026-10-24, the first official release has not been published. Linux x64, Windows x64, and Android universal APK are the automatic build targets; actual packages depend on the manifest. Public compiled packages do not require GUI/Core source access. Developers who already have source access can also follow [Build from source](/en/install/).
+2. Check the live manifest on [Download](/en/download/), choose R2 or the GitHub backup, and compare SHA256. As of 2026-10-24, the first official release has not been published. Linux x64 / ARM64, Windows x64 / ARM64, macOS Apple Silicon ARM64 validation builds, and Android universal APK are the automatic build targets; actual packages depend on the manifest. Public compiled packages do not require GUI/Core source access. Developers who already have source access can also follow [Build from source](/en/install/).
 3. Follow the [GUI guide](/en/guides/gui/) to add an account, then use the authentication steps for [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi/), or [vivo](/en/guides/vivo/).
 4. Copy a few photos and videos first. Verify their location and readability before starting a batch task.
 
