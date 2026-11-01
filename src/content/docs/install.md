@@ -13,11 +13,11 @@ description: 面向已有源码访问权限的开发者，准备标准 Flutter �
 
 ```text
 工作父目录/
-├── picferry-org/
-│   ├── picferry_core/
-│   ├── picferry_gui/
-│   └── picferry-website/     # 可选：公开网站
-└── picferry-ohos-build/     # OHOS 隔离副本与产物
+└── picferry-org/
+    ├── picferry_core/
+    ├── picferry_gui/
+    │   └── .local/flutter/   # OHOS 隔离副本与产物（gitignore）
+    └── picferry-website/     # 可选：公开网站
 ```
 
 原始 GUI/Core 使用**标准 Flutter SDK 及其配套 Dart**。根据当前源码、依赖解析结果和平台插件选择兼容的工具链，先运行 `flutter --version`、`dart --version` 和 `flutter doctor -v` 检查环境。`pubspec.yaml` 中较早的 SDK 下限只是声明，不能视为当前依赖和原生工程都已验证兼容的保证。
@@ -65,10 +65,10 @@ macOS 已有 `macos/` 原生工程，使用 Apple Silicon 主机、Xcode 和 Coc
 
 ## OHOS：隔离准备
 
-先由用户在本机将 `OHOS_FLUTTER_ROOT` 设置为实际 OHOS Flutter SDK 目录。下面命令的**工作目录是 `picferry-org/picferry_gui/`**；`../../picferry-ohos-build` 指向上方布局中工作区之外的隔离目录：
+先由用户在本机将 `OHOS_FLUTTER_ROOT` 设置为实际 OHOS Flutter SDK 目录。下面命令的**工作目录是 `picferry-org/picferry_gui/`**，隔离副本生成在包内 `.local/flutter/`：
 
 ```sh
-python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --build-root ../../picferry-ohos-build --prepare-only
+python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --prepare-only
 ```
 
 `--prepare-only` 用于准备和检查隔离副本，不执行完整应用构建。后续构建按已获授权源码中的 OHOS 工具说明进行，并使用相同的 SDK 与隔离目录。

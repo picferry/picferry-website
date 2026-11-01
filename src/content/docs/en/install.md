@@ -13,11 +13,11 @@ Obtain source through an authorized channel and keep the following sibling layou
 
 ```text
 parent-directory/
-├── picferry-org/
-│   ├── picferry_core/
-│   ├── picferry_gui/
-│   └── picferry-website/     # Optional public website
-└── picferry-ohos-build/     # Isolated OHOS copies and artifacts
+└── picferry-org/
+    ├── picferry_core/
+    ├── picferry_gui/
+    │   └── .local/flutter/   # Isolated OHOS copies and artifacts (gitignored)
+    └── picferry-website/     # Optional public website
 ```
 
 Use the **standard Flutter SDK and its bundled Dart** for the original GUI/Core workspace. Choose a toolchain compatible with the current source, resolved dependencies, and platform plugins. Check it with `flutter --version`, `dart --version`, and `flutter doctor -v`. Older SDK lower bounds in `pubspec.yaml` are declarations, not a guarantee that today's dependencies and native projects have been verified with those versions.
@@ -65,10 +65,10 @@ The native `macos/` project uses an Apple Silicon host, Xcode, and CocoaPods. Pr
 
 ## OHOS: isolated preparation
 
-First set `OHOS_FLUTTER_ROOT` locally to your actual OHOS Flutter SDK directory. The following command's **working directory is `picferry-org/picferry_gui/`**. Its `../../picferry-ohos-build` path points outside the workspace, as in the layout above:
+First set `OHOS_FLUTTER_ROOT` locally to your actual OHOS Flutter SDK directory. The following command's **working directory is `picferry-org/picferry_gui/`**. The isolated copy is created at `.local/flutter/` inside the package:
 
 ```sh
-python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --build-root ../../picferry-ohos-build --prepare-only
+python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --prepare-only
 ```
 
 `--prepare-only` prepares and checks the isolated copy; it does not perform a full app build. For subsequent builds, follow the OHOS tool instructions in the source you have access to, using the same SDK and isolated directory.
