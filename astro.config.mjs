@@ -37,6 +37,7 @@ const sidebar = [
 		translations: { en: 'Project' },
 		items: [
 			{ label: '安全', translations: { en: 'Security' }, slug: 'security' },
+			{ label: '隐私政策', translations: { en: 'Privacy Policy' }, slug: 'privacy' },
 			{ label: '架构', translations: { en: 'Architecture' }, slug: 'architecture' },
 			{ label: '贡献', translations: { en: 'Contributing' }, slug: 'contributing' },
 		],

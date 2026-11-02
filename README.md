@@ -71,13 +71,12 @@ Hosted on Alibaba Cloud ESA Pages. Target public host: [https://picferry.jqknono
 
 ```sh
 npm run build
-esa-cli commit --name photos-downloader --assets dist --description "docs site" --no-bundle
-esa-cli deploy --name photos-downloader --environment staging --no-bundle
-esa-cli deploy --name photos-downloader --environment production --version <version>
+esa-cli deploy --name picferry-website --assets dist --environment staging --no-bundle --no-preview
+esa-cli deploy --name picferry-website --environment production --version <version> --no-preview
 esa-cli domain add picferry.jqknono.com
 ```
 
-The ESA project remains named `photos-downloader` until it is explicitly renamed in the hosting account. Resolve the new custom-domain CNAME from ESA and configure public DNS before cutover; the new domain's production routing has not been verified.
+The verified ESA project is `picferry-website`. Production version `1793635340363669278` serves the bilingual privacy policy. Both `/privacy/` and `/en/privacy/` returned HTTP 200 over HTTPS using a public-DNS-resolved edge IP. The existing custom domain and DNS were retained. Previous production version: `1793593865003631965`; rollback from this directory with `esa deploy --name picferry-website --environment production --version 1793593865003631965 --no-preview`.
 
 ## License
 

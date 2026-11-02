@@ -3,6 +3,8 @@ title: Security
 description: Authentication and local-data boundaries, plus safety guidance for copying, migration, explicit deletion, and cancellation.
 ---
 
+See the [Privacy Policy](/en/privacy/) (last updated: 2026-11-02) for Android authentication, local data, cleanup boundaries, and contact details. Website data handling is covered separately in the policy.
+
 ## Unofficial status and network boundaries
 
 PicFerry is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
@@ -13,7 +15,8 @@ The current implementation connects directly from the local device to vendor ser
 
 - **iCloud**: the Apple ID and password enter the app's authentication flow, followed by two-factor authentication when prompted. The China mainland account region is supported. It would be inaccurate to say that the password never enters the app.
 - **Xiaomi and vivo**: use official web authentication or import a Cookie file, depending on the platform. Cookies and sessions can confer account access and should be treated as credentials. See [Status](/en/status/#vendors-and-authentication) for available entry points.
-- **HUAWEI, OPPO, and HONOR**: adding accounts is disabled in the GUI, but Core has real copy-download implementations. Do not assume that their code makes no network requests.
+- **OPPO**: Android provides official WebView sign-in, after which the app reads and saves cookies/sessions.
+- **HUAWEI and HONOR**: not part of the current ordinary add-account flow on Android, but Core has real copy-download implementations. Do not assume that their code makes no network requests.
 
 Use devices and authentication pages you trust. Enter passwords and verification codes yourself through the app or vendor authentication interface, and use sanitized information when reporting issues.
 
@@ -23,7 +26,7 @@ The app stores account configuration, Cookie/session files, and preview/metadata
 
 - Keep cookies, session files, account configuration, and caches on access-controlled devices and in protected directories. Use protected backups for this data.
 - Use sanitized copies of public logs, screenshots, issues, and PRs, removing passwords, verification codes, cookies, sessions, account/device identifiers, and signed media URLs.
-- **Removing an account removes only its in-app configuration.** It does not clear sessions, caches, downloaded media, or cloud content, sign you out of the vendor service, or revoke authorization. To revoke a session, use the vendor's account-security controls and separately address remaining local data.
+- **On Android, removing an account clears its in-app configuration and associated securely saved passwords.** It does not clear sessions, caches, downloaded media, or cloud content; Xiaomi and vivo WebView cookies remain. It does not sign you out of the vendor service or revoke authorization. Clearing app data or uninstalling clears app-private data, while media in user-selected directories and the system library remains. To revoke a session, use the vendor's account-security controls and separately address remaining local data.
 
 ## Copying, migration, and explicit deletion
 

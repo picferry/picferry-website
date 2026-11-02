@@ -1,5 +1,5 @@
 {
-  "name": "photos-downloader",
+  "name": "picferry-website",
   "description": "Public website and user guides for PicFerry",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
