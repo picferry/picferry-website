@@ -3,13 +3,13 @@ title: Security
 description: Authentication and local-data boundaries, plus safety guidance for copying, migration, explicit deletion, and cancellation.
 ---
 
-See the [Privacy Policy](/en/privacy/) (last updated: 2026-11-02) for Android authentication, local data, cleanup boundaries, and contact details. Website data handling is covered separately in the policy.
+See the [Privacy Policy](/en/privacy/) (last updated: 2026-11-03) for Android authentication, local data, cleanup boundaries, and contact details. Website data handling is covered separately in the policy.
 
 ## Unofficial status and network boundaries
 
-PicFerry is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
+PicFerry (Chinese name: 相册摆渡) is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
 
-The current implementation connects directly from the local device to vendor services. No PicFerry-operated relay has been observed in authentication or media transfer. This is not an offline app: signing in, browsing cloud media, downloading, and cloud deletion require network access and remain subject to vendor rules. This description is not a comprehensive security audit or a privacy guarantee for every dependency.
+The current implementation connects directly from the local device to vendor services. No PicFerry-operated relay has been observed in authentication or media transfer. Real cloud services still require a vendor account: signing in, browsing cloud media, downloading, and cloud deletion require network access and remain subject to vendor rules. The app also has a public offline sample entry as a product goal for browsing bundled synthetic media with no sign-in. That entry is implemented in a separate development task, is pending acceptance, and does not stand in for completed vendor authentication review. This description is not a comprehensive security audit or a privacy guarantee for every dependency.
 
 ## Where authentication information goes
 
@@ -22,7 +22,7 @@ Use devices and authentication pages you trust. Enter passwords and verification
 
 ## Local storage does not imply uniform encryption
 
-The app stores account configuration, Cookie/session files, and preview/metadata caches locally. Downloaded photos and videos go to the selected folder or system library. There is no uniform encryption guarantee covering this data, and local storage alone does not mean all credentials are protected by a system keychain.
+The app stores account configuration, Cookie/session files, and preview/metadata caches locally. Downloaded photos and videos go to the selected folder or system library. The target public offline entry ships 8 composite images and 2 short videos with the app: browsing and temporary playback stay on the device, and demo copies are created only when you choose to save them. There is no uniform encryption guarantee covering this data, and local storage alone does not mean all credentials are protected by a system keychain.
 
 - Keep cookies, session files, account configuration, and caches on access-controlled devices and in protected directories. Use protected backups for this data.
 - Use sanitized copies of public logs, screenshots, issues, and PRs, removing passwords, verification codes, cookies, sessions, account/device identifiers, and signed media URLs.
@@ -30,7 +30,7 @@ The app stores account configuration, Cookie/session files, and preview/metadata
 
 ## Copying, migration, and explicit deletion
 
-The default **`copy`** mode keeps cloud originals. Copy a few items first and verify readability, destination, and backup results before deciding whether to migrate.
+The default **`copy`** mode keeps cloud originals. Copy a few items first and verify readability, destination, and backup results before deciding whether to migrate. In the target offline entry, deleting a demo copy affects only locally saved synthetic samples and can be restored from the bundled files; it is not cloud deletion. That entry is pending acceptance.
 
 **`move` (download and delete cloud originals)** is available only for iCloud, Xiaomi, and vivo. For vivo, it requires a suite session; legacy sessions use copy. Migration requires resource verification: iCloud checks completion of selected resource groups and vendor rules, while Xiaomi and vivo require integrity verification of originals downloaded in the current run. Mobile platforms also require successful system-library save receipts. Insufficient verification or unconfirmed saving leaves cloud originals intact.
 
