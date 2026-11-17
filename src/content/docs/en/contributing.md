@@ -9,7 +9,7 @@ The public [picferry/picferry-website](https://github.com/picferry/picferry-webs
 
 For GUI/Core source access and public availability, use the dated verification scope on [Status](/en/status/). Implementation contributions require access to the corresponding repositories and adherence to their contribution rules. The website repository's **Releases may host official compiled artifacts uploaded by the controlled release workflow**, with identical copies in R2. Keep PRs focused on website source, documentation, and tests; deliver binaries through the official Release workflow, not PR commits. Public package downloads and GUI/Core source permissions are managed separately.
 
-Current public packages cover Linux x64 / ARM64, Windows x64 / ARM64, and Android universal APK. macOS, iOS, and OHOS currently ship through app stores or other independent channels. [Download](/en/download/) validates the live manifest in the browser before displaying R2 primary and GitHub backup links, version, size, and SHA256. New releases need no website rebuild.
+Current public packages cover Linux x64, Windows x64, and Android universal APK. macOS, iOS, and OHOS currently ship through app stores or other independent channels. [Download](/en/download/) validates the live manifest in the browser before displaying R2 primary and GitHub backup links, version, size, and SHA256. New releases need no website rebuild.
 
 ## Documentation principles
 

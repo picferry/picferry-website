@@ -7,7 +7,7 @@ This page is the reference capability matrix, distinguishing **GUI entry points,
 
 ## Verified public availability
 
-Official compiled packages are distributed through R2 as the primary channel and the website repository's GitHub Releases as the backup. Current public packages cover Linux x64 / ARM64, Windows x64 / ARM64, and Android universal APK. macOS, iOS, and OHOS currently ship through app stores or other independent channels. Actual availability depends on the validated live manifest.
+Official compiled packages are distributed through R2 as the primary channel and the website repository's GitHub Releases as the backup. Current public packages cover Linux x64, Windows x64, and Android universal APK. macOS, iOS, and OHOS currently ship through app stores or other independent channels. Actual availability depends on the validated live manifest.
 
 The public website repository is [picferry/picferry-website](https://github.com/picferry/picferry-website), whose Releases host official compiled artifacts. GUI/Core source permissions and package distribution are separate: restricted source does not prevent downloading official packages. [Download](/en/download/) reads R2's `picferry/release/latest.json` in the browser and displays version, architecture, size, SHA256, and both download links from a validated live manifest. HTTP 404 shows a waiting state; network failures have a separate message. See [Build from source](/en/install/) if you already have source access. Store listings and public direct downloads are verified separately.
 

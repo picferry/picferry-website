@@ -5,7 +5,7 @@ description: Standard Flutter and isolated OHOS setup for developers who already
 
 This page is for developers who **already have access to the `picferry_gui` and `picferry_core` source code**. The website repository's source tree contains the site and documentation; its public Releases may host official compiled packages, with identical copies stored in R2. Restricted source access does not prevent public package downloads. App users should start with the R2 primary and GitHub backup list on [Download](/en/download/) and check version, architecture, and SHA256.
 
-Current public packages cover Linux x64 / ARM64, Windows x64 / ARM64, and Android universal APK; actual availability depends on the live manifest. macOS, iOS, and OHOS currently ship through app stores or other independent channels. See [Status](/en/status/) for GUI/Core source-access checks; building from source still requires permission.
+Current public packages cover Linux x64, Windows x64, and Android universal APK; actual availability depends on the live manifest. macOS, iOS, and OHOS currently ship through app stores or other independent channels. See [Status](/en/status/) for GUI/Core source-access checks; building from source still requires permission.
 
 ## Directory and SDK prerequisites
 

@@ -17,7 +17,7 @@ PicFerry 是非官方的云相册下载应用：连接账号、浏览照片和�
 ## 开始使用
 
 1. 阅读 [安全说明](/security/)，了解认证信息、本地保存和云端删除的边界。
-2. 查看 [下载页](/download/) 的实时发布清单，选择 R2 主下载或 GitHub 备用并核对 SHA256。当前公开安装包覆盖 Linux x64 / ARM64、Windows x64 / ARM64 和 Android universal APK；macOS、iOS、OHOS 走应用市场或其他独立渠道。实际包以清单为准。公开编译包不要求 GUI/Core 源码权限；已有源码权限的开发者也可参考 [从源码构建](/install/)。
+2. 查看 [下载页](/download/) 的实时发布清单，选择 R2 主下载或 GitHub 备用并核对 SHA256。当前公开安装包覆盖 Linux x64、Windows x64 和 Android universal APK；macOS、iOS、OHOS 走应用市场或其他独立渠道。实际包以清单为准。公开编译包不要求 GUI/Core 源码权限；已有源码权限的开发者也可参考 [从源码构建](/install/)。
 3. 按 [GUI 指南](/guides/gui/) 添加账号，再阅读 [iCloud](/guides/icloud/)、[小米](/guides/xiaomi/)、[vivo](/guides/vivo/) 或 [OPPO](/guides/oppo/) 的认证步骤。
 4. 先用复制模式试存少量照片和视频，确认保存位置和文件可读，再执行批量任务。
 

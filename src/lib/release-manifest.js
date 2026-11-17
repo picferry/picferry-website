@@ -46,7 +46,7 @@ export function validateManifest(value) {
     && Number(value.publishedAt.slice(14, 16)) < 60
     && Number(value.publishedAt.slice(17, 19)) < 60);
   const releaseUrl = validateUrl(value.releaseUrl, `${RELEASE_BASE}/tag/${value.version}`);
-  requireValid(Array.isArray(value.assets) && value.assets.length <= 5);
+  requireValid(Array.isArray(value.assets) && value.assets.length <= 3);
   const seen = new Set();
   const assets = value.assets.map((asset) => {
     requireValid(isRecord(asset) && EXTENSIONS.has(asset.platform) && ARCHITECTURES.has(asset.arch)

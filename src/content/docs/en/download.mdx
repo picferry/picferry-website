@@ -15,12 +15,11 @@ The private GUI repository automatically builds official packages. The same file
 
 ## Platforms and architectures
 
-Official public packages currently target **Linux x64 / ARM64 (tar.gz), Windows x64 / ARM64 (zip), and Android universal APK**: five targets. Use the live list above for available versions, filenames, sizes, and SHA256 values.
+Official public packages currently target **Linux x64 (tar.gz), Windows x64 (zip), and Android universal APK**: three targets. Use the live list above for available versions, filenames, sizes, and SHA256 values.
 
-- **x64**: Intel / AMD 64-bit processors; not a native ARM64 package.
-- **arm64**: ARM 64-bit processors; choose the package for your operating system: Windows ARM or Linux ARM.
+- **x64**: Intel / AMD 64-bit processors.
 - **universal APK**: contains multiple Android ABIs; it does not guarantee compatibility with every device or OS version.
-- macOS, iOS, and OHOS currently ship through app stores or other independent channels. Web is a UI preview only. See [Status](/en/status/) for capabilities.
+- Desktop ARM64, macOS, iOS, and OHOS currently ship through app stores or other independent channels. Web is a UI preview only. See [Status](/en/status/) for capabilities.
 
 After downloading, check SHA256 with `sha256sum <filename>` on Linux or `Get-FileHash <filename> -Algorithm SHA256` in Windows PowerShell. Both channels should deliver identical files. Hash comparison checks integrity; it does not replace source verification or a digital signature. This site currently recommends no unverified store listings.
 

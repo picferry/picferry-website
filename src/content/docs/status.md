@@ -7,7 +7,7 @@ description: 当前应用的厂商、认证、平台、保存与删除能力，�
 
 ## 公开发布核实
 
-官方编译包的公开渠道为 R2 主下载与官网仓库 GitHub Releases 备用下载。当前公开安装包目标为 Linux x64 / ARM64、Windows x64 / ARM64 和 Android universal APK；macOS、iOS、OHOS 走应用市场或其他独立渠道。实际可用包以校验后的实时清单为准。
+官方编译包的公开渠道为 R2 主下载与官网仓库 GitHub Releases 备用下载。当前公开安装包目标为 Linux x64、Windows x64 和 Android universal APK；macOS、iOS、OHOS 走应用市场或其他独立渠道。实际可用包以校验后的实时清单为准。
 
 公开网站仓库为 [picferry/picferry-website](https://github.com/picferry/picferry-website)，其 Releases 承载官方编译产物。GUI/Core 源码权限与编译包分发分别管理，源码受限不表示无法下载官方包。[下载页](/download/) 在浏览器中读取 R2 的 `picferry/release/latest.json`，以校验后的实时清单显示版本、架构、大小、SHA256 与双渠道链接；404 显示等待清单，网络失败另行提示。已有源码权限时见 [从源码构建](/install/)。商店上架进度与公开直链分别核实。
 

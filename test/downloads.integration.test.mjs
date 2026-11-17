@@ -22,8 +22,7 @@ function fixture(version) {
   return {
     schemaVersion: 1, version, publishedAt: '2026-10-24T09:30:00+00:00',
     releaseUrl: `${RELEASE_BASE}/tag/${version}`,
-    assets: [['linux', 'x64', 'tar.gz'], ['windows', 'x64', 'zip'], ['android', 'universal', 'apk'],
-      ['linux', 'arm64', 'tar.gz'], ['windows', 'arm64', 'zip']].map(([platform, arch, extension], index) => {
+    assets: [['linux', 'x64', 'tar.gz'], ['windows', 'x64', 'zip'], ['android', 'universal', 'apk']].map(([platform, arch, extension], index) => {
       const name = `picferry-${version}-${platform}-${arch}.${extension}`;
       return { platform, arch, name, size: (index + 1) * 1048576, sha256: String(index + 1).repeat(64),
         url: `${R2_PREFIX}${version}/${name}`, githubUrl: `${RELEASE_BASE}/download/${version}/${name}` };
@@ -176,9 +175,10 @@ for (const locale of ['zh-CN', 'en']) {
     assert.equal(snapshot.locale, locale);
     assert.equal(snapshot.statusRole, 'status');
     assert.equal(snapshot.release, currentManifest.releaseUrl);
-    assert.equal(snapshot.cards.length, 5);
-    assert.ok(snapshot.text.includes('Linux arm64'));
-    assert.ok(snapshot.text.includes('Windows arm64'));
+    assert.equal(snapshot.cards.length, 3);
+    assert.ok(snapshot.text.includes('Linux x64'));
+    assert.ok(snapshot.text.includes('Windows x64'));
+    assert.ok(snapshot.text.includes('Android universal'));
     assert.ok(snapshot.text.includes(locale === 'en' ? 'Version: v1.2.3' : '版本: v1.2.3'));
     assert.ok(snapshot.text.includes('2026-10-24 09:30:00 UTC'));
     assert.ok(snapshot.text.includes('1 MiB (1,048,576'));

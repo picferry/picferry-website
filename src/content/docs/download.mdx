@@ -15,12 +15,11 @@ import Downloads from '../../components/Downloads.astro';
 
 ## 平台与架构
 
-当前官方公开安装包面向 **Linux x64 / ARM64（tar.gz）、Windows x64 / ARM64（zip）、Android universal APK**，共五个目标。实际可用版本、文件名、大小和 SHA256 以上方清单为准。
+当前官方公开安装包面向 **Linux x64（tar.gz）、Windows x64（zip）、Android universal APK**，共三个目标。实际可用版本、文件名、大小和 SHA256 以上方清单为准。
 
-- **x64**：Intel / AMD 64 位处理器，不能当作原生 ARM64 包。
-- **arm64**：ARM 64 位处理器；Windows ARM 与 Linux ARM 分别使用对应系统的包。
+- **x64**：Intel / AMD 64 位处理器。
 - **universal APK**：包含多种 Android ABI，不表示适用于所有系统版本或设备。
-- macOS、iOS、OHOS 当前通过应用市场或其他独立渠道发布；Web 仅供 UI 预览。完整能力见 [状态页](/status/)。
+- 桌面 ARM64、macOS、iOS、OHOS 当前通过应用市场或其他独立渠道发布；Web 仅供 UI 预览。完整能力见 [状态页](/status/)。
 
 下载后核对 SHA256：Linux 可运行 `sha256sum <文件名>`，Windows PowerShell 可运行 `Get-FileHash <文件名> -Algorithm SHA256`。两个渠道应得到相同文件；哈希核对用于检查完整性，不能替代来源确认或数字签名。本站当前不推荐任何未经核实的商店入口。
 
