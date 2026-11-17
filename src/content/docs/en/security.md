@@ -9,14 +9,14 @@ See the [Privacy Policy](/en/privacy/) (last updated: 2026-11-03) for Android au
 
 PicFerry (Chinese name: 相册摆渡) is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
 
-The current implementation connects directly from the local device to vendor services. No PicFerry-operated relay has been observed in authentication or media transfer. Real cloud services still require a vendor account: signing in, browsing cloud media, downloading, and cloud deletion require network access and remain subject to vendor rules. The app also has a public offline sample entry as a product goal for browsing bundled synthetic media with no sign-in. That entry is implemented in a separate development task, is pending acceptance, and does not stand in for completed vendor authentication review. This description is not a comprehensive security audit or a privacy guarantee for every dependency.
+The current app connects directly from the local device to vendor services. No PicFerry-operated relay has been observed in authentication or media transfer. Real cloud services still require a vendor account: signing in, browsing cloud media, downloading, and cloud deletion require network access and remain subject to vendor rules. The app also has a public offline sample entry for browsing bundled synthetic media with no sign-in. That entry does not stand in for vendor authentication. This description is not a comprehensive security audit or a privacy guarantee for every dependency.
 
 ## Where authentication information goes
 
 - **iCloud**: the Apple ID and password enter the app's authentication flow, followed by two-factor authentication when prompted. The China mainland account region is supported. It would be inaccurate to say that the password never enters the app.
 - **Xiaomi and vivo**: use official web authentication or import a Cookie file, depending on the platform. Cookies and sessions can confer account access and should be treated as credentials. See [Status](/en/status/#vendors-and-authentication) for available entry points.
 - **OPPO**: enabled platforms complete official web sign-in, after which the app reads and saves cookies/sessions. OnePlus and realme use the same OPPO cloud service. OHOS issues no credentials until login isolation is accepted.
-- **HUAWEI and HONOR**: not part of the current ordinary add-account flow on Android, but Core has real copy-download implementations. Do not assume that their code makes no network requests.
+- **HUAWEI and HONOR**: not part of the current ordinary add-account flow.
 
 Use devices and authentication pages you trust. Enter passwords and verification codes yourself through the app or vendor authentication interface, and use sanitized information when reporting issues.
 
@@ -30,7 +30,7 @@ The app stores account configuration, Cookie/session files, and preview/metadata
 
 ## Copying, migration, and explicit deletion
 
-The default **`copy`** mode keeps cloud originals. Copy a few items first and verify readability, destination, and backup results before deciding whether to migrate. In the target offline entry, deleting a demo copy affects only locally saved synthetic samples and can be restored from the bundled files; it is not cloud deletion. That entry is pending acceptance.
+The default **`copy`** mode keeps cloud originals. Copy a few items first and verify readability, destination, and backup results before deciding whether to migrate. In the offline sample entry, deleting a demo copy affects only locally saved synthetic samples and can be restored from the bundled files; it is not cloud deletion.
 
 **`move` (download and delete cloud originals)** is available only for iCloud, Xiaomi, and vivo. For vivo, it requires a suite session; legacy sessions use copy. Migration requires resource verification: iCloud checks completion of selected resource groups and vendor rules, while Xiaomi and vivo require integrity verification of originals downloaded in the current run. Mobile platforms also require successful system-library save receipts. Insufficient verification or unconfirmed saving leaves cloud originals intact.
 

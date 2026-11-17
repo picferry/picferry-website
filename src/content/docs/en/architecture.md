@@ -3,7 +3,7 @@ title: Architecture
 description: Responsibilities of the Flutter app, Dart vendor adapters, shared contracts, and system-library saving.
 ---
 
-PicFerry uses a Flutter app as the user interface, connects to cloud services through Dart vendor packages, and saves media to desktop folders or mobile system libraries. The layers below describe code responsibilities, **not three publicly accessible source repositories**. The website repository is public; see [Status](/en/status/) for GUI/Core access and release checks.
+PicFerry uses a Flutter app as the user interface, connects to cloud services through Dart vendor packages, and saves media to desktop folders or mobile system libraries. The layers below describe code responsibilities, **not three publicly accessible source repositories**. The website repository is public; see [Status](/en/status/) for app source access and release checks.
 
 ```mermaid
 flowchart LR
@@ -32,9 +32,9 @@ flowchart LR
 
 ## Calls and capability boundaries
 
-The GUI calls Dart libraries directly through relative path dependencies. Everyday use does not require launching a vendor CLI or using a Rust FFI bridge. Vendor implementations follow shared contracts but retain their authentication and deletion rules. The GUI currently enables adding iCloud, Xiaomi, vivo, and OPPO accounts. REDMI, POCO, iQOO, OnePlus, and realme are entry points for those parent services. Core has real copy-download implementations for HUAWEI and HONOR. The [Status page](/en/status/) centralizes the full differences.
+The app calls Dart libraries directly through relative path dependencies. Everyday use does not require launching a vendor command-line tool or using a Rust FFI bridge. Vendor implementations follow shared contracts but retain their authentication and deletion rules. The app currently enables adding iCloud, Xiaomi, vivo, and OPPO accounts. REDMI, POCO, iQOO, OnePlus, and realme are entry points for those parent services. Adding HUAWEI and HONOR accounts is not available yet. The [Status page](/en/status/) centralizes the full differences.
 
-Native apps access vendor services directly from the local device, with no PicFerry-operated relay observed in the current implementation. Web uses preview substitutes to display the UI without real cloud-service connections. macOS now has an Apple Silicon native project and build configuration; public direct downloads currently omit macOS packages, which ship through app stores or other independent channels.
+Native apps access vendor services directly from the local device, with no PicFerry-operated relay observed in the current implementation. Web uses preview substitutes to display the interface without real cloud-service connections. macOS can save to a local folder; website downloads currently omit macOS packages, which ship through app stores or other independent channels.
 
 ## From downloading to system saving
 
@@ -49,4 +49,4 @@ Account configuration, Cookie/session files, and preview/metadata caches are dis
 
 Core uses Melos for package management. GUI/Core are arranged as siblings to satisfy path dependencies. The standard Flutter workspace and isolated OHOS copies maintain separate dependencies, lockfiles, and artifacts; see [Build from source](/en/install/) for commands.
 
-Use [picferry/picferry-website](https://github.com/picferry/picferry-website) for public website discussion and documentation PRs. Implementation contributions to GUI/Core require the corresponding source access first; see [Contributing](/en/contributing/).
+Use [picferry/picferry-website](https://github.com/picferry/picferry-website) for public website discussion and documentation PRs. Implementation contributions to the app require the corresponding source access first; see [Contributing](/en/contributing/).

@@ -3,7 +3,7 @@ title: vivo
 description: Connect vivo Cloud, copy media, and understand suite and legacy session differences in PicFerry.
 ---
 
-PicFerry enables new vivo accounts, cloud album browsing, image previews, and copy downloads. **iQOO** is also available when adding an account; it uses the same vivo cloud service, and the account is stored as vivo. Moving and cloud deletion depend on the session protocol: **suite supports them; legacy supports copying only**. See [Downloads](/en/download/) for package availability and release notes.
+PicFerry enables new vivo accounts, cloud album browsing, image previews, and copy downloads. **iQOO** is also available when adding an account; it uses the same vivo cloud service, and the account is stored as vivo. Moving and cloud deletion depend on the session protocol: **suite supports them; legacy supports copying only**. See [Download](/en/download/) for installers.
 
 ## Connect your account
 
@@ -11,7 +11,7 @@ PicFerry enables new vivo accounts, cloud album browsing, image previews, and co
 2. Authenticate using the method for your platform:
 	- **Desktop:** use web sign-in, complete vivo's official authentication in the separate Chrome, Edge, or Chromium browser, enter the album, and return to PicFerry to confirm completion. Cookie file import is also supported.
 	- **OHOS:** use the native web sign-in page opened by the app and confirm after completing official authentication.
-	- **Android / iOS:** use a Cookie file. Android currently registers native web sign-in only for Xiaomi; use the Cookie flow for vivo.
+	- **Android / iOS:** use a Cookie file.
 3. Wait for session validation and saving, then open **Photos** to check your media.
 
 For Cookie sign-in, log in to [vivo's official website](https://pc.vivo.com.cn/suite?origin=cloudWeb#/album/all?folderId=1&clientBucketId=0) in a trusted browser, enter the album, and export the relevant cookies as a JSON file. Transfer it securely to your PicFerry device, select it under **Cookie File**, and save the connection. Older web sessions remain usable for copying. The app selects the protocol from valid credentials; renaming a file does not turn a legacy session into a suite session.
@@ -28,4 +28,4 @@ Explicit gallery deletion also requires a suite session, but it is a separate ac
 
 Cancelling preserves saved media; start a new task afterward. Resumable downloading, automatic sync, and scheduled tasks are not available. Incremental mode stops at the first existing target; disable it to fill gaps among older files.
 
-For CLI use, see [Build from source](/en/install/) and the Core package documentation. Source access requires repository permission.
+See [Download](/en/download/) for installers. For local builds, see [Build from source](/en/install/).

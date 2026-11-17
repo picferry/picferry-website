@@ -189,7 +189,7 @@ for (const locale of ['zh-CN', 'en']) {
       assert.equal(card.hash, asset.sha256);
       assert.deepEqual(card.links.map((link) => link.href), [asset.url, asset.githubUrl]);
       assert.deepEqual(card.links.map((link) => link.label), locale === 'en'
-        ? ['Download from R2', 'GitHub backup'] : ['R2 主下载', 'GitHub 备用下载']);
+        ? ['Download', 'Backup download'] : ['下载', '备用下载']);
       assert.ok(card.links.every((link) => link.accessible.includes(asset.arch) && link.accessible.includes('v1.2.3')));
     });
     for (const width of [375, 1280]) {

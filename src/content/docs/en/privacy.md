@@ -11,7 +11,7 @@ This policy describes data handling for the **PicFerry (Chinese name: 相册摆�
 
 The app is free, has no ads or in-app purchases, and has no account system of its own. An “account” in the app is a connection you add to a third-party cloud service, not an account registered with PicFerry. The current ordinary add-account flow on Android offers iCloud, Xiaomi, vivo, and OPPO; HUAWEI and HONOR are not part of that flow. PicFerry is not provided or endorsed by these vendors.
 
-The app also has a public offline sample entry as a product goal: you can browse 8 bundled composite images and 2 short videos with no sign-in. That entry is implemented in a separate development task and is pending acceptance; it is not treated as shipped behavior before acceptance. The synthetic samples are not real people, private albums, or a vendor cloud library, and they do not replace official authentication. Real cloud services still require the matching vendor account.
+The app also has a public offline sample entry: you can browse 8 bundled composite images and 2 short videos with no sign-in. The synthetic samples are not real people, private albums, or a vendor cloud library, and they do not replace official authentication. Real cloud services still require the matching vendor account.
 
 ## Sign-in and authentication information
 
@@ -32,7 +32,7 @@ Cookies/sessions can confer account access and are sensitive authentication info
 - **Downloaded photos and videos**: media is saved to the system library or a user-selected directory as you request, using the access Android provides for that destination. Your other apps or system services may manage those locations and their backups.
 - **Cloud operations**: browsing, previewing, downloading, and deletion or migration you select send requests to the relevant vendor. Cloud deletion, removing a local connection, and deleting demo copies are different actions. Review the scope before confirming; see [Security](/en/security/).
 
-Based on the current source code review, the app has no integrated first-party analytics, advertising, or crash reporting. This describes the app's own implementation, not an absence of data processing by third-party webpages, vendor services, or the device system. It is not a privacy audit of every dependency.
+The app has no integrated first-party analytics, advertising, or crash reporting. This describes the app itself, not an absence of data processing by third-party webpages, vendor services, or the device system. It is not a privacy audit of every dependency.
 
 ## Retention and cleanup
 
@@ -41,7 +41,7 @@ Local retention depends on your use, cache eviction, and active cleanup, rather 
 | Action | Data handling boundary |
 | --- | --- |
 | Delete an account in the app | Clears that account's configuration and associated securely saved passwords. It does not clear sessions, caches, or downloaded media, or delete the vendor account or cloud content. Xiaomi and vivo WebView cookies remain. This action does not mean a complete web sign-out or vendor-session revocation. |
-| Delete a demo copy | Removes only the locally saved demo copy. Bundled samples remain available to browse again or save again. This deletion affects only this device and is not cloud deletion. The entry is pending acceptance. |
+| Delete a demo copy | Removes only the locally saved demo copy. Bundled samples remain available to browse again or save again. This deletion affects only this device and is not cloud deletion. |
 | Clear app data or uninstall | Clears app-private data. Downloaded media in user-selected directories and the system library remains and must be managed separately in those locations. Bundled samples ship with the app and are unavailable after uninstall; demo copies already saved to the system library still need separate management. |
 | Revoke a third-party session | Use the relevant vendor's account-security or session-management settings. Removing an in-app account, clearing app data, or uninstalling does not itself revoke a session on the vendor's side. |
 

@@ -3,11 +3,11 @@ title: iCloud
 description: Sign in to iCloud, complete two-factor authentication, and save photos and videos in PicFerry.
 ---
 
-PicFerry supports in-app iCloud sign-in, photo and album browsing, and saving media to your device. See [Downloads](/en/download/) for package availability and release notes.
+PicFerry supports in-app iCloud sign-in, photo and album browsing, and saving media to your device. See [Download](/en/download/) for installers.
 
 ## Connect your account
 
-1. Ensure your Apple account allows access to iCloud data on the web. The downloader's web access method does not support Advanced Data Protection (ADP) being enabled; review Apple's security settings and their implications first.
+1. Ensure your Apple account allows access to iCloud data on the web. PicFerry cannot access iCloud data when Advanced Data Protection (ADP) is enabled; review Apple's security settings and their implications first.
 2. Choose **Add account → iCloud**, then set an account name and region. Select mainland China for accounts in that region, or global for other accounts.
 3. On the account connection page, enter your **Apple ID and primary account password** and sign in. App-specific passwords do not work with this web authentication flow.
 4. Complete two-factor authentication as prompted: enter the code from a trusted device, or use an available SMS verification option.
@@ -32,4 +32,4 @@ Explicit deletion in the gallery is separate: it does not require a backup and d
 
 Cancelling preserves saved media; start a new task afterward. Resumable downloading, automatic sync, and scheduling are not available. Incremental mode stops at the first existing target; turn it off when filling gaps among older files.
 
-For CLI use or development, see [Build from source](/en/install/) and the Core package documentation. Source access requires repository permission; CLI options are not a list of GUI features.
+See [Download](/en/download/) for installers. For local builds, see [Build from source](/en/install/).

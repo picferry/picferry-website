@@ -3,7 +3,7 @@ title: Xiaomi
 description: Connect Xiaomi Cloud through web sign-in or a Cookie file and download media in PicFerry.
 ---
 
-PicFerry enables new Xiaomi accounts, cloud album browsing, image previews, copy downloads, and optional moves. **REDMI** and **POCO** are also available when adding an account; both use the same Xiaomi cloud service, and the account is stored as Xiaomi. See [Downloads](/en/download/) for package availability and release notes. First confirm that your account can still access the required cloud media on Xiaomi's official website; service availability is determined by Xiaomi.
+PicFerry enables new Xiaomi accounts, cloud album browsing, image previews, copy downloads, and optional moves. **REDMI** and **POCO** are also available when adding an account; both use the same Xiaomi cloud service, and the account is stored as Xiaomi. See [Download](/en/download/) for installers. First confirm that your account can still access the required cloud media on Xiaomi's official website; service availability is determined by Xiaomi.
 
 ## Connect your account
 
@@ -26,4 +26,4 @@ In download-and-delete (`move`) mode, only media **downloaded and integrity-veri
 
 Explicit gallery deletion is a separate cloud action without a prior download or backup requirement; Xiaomi's recovery rules apply. Cancelling preserves saved media, and subsequent attempts start a new task rather than resume a transfer. Automatic sync is not available. Incremental mode stops at the first existing target; disable it to fill gaps among older files.
 
-For CLI use, see [Build from source](/en/install/) and the Core package documentation. Source access requires repository permission.
+See [Download](/en/download/) for installers. For local builds, see [Build from source](/en/install/).

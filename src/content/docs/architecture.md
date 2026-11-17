@@ -3,7 +3,7 @@ title: 架构
 description: Flutter 应用、Dart 厂商适配、共享契约与系统图库保存的职责边界。
 ---
 
-PicFerry 以 Flutter 应用作为用户入口，通过 Dart 厂商包连接云服务，再保存到桌面目录或移动端系统图库。下列分层描述的是代码职责，**不是三个公开源码仓库的声明**。网站仓库公开可访问，GUI/Core 的访问与发布核实结果见 [状态页](/status/)。
+PicFerry 以 Flutter 应用作为用户入口，通过 Dart 厂商包连接云服务，再保存到桌面目录或移动端系统图库。下列分层描述的是代码职责，**不是三个公开源码仓库的声明**。网站仓库公开可访问，应用源码访问与发布核实结果见 [状态页](/status/)。
 
 ```mermaid
 flowchart LR
@@ -32,9 +32,9 @@ flowchart LR
 
 ## 调用与能力边界
 
-GUI 通过相对路径依赖直接调用 Dart 库，日常使用无需启动厂商 CLI，也不经过 Rust FFI。厂商实现围绕共享契约提供能力，但认证和删除规则保留厂商差异：GUI 当前开放 iCloud、小米、vivo、OPPO 新增账号；REDMI、POCO、iQOO、OnePlus、realme 是对应父品牌的入口。华为、荣耀 Core 有真实复制下载实现。完整差异集中维护在 [状态页](/status/)。
+应用通过相对路径依赖直接调用 Dart 库，日常使用无需启动厂商命令行工具，也不经过 Rust FFI。厂商实现围绕共享契约提供能力，但认证和删除规则保留厂商差异：当前开放 iCloud、小米、vivo、OPPO 新增账号；REDMI、POCO、iQOO、OnePlus、realme 是对应父品牌的入口。华为、荣耀暂未开放新增账号。完整差异集中维护在 [状态页](/status/)。
 
-原生应用由本机直接访问厂商服务，当前未见 PicFerry 自有中转；Web 使用预览用的替代服务，仅展示 UI，不提供真实云服务连接。macOS 已补齐 Apple Silicon 原生工程与构建配置；官网直链当前不包含 macOS 包，商店或其他独立渠道另行发布。
+原生应用由本机直接访问厂商服务，当前未见 PicFerry 自有中转；Web 使用预览用的替代服务，仅展示界面，不提供真实云服务连接。macOS 可保存到本地目录；官网下载当前不包含 macOS 安装包，商店或其他独立渠道另行发布。
 
 ## 下载到系统保存
 
@@ -49,4 +49,4 @@ GUI 通过相对路径依赖直接调用 Dart 库，日常使用无需启动厂�
 
 Core 使用 Melos 管理包；GUI/Core 并排放置以满足路径依赖。标准 Flutter 工作区与 OHOS 隔离副本分别维护依赖、锁文件及产物，具体命令见 [从源码构建](/install/)。
 
-网站的公开讨论与文档 PR 使用 [picferry/picferry-website](https://github.com/picferry/picferry-website)。GUI/Core 实现贡献需先获得相应源码访问权限，见 [贡献](/contributing/)。
+网站的公开讨论与文档 PR 使用 [picferry/picferry-website](https://github.com/picferry/picferry-website)。应用实现贡献需先获得相应源码访问权限，见 [贡献](/contributing/)。

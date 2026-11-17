@@ -3,9 +3,9 @@ title: Build from source
 description: Standard Flutter and isolated OHOS setup for developers who already have source access.
 ---
 
-This page is for developers who **already have access to the `picferry_gui` and `picferry_core` source code**. The website repository's source tree contains the site and documentation; its public Releases may host official compiled packages, with identical copies stored in R2. Restricted source access does not prevent public package downloads. App users should start with the R2 primary and GitHub backup list on [Download](/en/download/) and check version, architecture, and SHA256.
+This page is for developers who **already have access to the app source code**. The website repository contains the public site and documentation. Restricted source access does not prevent downloading official packages. App users should start on [Download](/en/download/) and choose the package for their device.
 
-Current public packages cover Linux x64, Windows x64, and Android universal APK; actual availability depends on the live manifest. macOS, iOS, and OHOS currently ship through app stores or other independent channels. See [Status](/en/status/) for GUI/Core source-access checks; building from source still requires permission.
+Current official packages cover Linux x64, Windows x64, and Android; actual availability follows the download list. macOS, iOS, and OHOS currently ship through app stores or other independent channels. See [Status](/en/status/) for source-access checks; building from source still requires permission.
 
 ## Directory and SDK prerequisites
 

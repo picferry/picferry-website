@@ -3,7 +3,7 @@ title: GUI
 description: Connect cloud accounts, browse photos, and copy or move media to your device with PicFerry.
 ---
 
-Use PicFerry's graphical interface to connect cloud accounts, browse media, and save it to your device. See [Downloads](/en/download/) for package availability and release notes. For local builds, follow [Build from source](/en/install/); access to the GUI/Core source repositories is required.
+Use PicFerry's graphical interface to connect cloud accounts, browse media, and save it to your device. See [Download](/en/download/) for installers. For local builds, follow [Build from source](/en/install/).
 
 ## 1. Add and connect an account
 

@@ -12,7 +12,7 @@ const locales = [
     facts: [
       /相册摆渡（PicFerry）Android 应用/, /应用免费、无广告、无应用内购买，也没有自有账号系统/,
       /普通新增账号入口包括 iCloud、小米、vivo 和 OPPO；华为与荣耀不在普通新增入口中/,
-      /无需登录即可浏览随包装载的 8 张合成图和 2 条短视频/, /待验收；未验收前不作为已发布行为/,
+      /无需登录即可浏览随包装载的 8 张合成图和 2 条短视频/, /合成示例不是真实人物、私人相册或厂商云相册/,
       /真实云服务仍需对应厂商账户/, /由应用向 Apple 发送以完成认证/,
       /可选的安全密码保存，默认开启；您可关闭该选项/,
       /官方 WebView 登录页面/, /应用读取并在本地保存 Cookie\/session/,
@@ -41,7 +41,8 @@ const locales = [
       /PicFerry \(Chinese name: 相册摆渡\) Android app/, /free, has no ads or in-app purchases, and has no account system of its own/,
       /offers iCloud, Xiaomi, vivo, and OPPO; HUAWEI and HONOR are not part of that flow/,
       /browse 8 bundled composite images and 2 short videos with no sign-in/,
-      /pending acceptance/, /Real cloud services still require the matching vendor account/,
+      /synthetic samples are not real people, private albums, or a vendor cloud library/,
+      /Real cloud services still require the matching vendor account/,
       /sends them to Apple for authentication/, /Optional secure password storage is enabled by default, and you can turn it off/,
       /sign-in page in a WebView/, /app reads and locally saves cookies\/sessions/,
       /Authentication and media operations connect directly to vendor services/,
