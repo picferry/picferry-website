@@ -3,11 +3,11 @@ title: vivo
 description: 在 PicFerry 中连接 vivo 云相册，复制媒体并了解 suite 与 legacy 会话差异。
 ---
 
-PicFerry 已开放新增 vivo 账号，支持云相册浏览、图片预览和复制下载。迁移与云端删除取决于会话协议：**suite 支持，legacy 仅支持复制**。安装包与发布说明见 [下载页](/download/)。
+PicFerry 已开放新增 vivo 账号，支持云相册浏览、图片预览和复制下载。添加账号时也可选择 **iQOO**，它使用同一 vivo 云服务，账号仍按 vivo 保存。迁移与云端删除取决于会话协议：**suite 支持，legacy 仅支持复制**。安装包与发布说明见 [下载页](/download/)。
 
 ## 连接账号
 
-1. 选择「添加账号」→「vivo」，填写账号名称，打开账号连接页。
+1. 选择「添加账号」→「vivo」或「iQOO」，填写账号名称，打开 vivo 账号连接页。
 2. 按平台完成认证：
 	- **桌面**：使用网页登录，在独立的 Chrome、Edge 或 Chromium 中完成 vivo 官方认证并进入相册，回到 PicFerry 点击「已完成登录」；也可导入 Cookie 文件。
 	- **OHOS**：使用应用打开的原生网页登录页，完成官方认证后确认登录。

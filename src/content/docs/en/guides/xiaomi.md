@@ -3,11 +3,11 @@ title: Xiaomi
 description: Connect Xiaomi Cloud through web sign-in or a Cookie file and download media in PicFerry.
 ---
 
-PicFerry enables new Xiaomi accounts, cloud album browsing, image previews, copy downloads, and optional moves. See [Downloads](/en/download/) for package availability and release notes. First confirm that your account can still access the required cloud media on Xiaomi's official website; service availability is determined by Xiaomi.
+PicFerry enables new Xiaomi accounts, cloud album browsing, image previews, copy downloads, and optional moves. **REDMI** and **POCO** are also available when adding an account; both use the same Xiaomi cloud service, and the account is stored as Xiaomi. See [Downloads](/en/download/) for package availability and release notes. First confirm that your account can still access the required cloud media on Xiaomi's official website; service availability is determined by Xiaomi.
 
 ## Connect your account
 
-1. Choose **Add account → Xiaomi**, name the account, and open its connection page.
+1. Choose **Add account**, then **Xiaomi**, **REDMI**, or **POCO**. Name the account and open the Xiaomi connection page.
 2. Select the sign-in method for your platform:
 	- **Desktop:** start web sign-in, complete official authentication in the separate Chrome, Edge, or Chromium browser, enter the cloud gallery, and return to PicFerry to confirm completion. A Cookie file is also supported.
 	- **Android / OHOS:** use the native web sign-in page opened by the app, complete Xiaomi's authentication, and choose the control to finish signing in.

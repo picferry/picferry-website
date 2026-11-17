@@ -15,7 +15,7 @@ The current implementation connects directly from the local device to vendor ser
 
 - **iCloud**: the Apple ID and password enter the app's authentication flow, followed by two-factor authentication when prompted. The China mainland account region is supported. It would be inaccurate to say that the password never enters the app.
 - **Xiaomi and vivo**: use official web authentication or import a Cookie file, depending on the platform. Cookies and sessions can confer account access and should be treated as credentials. See [Status](/en/status/#vendors-and-authentication) for available entry points.
-- **OPPO**: Android provides official WebView sign-in, after which the app reads and saves cookies/sessions.
+- **OPPO**: enabled platforms complete official web sign-in, after which the app reads and saves cookies/sessions. OnePlus and realme use the same OPPO cloud service. OHOS issues no credentials until login isolation is accepted.
 - **HUAWEI and HONOR**: not part of the current ordinary add-account flow on Android, but Core has real copy-download implementations. Do not assume that their code makes no network requests.
 
 Use devices and authentication pages you trust. Enter passwords and verification codes yourself through the app or vendor authentication interface, and use sanitized information when reporting issues.

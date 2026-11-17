@@ -15,18 +15,18 @@ The public website repository is [picferry/picferry-website](https://github.com/
 
 ## Vendors and authentication
 
-Desktop authentication below refers to Windows / Linux, which currently have native projects. Web login requires **Chrome, Edge, or Chromium** installed locally.
+Desktop authentication below refers to Windows / Linux, which currently have native projects. Web login requires **Chrome, Edge, or Chromium** installed locally. REDMI and POCO use Xiaomi, iQOO uses vivo, and OnePlus and realme use OPPO. A sub-brand changes only the add-account entry; the account, authentication, and cloud service remain those of the parent provider.
 
 | Vendor | Add account in GUI | Desktop authentication | Android | iOS | OHOS | Core and migration capabilities |
 | --- | --- | --- | --- | --- | --- | --- |
 | iCloud | Enabled | In-app Apple ID, password, and 2FA | Same as desktop | Same as desktop | Same as desktop | Copy and move; supports the China mainland account region |
-| Xiaomi | Enabled | Separate browser login or Cookie file | Native web login or Cookie file | Cookie file | Native web login or Cookie file | Copy and move |
-| vivo | Enabled | Separate browser login or Cookie file | Cookie file | Cookie file | Native web login or Cookie file | Copy; move requires a suite session, while legacy sessions use copy |
+| Xiaomi | Enabled, including REDMI and POCO | Separate browser login or Cookie file | Native web login or Cookie file | Cookie file | Native web login or Cookie file | Copy and move |
+| vivo | Enabled, including iQOO | Separate browser login or Cookie file | Cookie file | Cookie file | Native web login or Cookie file | Copy; move requires a suite session, while legacy sessions use copy |
+| OPPO | Enabled, including OnePlus and realme | Official web sign-in; the session is captured after confirmation | In-app official web sign-in | In-app official web sign-in | Stops safely and issues no credentials until login isolation is accepted | Copy and individual gallery deletion; batch move is not enabled in the current GUI |
 | HUAWEI | Disabled | No GUI add-account authentication flow available | Same | Same | Same | Real copy-download implementation exists; move is not enabled in the current GUI |
-| OPPO | Disabled | No GUI add-account authentication flow available | Same | Same | Same | Real copy-download implementation exists; move is not enabled in the current GUI |
 | HONOR | Disabled | No GUI add-account authentication flow available | Same | Same | Same | Real copy-download implementation exists; move is not enabled in the current GUI |
 
-For authentication, see [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi/), and [vivo](/en/guides/vivo/). For Core and GUI boundaries, see [HUAWEI](/en/guides/huawei/), [OPPO](/en/guides/oppo/), and [HONOR](/en/guides/honor/). A disabled add-account entry does not mean Core is only a placeholder.
+For authentication, see [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi/), [vivo](/en/guides/vivo/), and [OPPO](/en/guides/oppo/). For Core and GUI boundaries, see [HUAWEI](/en/guides/huawei/) and [HONOR](/en/guides/honor/). A disabled add-account entry does not mean Core is only a placeholder.
 
 ## Platforms and save destinations
 
@@ -59,7 +59,7 @@ Migration and explicit deletion can affect other devices using the same cloud se
 
 ## Browsing, settings, and local data
 
-- iCloud, Xiaomi, and vivo support image previews. Inline video playback is available only when iCloud returns a `small_video` resource; other videos can be downloaded and opened in a local player.
+- iCloud, Xiaomi, vivo, and OPPO support image previews. Inline video playback is available only when iCloud returns a `small_video` resource; other videos can be downloaded and opened in a local player.
 - Saving Live Photo resources does not guarantee that the system library restores them as paired Live Photos.
 - Settings include Chinese and English, system/light/dark themes, gallery density, and default download parameters. Default concurrency is **4**.
 - Account configuration, Cookie/session files, and preview/metadata caches are stored locally, without a uniform encryption guarantee.

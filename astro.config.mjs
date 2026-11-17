@@ -58,7 +58,7 @@ export default defineConfig({
 				'zh-CN': 'PicFerry',
 				en: 'PicFerry',
 			},
-			description: '非官方云相册工具：连接 iCloud、小米和 vivo，浏览照片与视频，保存到本地目录或手机系统图库。',
+			description: '非官方云相册工具：连接 iCloud、小米、vivo 和 OPPO，浏览照片与视频，保存到本地目录或手机系统图库。',
 			defaultLocale: 'root',
 			locales: {
 				root: { label: '简体中文', lang: 'zh-CN' },
@@ -72,6 +72,9 @@ export default defineConfig({
 				},
 			],
 			customCss: ['./src/styles/custom.css'],
+			components: {
+				Header: './src/components/Header.astro',
+			},
 			sidebar,
 			head: [
 				{

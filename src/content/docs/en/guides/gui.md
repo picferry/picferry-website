@@ -7,19 +7,20 @@ Use PicFerry's graphical interface to connect cloud accounts, browse media, and 
 
 ## 1. Add and connect an account
 
-Choose **Add account**, select a provider, and give the account a recognizable name. New accounts are currently enabled for [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi/), and [vivo](/en/guides/vivo/). Adding HUAWEI, OPPO, or HONOR accounts is not enabled yet.
+Choose **Add account**, select a brand, and give the account a recognizable name. New accounts are currently enabled for [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi/), [vivo](/en/guides/vivo/), and [OPPO](/en/guides/oppo/). REDMI and POCO use Xiaomi Cloud, iQOO uses vivo Cloud, and OnePlus and realme use OPPO Cloud; accounts are stored under the parent provider. Adding HUAWEI or HONOR accounts is not enabled yet.
 
-| Provider | Connection options |
-| --- | --- |
-| iCloud | Enter your Apple ID and password in the app, then complete two-factor authentication; select the corresponding region for mainland China accounts |
-| Xiaomi | Separate browser sign-in or a Cookie file on desktop; native web sign-in on Android and OHOS; a Cookie file on iOS |
-| vivo | Separate browser sign-in or a Cookie file on desktop; native web sign-in on OHOS; a Cookie file on Android and iOS |
+| Brand entry | Cloud service | Connection options |
+| --- | --- | --- |
+| iCloud | iCloud | Enter your Apple ID and password in the app, then complete two-factor authentication; select the corresponding region for mainland China accounts |
+| Xiaomi, REDMI, POCO | Xiaomi | Separate browser sign-in or a Cookie file on desktop; native web sign-in on Android and OHOS; a Cookie file on iOS |
+| vivo, iQOO | vivo | Separate browser sign-in or a Cookie file on desktop; native web sign-in on OHOS; a Cookie file on Android and iOS |
+| OPPO, OnePlus, realme | OPPO | Complete official web sign-in on each platform. OHOS stops safely and issues no credentials until login isolation is accepted |
 
 Desktop web sign-in requires Chrome, Edge, or Chromium. Complete authentication on the official website, then return to PicFerry to confirm. Cookie files and saved sessions are credentials: keep them in trusted storage and sign in again or reimport them when they expire. See each provider's guide for details.
 
 ## 2. Browse and save a small sample
 
-After connecting, open **Photos** to browse the media list or cloud albums, preview items, or download an individual item. Image previews are supported for iCloud, Xiaomi, and vivo. **Inline video playback is available only when iCloud supplies a `small_video` resource**; otherwise, download the video and use a local player.
+After connecting, open **Photos** to browse the media list or cloud albums, preview items, or download an individual item. Image previews are supported for iCloud, Xiaomi, vivo, and OPPO. **Inline video playback is available only when iCloud supplies a `small_video` resource**; otherwise, download the video and use a local player.
 
 Save a few photos and videos first. Check that they open correctly and appear in the expected location before starting a large batch. Saving Live Photo resources does not guarantee that the system photo library will reconstruct them as paired Live Photos.
 

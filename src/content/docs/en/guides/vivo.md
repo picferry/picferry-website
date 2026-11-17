@@ -3,11 +3,11 @@ title: vivo
 description: Connect vivo Cloud, copy media, and understand suite and legacy session differences in PicFerry.
 ---
 
-PicFerry enables new vivo accounts, cloud album browsing, image previews, and copy downloads. Moving and cloud deletion depend on the session protocol: **suite supports them; legacy supports copying only**. See [Downloads](/en/download/) for package availability and release notes.
+PicFerry enables new vivo accounts, cloud album browsing, image previews, and copy downloads. **iQOO** is also available when adding an account; it uses the same vivo cloud service, and the account is stored as vivo. Moving and cloud deletion depend on the session protocol: **suite supports them; legacy supports copying only**. See [Downloads](/en/download/) for package availability and release notes.
 
 ## Connect your account
 
-1. Choose **Add account → vivo**, name the account, and open its connection page.
+1. Choose **Add account**, then **vivo** or **iQOO**. Name the account and open the vivo connection page.
 2. Authenticate using the method for your platform:
 	- **Desktop:** use web sign-in, complete vivo's official authentication in the separate Chrome, Edge, or Chromium browser, enter the album, and return to PicFerry to confirm completion. Cookie file import is also supported.
 	- **OHOS:** use the native web sign-in page opened by the app and confirm after completing official authentication.

@@ -9,22 +9,22 @@ const base = en ? '/en/' : '/';
 const text = en ? {
   connected: 'App integrated',
   connectedNote: 'Connect an account to browse and save your media.',
-  core: 'Core implemented',
-  coreNote: 'Sessions are unstable. Adding accounts in the App is not enabled yet.',
-  unstable: 'Unstable sessions',
+  core: 'Not supported yet',
+  coreNote: 'Adding these accounts is not available in the App yet.',
+  unstable: 'Not available yet',
   capabilities: 'From cloud gallery to your device',
   introduction: 'Start with a few items. Keep cloud originals until you have checked your local copies.',
 } : {
   connected: 'App 已接入',
   connectedNote: '连接账号，即可浏览并保存云端媒体。',
-  core: '核心已实现',
-  coreNote: '会话稳定性仍待改善，App 暂未开放新增账号。',
-  unstable: '会话不稳定',
+  core: '暂未支持',
+  coreNote: 'App 暂未开放新增这些账号。',
+  unstable: '暂未开放',
   capabilities: '从云端浏览，到本机保存',
   introduction: '先试存少量照片和视频，确认本地副本可用，再决定是否释放云空间。',
 };
 
-// 厂商顺序与开放状态共用，文案按语言切换。
+// 顺序与 App「添加账号」一致：父品牌后紧跟使用同一云服务的入口。
 const groups = [
   {
     id: 'connected-services',
@@ -32,9 +32,15 @@ const groups = [
     note: text.connectedNote,
     connected: true,
     vendors: [
-      { id: 'icloud', name: 'iCloud', description: en ? 'Sign in with Apple ID and two-factor authentication. Supports mainland China accounts, browsing, downloads and verified migration.' : 'Apple ID 与双重认证，支持中国大陆区；浏览、下载及通过校验后的迁移。' },
-      { id: 'xiaomi', name: 'Xiaomi Cloud', description: en ? 'Browse albums, save originals and migrate media. Web login or cookie import depends on your OS.' : '浏览云相册、保存原件与迁移媒体；按系统使用网页登录或 Cookie 导入。' },
-      { id: 'vivo', name: 'vivo Cloud', description: en ? 'Browse and save cloud media.' : '浏览并保存云端媒体。' },
+      { id: 'icloud', name: 'iCloud', description: en ? 'Apple ID, two-factor authentication, and mainland China accounts. Browse, download, and move after verification.' : 'Apple ID、双重认证与中国大陆区；浏览、下载及通过校验后的迁移。' },
+      { id: 'xiaomi', name: 'Xiaomi', description: en ? 'Browse albums, save originals, and move media. Sign-in depends on your OS.' : '浏览云相册、保存原件与迁移媒体；按系统使用网页登录或 Cookie。' },
+      { id: 'xiaomi', name: 'REDMI', description: en ? 'Uses the same Xiaomi cloud service. The account is stored as Xiaomi.' : '使用同一小米云服务，账号按小米保存。' },
+      { id: 'xiaomi', name: 'POCO', description: en ? 'Uses the same Xiaomi cloud service. The account is stored as Xiaomi.' : '使用同一小米云服务，账号按小米保存。' },
+      { id: 'vivo', name: 'vivo', description: en ? 'Browse and save cloud media. Moves require a suite session.' : '浏览并保存云端媒体；迁移需要 suite 会话。' },
+      { id: 'vivo', name: 'iQOO', description: en ? 'Uses the same vivo cloud service. The account is stored as vivo.' : '使用同一 vivo 云服务，账号按 vivo 保存。' },
+      { id: 'oppo', name: 'OPPO', description: en ? 'Official web sign-in, browsing, saving, and individual deletion. Batch moves are not enabled.' : '官方网页登录后浏览、保存，并支持图库单项删除；批量迁移未开放。' },
+      { id: 'oppo', name: 'OnePlus', description: en ? 'Uses the same OPPO cloud service. The account is stored as OPPO.' : '使用同一 OPPO 云服务，账号按 OPPO 保存。' },
+      { id: 'oppo', name: 'realme', description: en ? 'Uses the same OPPO cloud service. The account is stored as OPPO.' : '使用同一 OPPO 云服务，账号按 OPPO 保存。' },
     ],
   },
   {
@@ -43,9 +49,8 @@ const groups = [
     note: text.coreNote,
     connected: false,
     vendors: [
-      { id: 'huawei', name: 'HUAWEI Cloud' },
-      { id: 'oppo', name: 'OPPO Cloud' },
-      { id: 'honor', name: 'HONOR Cloud' },
+      { id: 'huawei', name: 'HUAWEI' },
+      { id: 'honor', name: 'HONOR' },
     ],
   },
 ];
@@ -64,26 +69,49 @@ const steps = en ? [
 <div class="home-overview not-content">
   <div class="service-columns">
     {groups.map((group) => (
-      <section class="service-group" aria-labelledby={group.id}>
-        <header class="service-group-heading">
-          <h3 id={group.id}>{group.title}</h3>
-          <p>{group.note}</p>
-        </header>
-        <ul class="service-list" role="list">
-          {group.vendors.map((vendor) => (
-            <li>
-              <a class="service-card" href={`${base}guides/${vendor.id}/`}>
-                <span class="service-name">{vendor.name}</span>
-                <span class="service-badges">
-                  <span class:list={['service-badge', group.connected ? 'integrated' : 'implemented']}>{group.title}</span>
-                  {!group.connected && <span class="service-badge unstable">{text.unstable}</span>}
-                </span>
-                {vendor.description && <p>{vendor.description}</p>}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      group.connected ? (
+        <section class="service-group" aria-labelledby={group.id}>
+          <header class="service-group-heading">
+            <h3 id={group.id}>{group.title}</h3>
+            <p>{group.note}</p>
+          </header>
+          <ul class="service-list connected-list" role="list">
+            {group.vendors.map((vendor) => (
+              <li>
+                <a class="service-row" href={`${base}guides/${vendor.id}/`}>
+                  <span class="service-name">{vendor.name}</span>
+                  {vendor.description && <span>{vendor.description}</span>}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
+        <details class="service-group pending-group">
+          <summary>
+            <span class="service-group-heading">
+              <span class="summary-title" id={group.id}>{group.title}</span>
+              <span class="summary-names">{group.vendors.map((vendor) => vendor.name).join(en ? ', ' : '、')}</span>
+            </span>
+          </summary>
+          <p class="pending-note">{group.note}</p>
+          <ul class="service-list" role="list">
+            {group.vendors.map((vendor) => (
+              <li>
+                <a class="service-card" href={`${base}guides/${vendor.id}/`}>
+                  <span class="service-heading">
+                    <span class="service-name">{vendor.name}</span>
+                    <span class="service-badges">
+                      <span class="service-badge implemented">{group.title}</span>
+                      <span class="service-badge unstable">{text.unstable}</span>
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )
     ))}
   </div>
 
@@ -115,7 +143,30 @@ const steps = en ? [
   .service-columns { display: grid; gap: 2rem; }
   .service-group { min-width: 0; }
   .service-group-heading { margin-bottom: 1rem; }
-  h3 { font-size: 1.125rem; line-height: 1.5; }
+  h3, .summary-title { font-size: 1.125rem; line-height: 1.5; font-weight: 600; }
+  .pending-group { border-block-start: 1px solid var(--sl-color-gray-5); }
+  .pending-group > summary {
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .pending-group > summary::-webkit-details-marker { display: none; }
+  .pending-group > summary::after {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    margin-inline-start: auto;
+    border-inline-end: 2px solid currentColor;
+    border-block-end: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .pending-group[open] > summary::after { transform: rotate(225deg); }
+  .pending-group .service-group-heading { display: grid; gap: .25rem; margin: 0; }
+  .summary-names { color: var(--overview-muted); font-size: .875rem; line-height: 1.5; }
+  .pending-note { margin: .5rem 0 1rem; color: var(--overview-muted); }
+  .pending-group > summary:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px; }
   .service-group-heading p, .capabilities-heading p { margin-top: .5rem; color: var(--overview-muted); }
   .service-list, .workflow { padding: 0; list-style: none; display: grid; gap: 1rem; }
   .service-card {
@@ -133,14 +184,40 @@ const steps = en ? [
     transition: border-color 160ms ease;
   }
   .service-card:hover { border-color: var(--sl-color-text-accent); }
-  .service-name { font-weight: 600; font-size: 1.125rem; }
+  .service-card:active { border-color: var(--sl-color-text-accent); }
+  .connected-list {
+    gap: 0;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: .875rem;
+    background: var(--overview-surface);
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: minmax(6.5rem, auto) minmax(0, 1fr);
+    align-items: center;
+    gap: .75rem 1.5rem;
+    min-height: 3.5rem;
+    padding: .75rem 1.25rem;
+    border-block-start: 1px solid var(--sl-color-gray-5);
+    color: var(--sl-color-text);
+    text-decoration: none;
+  }
+  .connected-list > li:first-child .service-row { border-block-start: 0; }
+  .service-row span:last-child { color: var(--overview-muted); line-height: 1.6; }
+  .service-row:hover { background: var(--sl-color-gray-6, color-mix(in srgb, var(--sl-color-gray-5) 45%, transparent)); }
+  .service-row:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: -3px; }
+  .service-heading { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; }
+  .service-name { font-weight: 600; font-size: 1.125rem; line-height: 1.5; }
   .service-badges { display: flex; flex-wrap: wrap; gap: .5rem; }
   .service-badge {
     display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
     padding: .125rem .625rem;
     border-radius: 999px;
     font-size: .75rem;
-    line-height: 1.75;
+    line-height: 1.5;
     font-weight: 600;
     white-space: nowrap;
   }
@@ -177,11 +254,11 @@ const steps = en ? [
     padding-block: .5rem;
   }
   .home-overview a:focus-visible { outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px; }
-  @media (min-width: 50rem) {
-    .service-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .service-group { display: grid; grid-template-rows: auto 1fr; }
-    .service-group-heading { min-height: 6rem; }
-    .service-list { grid-auto-rows: 1fr; }
+  @media (max-width: 40rem) {
+    .service-row { grid-template-columns: minmax(0, 1fr); gap: .25rem; align-items: start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pending-group > summary::after { transition: none; }
   }
   @media (min-width: 64rem) {
     .workflow { grid-template-columns: repeat(3, minmax(0, 1fr)); }

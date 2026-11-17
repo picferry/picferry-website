@@ -34,3 +34,11 @@
 .platform-table code {
 	font-size: 0.85em;
 }
+
+html {
+	scroll-padding-top: calc(var(--sl-nav-height) + 0.75rem);
+}
+
+.hero .actions a:first-child {
+	min-height: 2.75rem;
+}

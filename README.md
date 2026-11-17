@@ -1,6 +1,6 @@
 # PicFerry
 
-Public website and bilingual user guides for [PicFerry](https://picferry.jqknono.com), an unofficial cloud photo app. The App currently enables iCloud, Xiaomi and vivo accounts; HUAWEI, OPPO and HONOR have core copy-download implementations but no new-account entry in the App.
+Public website and bilingual user guides for [PicFerry](https://picferry.jqknono.com), an unofficial cloud photo app. The App currently enables iCloud, Xiaomi, vivo and OPPO accounts, including REDMI, POCO, iQOO, OnePlus and realme entry points that use the matching parent service. HUAWEI and HONOR have core copy-download implementations but no new-account entry in the App.
 
 CLI and GUI source live in sibling repositories that require access permission:
 

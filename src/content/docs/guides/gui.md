@@ -7,19 +7,20 @@ PicFerry 的图形界面用于连接云相册、浏览媒体并保存到本机�
 
 ## 1. 添加并连接账号
 
-点击「添加账号」，选择厂商并填写便于识别的账号名称。目前开放新增 [iCloud](/guides/icloud/)、[小米](/guides/xiaomi/) 和 [vivo](/guides/vivo/) 账号；华为、OPPO、荣耀暂未开放新增入口。
+点击「添加账号」，选择品牌并填写便于识别的账号名称。目前开放新增 [iCloud](/guides/icloud/)、[小米](/guides/xiaomi/)、[vivo](/guides/vivo/) 和 [OPPO](/guides/oppo/) 账号。REDMI、POCO 使用小米云服务，iQOO 使用 vivo 云服务，OnePlus、realme 使用 OPPO 云服务；账号仍按父品牌保存。华为、荣耀暂未开放新增入口。
 
-| 厂商 | 连接方式 |
-| --- | --- |
-| iCloud | 应用内输入 Apple ID 与密码，按提示完成双重认证；中国大陆账号选择对应区域 |
-| 小米 | 桌面独立浏览器网页登录或 Cookie 文件；Android、OHOS 原生网页登录；iOS 使用 Cookie 文件 |
-| vivo | 桌面独立浏览器网页登录或 Cookie 文件；OHOS 原生网页登录；Android、iOS 使用 Cookie 文件 |
+| 品牌入口 | 云服务 | 连接方式 |
+| --- | --- | --- |
+| iCloud | iCloud | 应用内输入 Apple ID 与密码，按提示完成双重认证；中国大陆账号选择对应区域 |
+| Xiaomi、REDMI、POCO | 小米 | 桌面独立浏览器网页登录或 Cookie 文件；Android、OHOS 原生网页登录；iOS 使用 Cookie 文件 |
+| vivo、iQOO | vivo | 桌面独立浏览器网页登录或 Cookie 文件；OHOS 原生网页登录；Android、iOS 使用 Cookie 文件 |
+| OPPO、OnePlus、realme | OPPO | 各平台在官方网页完成登录；OHOS 在登录隔离完成验收前安全停止，不发放凭据 |
 
 桌面网页登录需要安装 Chrome、Edge 或 Chromium。在官方页面完成认证，再回到 PicFerry 确认登录。Cookie 文件与登录会话相当于凭据，请仅保存在受信任的位置；失效后重新登录或导入。详细步骤见对应厂商指南。
 
 ## 2. 浏览并试存少量媒体
 
-连接后打开「照片」，浏览列表或云端相册，选择媒体查看预览或单项下载。iCloud、小米、vivo 支持图片预览；**视频内联播放仅限 iCloud 返回 `small_video` 资源时**，其他情况可下载后用本机播放器查看。
+连接后打开「照片」，浏览列表或云端相册，选择媒体查看预览或单项下载。iCloud、小米、vivo、OPPO 支持图片预览；**视频内联播放仅限 iCloud 返回 `small_video` 资源时**，其他情况可下载后用本机播放器查看。
 
 先试存少量照片和视频，确认文件可打开、保存位置正确，再开始大批量下载。Live Photo 的相关资源保存不代表系统图库一定会将其还原为成对的实况照片。
 

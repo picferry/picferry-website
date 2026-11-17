@@ -15,18 +15,18 @@ description: 当前应用的厂商、认证、平台、保存与删除能力，�
 
 ## 厂商与认证
 
-桌面认证一栏指当前有原生工程的 Windows / Linux；网页登录需要本机安装 **Chrome、Edge 或 Chromium**。
+桌面认证一栏指当前有原生工程的 Windows / Linux；网页登录需要本机安装 **Chrome、Edge 或 Chromium**。REDMI、POCO 使用小米，iQOO 使用 vivo，OnePlus、realme 使用 OPPO；子品牌只改变添加入口，账号、认证和云服务仍使用父品牌。
 
 | 厂商 | GUI 新增账号 | 桌面认证 | Android | iOS | OHOS | Core 与迁移能力 |
 | --- | --- | --- | --- | --- | --- | --- |
 | iCloud | 开放 | 应用内 Apple ID、密码与 2FA | 同桌面 | 同桌面 | 同桌面 | 复制与迁移；支持中国大陆账号区域 |
-| 小米 | 开放 | 独立浏览器网页登录或 Cookie 文件 | 原生网页登录或 Cookie 文件 | Cookie 文件 | 原生网页登录或 Cookie 文件 | 复制与迁移 |
-| vivo | 开放 | 独立浏览器网页登录或 Cookie 文件 | Cookie 文件 | Cookie 文件 | 原生网页登录或 Cookie 文件 | 复制；迁移仅限 suite 会话，legacy 会话使用复制 |
+| 小米 | 开放；含 REDMI、POCO | 独立浏览器网页登录或 Cookie 文件 | 原生网页登录或 Cookie 文件 | Cookie 文件 | 原生网页登录或 Cookie 文件 | 复制与迁移 |
+| vivo | 开放；含 iQOO | 独立浏览器网页登录或 Cookie 文件 | Cookie 文件 | Cookie 文件 | 原生网页登录或 Cookie 文件 | 复制；迁移仅限 suite 会话，legacy 会话使用复制 |
+| OPPO | 开放；含 OnePlus、realme | 官方网页登录，确认后采集会话 | 应用内官方网页登录 | 应用内官方网页登录 | 登录隔离验收前安全停止，不发放凭据 | 复制与图库单项删除；当前 GUI 不开放批量迁移 |
 | 华为 | 关闭 | 未开放 GUI 新增认证流程 | 同左 | 同左 | 同左 | 已有真实复制下载实现；当前 GUI 不开放迁移 |
-| OPPO | 关闭 | 未开放 GUI 新增认证流程 | 同左 | 同左 | 同左 | 已有真实复制下载实现；当前 GUI 不开放迁移 |
 | 荣耀 | 关闭 | 未开放 GUI 新增认证流程 | 同左 | 同左 | 同左 | 已有真实复制下载实现；当前 GUI 不开放迁移 |
 
-认证操作见 [iCloud](/guides/icloud/)、[小米](/guides/xiaomi/)、[vivo](/guides/vivo/)；Core 与入口边界见 [华为](/guides/huawei/)、[OPPO](/guides/oppo/)、[荣耀](/guides/honor/)。关闭新增入口不表示 Core 只有占位代码。
+认证操作见 [iCloud](/guides/icloud/)、[小米](/guides/xiaomi/)、[vivo](/guides/vivo/)、[OPPO](/guides/oppo/)；Core 与入口边界见 [华为](/guides/huawei/)、[荣耀](/guides/honor/)。关闭新增入口不表示 Core 只有占位代码。
 
 ## 平台与保存目标
 
@@ -59,7 +59,7 @@ description: 当前应用的厂商、认证、平台、保存与删除能力，�
 
 ## 浏览、设置与本地数据
 
-- iCloud、小米、vivo 支持图片预览；视频内联播放仅限 iCloud 返回 `small_video` 资源的情况，其他视频可下载后用本机播放器查看。
+- iCloud、小米、vivo、OPPO 支持图片预览；视频内联播放仅限 iCloud 返回 `small_video` 资源的情况，其他视频可下载后用本机播放器查看。
 - 保存 Live Photo 相关资源不保证系统图库将其还原为成对的实况照片。
 - 设置支持中英文、跟随系统/浅色/深色主题、图库密度和默认下载参数；默认并发为 **4**。
 - 账号配置、Cookie/会话文件和预览、元数据缓存保存在本机，没有统一加密保证。

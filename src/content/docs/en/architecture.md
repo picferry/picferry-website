@@ -32,7 +32,7 @@ flowchart LR
 
 ## Calls and capability boundaries
 
-The GUI calls Dart libraries directly through relative path dependencies. Everyday use does not require launching a vendor CLI or using a Rust FFI bridge. Vendor implementations follow shared contracts but retain their authentication and deletion rules. The GUI currently enables adding iCloud, Xiaomi, and vivo accounts; Core has real copy-download implementations for the other vendors. The [Status page](/en/status/) centralizes the full differences.
+The GUI calls Dart libraries directly through relative path dependencies. Everyday use does not require launching a vendor CLI or using a Rust FFI bridge. Vendor implementations follow shared contracts but retain their authentication and deletion rules. The GUI currently enables adding iCloud, Xiaomi, vivo, and OPPO accounts. REDMI, POCO, iQOO, OnePlus, and realme are entry points for those parent services. Core has real copy-download implementations for HUAWEI and HONOR. The [Status page](/en/status/) centralizes the full differences.
 
 Native apps access vendor services directly from the local device, with no PicFerry-operated relay observed in the current implementation. Web uses preview substitutes to display the UI without real cloud-service connections. macOS now has an Apple Silicon native project and build configuration; real builds, installation, and functional validation are still required.
 
