@@ -5,7 +5,7 @@ export const MANIFEST_URL = `${R2_PREFIX}latest.json`;
 export const FETCH_TIMEOUT_MS = 10000;
 
 const TAG = /^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(?:-([a-z][a-z0-9]*(?:\.(?:0|[1-9][0-9]*|[a-z][a-z0-9]*))*))?$/;
-const EXTENSIONS = new Map([['linux', 'tar.gz'], ['windows', 'zip'], ['android', 'apk'], ['macos', 'zip']]);
+const EXTENSIONS = new Map([['linux', 'tar.gz'], ['windows', 'zip'], ['android', 'apk']]);
 const ARCHITECTURES = new Set(['x64', 'arm64', 'universal']);
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})$/;
 
@@ -46,7 +46,7 @@ export function validateManifest(value) {
     && Number(value.publishedAt.slice(14, 16)) < 60
     && Number(value.publishedAt.slice(17, 19)) < 60);
   const releaseUrl = validateUrl(value.releaseUrl, `${RELEASE_BASE}/tag/${value.version}`);
-  requireValid(Array.isArray(value.assets) && value.assets.length <= 9);
+  requireValid(Array.isArray(value.assets) && value.assets.length <= 5);
   const seen = new Set();
   const assets = value.assets.map((asset) => {
     requireValid(isRecord(asset) && EXTENSIONS.has(asset.platform) && ARCHITECTURES.has(asset.arch)

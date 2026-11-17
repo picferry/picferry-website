@@ -7,11 +7,9 @@ description: 当前应用的厂商、认证、平台、保存与删除能力，�
 
 ## 公开发布核实
 
-**截至 2026-10-24，首个正式版本尚未发布。** 官方编译包的公开渠道已确定为 R2 主下载与官网仓库 GitHub Releases 备用下载；当前受控自动构建目标为 Linux x64 / ARM64、Windows x64 / ARM64、macOS Apple Silicon ARM64 验证包和 Android universal APK，目标存在不代表包已经发布。
+官方编译包的公开渠道为 R2 主下载与官网仓库 GitHub Releases 备用下载。当前公开安装包目标为 Linux x64 / ARM64、Windows x64 / ARM64 和 Android universal APK；macOS、iOS、OHOS 走应用市场或其他独立渠道。实际可用包以校验后的实时清单为准。
 
-当天通过公开 GitHub API 核实：`picferry/picferry-website` 仓库返回 200，其 latest release 返回 404；`picferry/picferry_gui` 和 `picferry/picferry_core` 的仓库与 latest release 均返回 404。这只说明上述公开入口的核实结果，不等于全球不存在安装包，也不能据此判断受限仓库内的内容。
-
-公开网站仓库为 [picferry/picferry-website](https://github.com/picferry/picferry-website)，其 Releases 承载官方编译产物。GUI/Core 源码权限与编译包分发分别管理，源码受限不表示无法下载官方包。[下载页](/download/) 在浏览器中读取 R2 的 `picferry/release/latest.json`，以校验后的实时清单显示版本、架构、大小、SHA256 与双渠道链接；404 显示首发等待，网络失败另行提示。已有源码权限时见 [从源码构建](/install/)。这里不承诺商店上架或发布日期。
+公开网站仓库为 [picferry/picferry-website](https://github.com/picferry/picferry-website)，其 Releases 承载官方编译产物。GUI/Core 源码权限与编译包分发分别管理，源码受限不表示无法下载官方包。[下载页](/download/) 在浏览器中读取 R2 的 `picferry/release/latest.json`，以校验后的实时清单显示版本、架构、大小、SHA256 与双渠道链接；404 显示等待清单，网络失败另行提示。已有源码权限时见 [从源码构建](/install/)。商店上架进度与公开直链分别核实。
 
 ## 厂商与认证
 
@@ -37,7 +35,7 @@ description: 当前应用的厂商、认证、平台、保存与删除能力，�
 | Android | 有原生工程 | 系统图库，按系统要求授权 |
 | iOS | 有原生工程 | 系统照片图库，需要完整照片访问权限及 Apple 构建、签名环境 |
 | OHOS | 有原生工程 | 系统图库；应用保持前台并确认系统保存对话框，每批最多 100 项；使用隔离的 OHOS 构建环境 |
-| macOS | 已接入 Apple Silicon ARM64 原生工程与发布构建目标 | 本地目录保存；ad-hoc 签名验证包，尚未配置 Developer ID / 公证，待实机验收 |
+| macOS | 已接入 Apple Silicon ARM64 原生工程 | 本地目录保存；当前不走官网直链，后续经应用市场或其他独立渠道发布 |
 | Web | 仅 UI 预览 | 没有真实云服务连接或下载能力 |
 
 桌面批量下载默认在账号目录内按 **UTC 年/月/日（`YYYY/MM/DD`）**归档，图库单项下载直接放入账号目录。移动端使用 **PicFerry** 归档；保存不会重建云端相册结构。工程状态与公开包可用性分别核实。

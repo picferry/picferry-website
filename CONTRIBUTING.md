@@ -6,8 +6,8 @@
 
 - 欢迎文档、翻译、网站样式、下载组件及其正向集成测试改进。
 - PR 保持网站源码、文档与测试范围，日志和截图采用脱敏数据；二进制通过官方 Release 流程交付，不随 PR 提交。凭据、Cookie、会话和签名媒体 URL 保持私密。
-- 私有 GUI 仓库自动构建 Linux x64、Windows x64、Android universal APK，经授权发布到 `picferry/picferry-website` Releases 与 R2 `downloads` 桶，同一文件双份分发。
-- GUI/Core 源码贡献需要对应仓库权限；公开编译包下载不要求源码权限。截至 2026-10-24，首个正式版本尚未发布，实际下载入口以校验后的实时清单为准。
+- 私有 GUI 仓库自动构建 Linux x64 / ARM64、Windows x64 / ARM64、Android universal APK，经授权发布到 `picferry/picferry-website` Releases 与 R2 `downloads` 桶，同一文件双份分发。macOS、iOS、OHOS 走应用市场或其他独立渠道。
+- GUI/Core 源码贡献需要对应仓库权限；公开编译包下载不要求源码权限。实际下载入口以校验后的实时清单为准。
 
 ## Local preview
 

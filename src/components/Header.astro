@@ -12,6 +12,8 @@ const shouldRenderSearch =
 const en = Astro.locals.starlightRoute.locale === 'en';
 const docsHref = en ? '/en/getting-started/' : '/getting-started/';
 const docsLabel = en ? 'Docs' : '文档';
+const downloadHref = en ? '/en/download/' : '/download/';
+const downloadLabel = en ? 'Download app' : '下载应用';
 ---
 
 <div class="header">
@@ -22,10 +24,13 @@ const docsLabel = en ? 'Docs' : '文档';
 		{shouldRenderSearch && <Search />}
 	</div>
 	<div class="sl-hidden md:sl-flex print:hidden right-group">
-		<a class="docs-entry" href={docsHref} aria-current={Astro.url.pathname === docsHref ? 'page' : undefined}>{docsLabel}</a>
+		<nav class="header-links" aria-label={en ? 'Documentation' : '文档'}>
+			<a href={docsHref} aria-current={Astro.url.pathname === docsHref ? 'page' : undefined}>{docsLabel}</a>
+		</nav>
 		<div class="sl-flex social-icons">
 			<SocialIcons />
 		</div>
+		<a class="package-entry" href={downloadHref} aria-current={Astro.url.pathname === downloadHref ? 'page' : undefined}>{downloadLabel}</a>
 		<ThemeSelect />
 		<LanguageSelect />
 	</div>
@@ -55,8 +60,14 @@ const docsLabel = en ? 'Docs' : '文档';
 			align-items: center;
 		}
 
-		.docs-entry {
+		.header-links {
 			display: none;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.header-links a {
+			display: inline-flex;
 			align-items: center;
 			height: 2rem;
 			padding: 0 0.125rem;
@@ -68,17 +79,36 @@ const docsLabel = en ? 'Docs' : '文档';
 			white-space: nowrap;
 		}
 
-		.docs-entry[aria-current='page'] {
+		.header-links a[aria-current='page'],
+		.header-links a:hover {
 			color: var(--sl-color-text-accent);
 		}
 
-		.docs-entry:hover {
-			color: var(--sl-color-text-accent);
-		}
-
-		.docs-entry:focus-visible {
+		.header-links a:focus-visible,
+		.package-entry:focus-visible {
 			outline: 3px solid var(--sl-color-text-accent);
 			outline-offset: 2px;
+		}
+
+		.package-entry {
+			display: none;
+			align-items: center;
+			height: 2rem;
+			padding: 0 0.75rem;
+			border: 1px solid var(--sl-color-text-accent);
+			border-radius: 0.5rem;
+			background: var(--sl-color-accent-low);
+			color: var(--sl-color-text-accent);
+			font-size: var(--sl-text-sm);
+			font-weight: 600;
+			line-height: 2rem;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.package-entry[aria-current='page'] {
+			background: var(--sl-color-text-accent);
+			color: var(--sl-color-black);
 		}
 
 		.right-group,
@@ -97,8 +127,9 @@ const docsLabel = en ? 'Docs' : '文档';
 		}
 
 		@media (min-width: 50rem) {
-			.docs-entry {
-				display: inline-flex;
+			.header-links,
+			.package-entry {
+				display: flex;
 			}
 
 			:global(:root[data-has-sidebar]) {

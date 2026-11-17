@@ -34,7 +34,7 @@ flowchart LR
 
 GUI 通过相对路径依赖直接调用 Dart 库，日常使用无需启动厂商 CLI，也不经过 Rust FFI。厂商实现围绕共享契约提供能力，但认证和删除规则保留厂商差异：GUI 当前开放 iCloud、小米、vivo、OPPO 新增账号；REDMI、POCO、iQOO、OnePlus、realme 是对应父品牌的入口。华为、荣耀 Core 有真实复制下载实现。完整差异集中维护在 [状态页](/status/)。
 
-原生应用由本机直接访问厂商服务，当前未见 PicFerry 自有中转；Web 使用预览用的替代服务，仅展示 UI，不提供真实云服务连接。macOS 已补齐 Apple Silicon 原生工程与构建配置；工程存在仍需通过真实构建、安装及业务验收。
+原生应用由本机直接访问厂商服务，当前未见 PicFerry 自有中转；Web 使用预览用的替代服务，仅展示 UI，不提供真实云服务连接。macOS 已补齐 Apple Silicon 原生工程与构建配置；官网直链当前不包含 macOS 包，商店或其他独立渠道另行发布。
 
 ## 下载到系统保存
 
