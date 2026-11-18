@@ -5,9 +5,9 @@ Public website and bilingual user guides for [PicFerry](https://picferry.jqknono
 CLI and GUI source live in sibling repositories that require access permission:
 
 - [`picferry_core`](https://github.com/picferry/picferry_core) — shared Dart core + vendor packages (Melos monorepo)
-- [`picferry_gui`](https://github.com/picferry/picferry_gui) — Flutter app with desktop folders and Android / iOS / OHOS media-library saving
+- [`picferry_gui`](https://github.com/picferry/picferry_gui) — Flutter app with desktop folders and Android / iOS / HarmonyOS media-library saving
 
-本仓库代码树承载公开网站与双语指南，**官方 Releases 允许存放受控发布的编译产物，PR 保持源码、文档和测试范围，不附二进制**。私有 GUI 仓库自动构建 Linux x64、Windows x64、Android universal APK，同一份文件发布到本仓库 Releases 和 R2 `downloads` 桶。GUI/Core 源码权限与公开编译包下载分别管理。macOS、iOS、OHOS 走应用市场或其他独立渠道。
+本仓库代码树承载公开网站与双语指南，**官方 Releases 允许存放受控发布的编译产物，PR 保持源码、文档和测试范围，不附二进制**。私有 GUI 仓库自动构建 Linux x64、Windows x64、Android universal APK，同一份文件发布到本仓库 Releases 和 R2 `downloads` 桶。GUI/Core 源码权限与公开编译包下载分别管理。macOS、iOS、HarmonyOS 走应用市场或其他独立渠道。
 
 下载页仅根据实时清单显示资产，不预置虚构下载链接。
 

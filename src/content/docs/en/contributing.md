@@ -9,7 +9,7 @@ The public [picferry/picferry-website](https://github.com/picferry/picferry-webs
 
 For app source access and public availability, use [Status](/en/status/). Implementation contributions require access to the corresponding repositories and adherence to their contribution rules. Keep PRs focused on website source, documentation, and tests; do not attach official installers to PRs. Public package downloads and source permissions are managed separately.
 
-Current official packages cover Linux x64, Windows x64, and Android. macOS, iOS, and OHOS currently ship through app stores or other independent channels. After a new version is published, refresh [Download](/en/download/).
+Current official packages cover Linux x64, Windows x64, and Android. macOS, iOS, and HarmonyOS currently ship through app stores or other independent channels. After a new version is published, refresh [Download](/en/download/).
 
 ## Documentation principles
 

@@ -12,9 +12,9 @@ PicFerry 的图形界面用于连接云相册、浏览媒体并保存到本机�
 | 品牌入口 | 云服务 | 连接方式 |
 | --- | --- | --- |
 | iCloud | iCloud | 应用内输入 Apple ID 与密码，按提示完成双重认证；中国大陆账号选择对应区域 |
-| Xiaomi、REDMI、POCO | 小米 | 桌面独立浏览器网页登录或 Cookie 文件；Android、OHOS 原生网页登录；iOS 使用 Cookie 文件 |
-| vivo、iQOO | vivo | 桌面独立浏览器网页登录或 Cookie 文件；OHOS 原生网页登录；Android、iOS 使用 Cookie 文件 |
-| OPPO、OnePlus、realme | OPPO | 各平台在官方网页完成登录；OHOS 在登录隔离完成验收前安全停止，不发放凭据 |
+| Xiaomi、REDMI、POCO | 小米 | 桌面独立浏览器网页登录或 Cookie 文件；Android、HarmonyOS 原生网页登录；iOS 使用 Cookie 文件 |
+| vivo、iQOO | vivo | 桌面独立浏览器网页登录或 Cookie 文件；HarmonyOS 原生网页登录；Android、iOS 使用 Cookie 文件 |
+| OPPO、OnePlus、realme | OPPO | 各平台在官方网页完成登录；HarmonyOS 在登录隔离完成验收前安全停止，不发放凭据 |
 
 桌面网页登录需要安装 Chrome、Edge 或 Chromium。在官方页面完成认证，再回到 PicFerry 确认登录。Cookie 文件与登录会话相当于凭据，请仅保存在受信任的位置；失效后重新登录或导入。详细步骤见对应厂商指南。
 
@@ -33,7 +33,7 @@ PicFerry 的图形界面用于连接云相册、浏览媒体并保存到本机�
 | Windows / Linux | 本地目录；可选择并打开保存文件夹，默认按账号分隔 |
 | Android | 默认保存到系统图库，按系统提示授权 |
 | iOS | 默认保存到系统照片图库，需要完整照片访问权限 |
-| OHOS | 默认保存到系统图库；保持应用在前台并确认系统保存对话框，每批最多 100 项 |
+| HarmonyOS | 默认保存到系统图库；保持应用在前台并确认系统保存对话框，每批最多 100 项 |
 
 桌面批量下载默认在账号目录内按 **UTC 年/月/日**组织（`YYYY/MM/DD`），因此可能与本地时区显示日期不同；图库单项下载直接放入账号目录。移动端使用 PicFerry 归档，**不会重建云端相册结构**。图库中的相册浏览也不等于批量下载会按相册分目录归档。
 

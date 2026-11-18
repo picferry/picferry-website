@@ -9,7 +9,7 @@ description: 公开网站的贡献方式、中英文文档核对，以及应用�
 
 应用源码访问和公开发布状态以 [状态页](/status/) 为准。实现贡献需要先取得对应仓库访问权限，并遵循其协作约定。PR 保持网站源码、文档和测试范围，官方安装包不随 PR 提交。公开包下载与源码权限分别管理。
 
-当前官方安装包覆盖 Linux x64、Windows x64 和 Android；macOS、iOS、OHOS 走应用市场或其他独立渠道。新版本发布后，[下载页](/download/) 刷新即可看到。
+当前官方安装包覆盖 Linux x64、Windows x64 和 Android；macOS、iOS、HarmonyOS 走应用市场或其他独立渠道。新版本发布后，[下载页](/download/) 刷新即可看到。
 
 ## 文档修改原则
 

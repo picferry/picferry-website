@@ -1,11 +1,11 @@
 ---
 title: Build from source
-description: Standard Flutter and isolated OHOS setup for developers who already have source access.
+description: Standard Flutter and isolated HarmonyOS setup for developers who already have source access.
 ---
 
 This page is for developers who **already have access to the app source code**. The website repository contains the public site and documentation. Restricted source access does not prevent downloading official packages. App users should start on [Download](/en/download/) and choose the package for their device.
 
-Current official packages cover Linux x64, Windows x64, and Android; actual availability follows the download list. macOS, iOS, and OHOS currently ship through app stores or other independent channels. See [Status](/en/status/) for source-access checks; building from source still requires permission.
+Current official packages cover Linux x64, Windows x64, and Android; actual availability follows the download list. macOS, iOS, and HarmonyOS currently ship through app stores or other independent channels. See [Status](/en/status/) for source-access checks; building from source still requires permission.
 
 ## Directory and SDK prerequisites
 
@@ -16,7 +16,7 @@ parent-directory/
 └── picferry-org/
     ├── picferry_core/
     ├── picferry_gui/
-    │   └── .local/flutter/   # Isolated OHOS copies and artifacts (gitignored)
+    │   └── .local/flutter/   # Isolated HarmonyOS copies and artifacts (gitignored)
     └── picferry-website/     # Optional public website
 ```
 
@@ -36,7 +36,7 @@ dart run melos run analyze
 dart run melos run test
 ```
 
-Vendor packages contain Dart libraries and CLI entry points. The GUI calls the libraries directly; using a CLI is not a prerequisite for using the app. See [Architecture](/en/architecture/) for responsibilities.
+Vendor packages contain Dart libraries and CLI entry points. The GUI calls the libraries directly; using a CLI is not a prerequisite for using the app.
 
 ## GUI: standard Flutter
 
@@ -59,20 +59,20 @@ flutter run -d linux
 | Windows | Configure Flutter desktop support and the Visual Studio C++ toolchain on a Windows host, then select the Windows device |
 | Android | Configure the Android SDK, build tools, and a device/emulator; grant photo-library permissions as required by the OS |
 | iOS | Configure Xcode, dependencies, and signing on a macOS host. System-library saving needs full photo-library access; a macOS build host does not imply a supported macOS app target |
-| OHOS | Use a compatible OHOS Flutter SDK, native toolchain, device, and signing configuration, with dependency isolation as described below |
+| HarmonyOS | Use a compatible HarmonyOS Flutter SDK, native toolchain, device, and signing configuration, with dependency isolation as described below |
 
 The native `macos/` project uses an Apple Silicon host, Xcode, and CocoaPods. Source builds can follow the GUI repository's `RELEASING.md` to prepare the pinned MDK podspec. Public direct downloads currently omit macOS packages, which later ship through app stores or other independent channels. Web is a UI preview without real cloud-service connections. See [Status](/en/status/) for the complete platform and authentication matrices.
 
-## OHOS: isolated preparation
+## HarmonyOS: isolated preparation
 
-First set `OHOS_FLUTTER_ROOT` locally to your actual OHOS Flutter SDK directory. The following command's **working directory is `picferry-org/picferry_gui/`**. The isolated copy is created at `.local/flutter/` inside the package:
+First set `OHOS_FLUTTER_ROOT` locally to your actual HarmonyOS Flutter SDK directory. The following command's **working directory is `picferry-org/picferry_gui/`**. The isolated copy is created at `.local/flutter/` inside the package:
 
 ```sh
 python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --prepare-only
 ```
 
-`--prepare-only` prepares and checks the isolated copy; it does not perform a full app build. For subsequent builds, follow the OHOS tool instructions in the source you have access to, using the same SDK and isolated directory.
+`--prepare-only` prepares and checks the isolated copy; it does not perform a full app build. For subsequent builds, follow the HarmonyOS tool instructions in the source you have access to, using the same SDK and isolated directory.
 
-Keep the original GUI/Core dependencies, lockfiles, and `.dart_tool` associated with the standard SDK. OHOS dependency resolution, lockfiles, native dependencies, and artifacts stay in the isolated copy. Maintain shared source and overlay configuration in the source workspace, then sync through the preparation entry point. Use `--update-lock` only after separately approving dependency upgrades.
+Keep the original GUI/Core dependencies, lockfiles, and `.dart_tool` associated with the standard SDK. HarmonyOS dependency resolution, lockfiles, native dependencies, and artifacts stay in the isolated copy. Maintain shared source and overlay configuration in the source workspace, then sync through the preparation entry point. Use `--update-lock` only after separately approving dependency upgrades.
 
-Saving media on OHOS still requires the app to remain in the foreground and the user to confirm the system save dialog, with at most 100 items per batch. A successful source build does not replace device-level validation of saving.
+Saving media on HarmonyOS still requires the app to remain in the foreground and the user to confirm the system save dialog, with at most 100 items per batch. A successful source build does not replace device-level validation of saving.

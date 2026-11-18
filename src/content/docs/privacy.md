@@ -7,7 +7,7 @@ description: PicFerry Android 应用的认证、本地数据、第三方服务�
 
 ## 适用范围与开发者
 
-本政策说明 **相册摆渡（PicFerry）Android 应用**及本网站相关的数据处理，不将 Android 的密码保存方式或其他实现细节承诺为所有平台的行为。PicFerry 是非官方云相册工具，开发者为 **jqknono**，隐私联系邮箱为 [jqknono@gmail.com](mailto:jqknono@gmail.com)。中文政策地址为 [https://picferry.jqknono.com/privacy/](https://picferry.jqknono.com/privacy/)，另有 [English version](/en/privacy/)。
+本政策说明 **相册摆渡（PicFerry）Android 应用**及本网站相关的数据处理，不将 Android 的密码保存方式或其他实现细节承诺为所有平台的行为。PicFerry 是非官方云相册工具，开发者为 **jqknono**，隐私联系邮箱为 [jqknono@gmail.com](mailto:jqknono@gmail.com)。中文政策地址为 [https://picferry.jqknono.com/privacy/](https://picferry.jqknono.com/privacy/)；英文政策地址为 [https://picferry.jqknono.com/en/privacy/](https://picferry.jqknono.com/en/privacy/)。
 
 应用免费、无广告、无应用内购买，也没有自有账号系统。应用中的“账号”是用户添加的第三方云服务连接，并非向 PicFerry 注册的账号。当前 Android 普通新增账号入口包括 iCloud、小米、vivo 和 OPPO；华为与荣耀不在普通新增入口中。PicFerry 不由这些厂商提供或背书。
 

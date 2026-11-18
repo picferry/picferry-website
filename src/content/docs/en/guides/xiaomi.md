@@ -10,7 +10,7 @@ PicFerry enables new Xiaomi accounts, cloud album browsing, image previews, copy
 1. Choose **Add account**, then **Xiaomi**, **REDMI**, or **POCO**. Name the account and open the Xiaomi connection page.
 2. Select the sign-in method for your platform:
 	- **Desktop:** start web sign-in, complete official authentication in the separate Chrome, Edge, or Chromium browser, enter the cloud gallery, and return to PicFerry to confirm completion. A Cookie file is also supported.
-	- **Android / OHOS:** use the native web sign-in page opened by the app, complete Xiaomi's authentication, and choose the control to finish signing in.
+	- **Android / HarmonyOS:** use the native web sign-in page opened by the app, complete Xiaomi's authentication, and choose the control to finish signing in.
 	- **iOS:** use a Cookie file.
 3. Wait for session validation and saving, then open **Photos** to check that you connected the intended account.
 
@@ -20,7 +20,7 @@ If no desktop browser is found, install Chrome, Edge, or Chromium and retry, or 
 
 ## Download and move
 
-Preview and download a small sample, then use batch download with the default **Download only** (`copy`) mode. Desktop saves use account directories; Android, iOS, and OHOS default to the system photo library. See the [GUI guide](/en/guides/gui/) for folder organization, permissions, and OHOS save confirmation. Download videos to play them locally; Xiaomi inline video playback is not supported.
+Preview and download a small sample, then use batch download with the default **Download only** (`copy`) mode. Desktop saves use account directories; Android, iOS, and HarmonyOS default to the system photo library. See the [GUI guide](/en/guides/gui/) for folder organization, permissions, and HarmonyOS save confirmation. Download videos to play them locally; Xiaomi inline video playback is not supported.
 
 In download-and-delete (`move`) mode, only media **downloaded and integrity-verified as originals in the current run** qualifies for migration. Mobile saves also require a successful system-library save receipt. Same-named existing files, missing integrity evidence, or unverified compound resources are not grounds for deletion. Deletion propagates to devices signed in to Xiaomi Cloud; check your backup and the confirmation message first.
 

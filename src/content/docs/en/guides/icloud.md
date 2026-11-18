@@ -20,7 +20,7 @@ If sign-in fails, check the account region, web access settings, and verificatio
 Preview or download a few individual photos first. Then open batch download, keep **Download only**, choose the media type and new-download count, check the destination, and start.
 
 - Desktop batches use UTC year/month/day folders inside the account directory by default. Individual downloads go directly into the account directory.
-- Android, iOS, and OHOS save to the system photo library by default. iOS requires full photo access; OHOS requires foreground save confirmation, with up to 100 items per batch. See the [GUI guide](/en/guides/gui/).
+- Android, iOS, and HarmonyOS save to the system photo library by default. iOS requires full photo access; HarmonyOS requires foreground save confirmation, with up to 100 items per batch. See the [GUI guide](/en/guides/gui/).
 - Image previews are supported. Inline video playback requires a `small_video` resource from iCloud.
 - Browsing cloud albums does not mean batch downloads use album folders. Mobile saves do not recreate cloud albums, and paired Live Photo reconstruction in the system library is not guaranteed.
 

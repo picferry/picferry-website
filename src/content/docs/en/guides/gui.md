@@ -12,9 +12,9 @@ Choose **Add account**, select a brand, and give the account a recognizable name
 | Brand entry | Cloud service | Connection options |
 | --- | --- | --- |
 | iCloud | iCloud | Enter your Apple ID and password in the app, then complete two-factor authentication; select the corresponding region for mainland China accounts |
-| Xiaomi, REDMI, POCO | Xiaomi | Separate browser sign-in or a Cookie file on desktop; native web sign-in on Android and OHOS; a Cookie file on iOS |
-| vivo, iQOO | vivo | Separate browser sign-in or a Cookie file on desktop; native web sign-in on OHOS; a Cookie file on Android and iOS |
-| OPPO, OnePlus, realme | OPPO | Complete official web sign-in on each platform. OHOS stops safely and issues no credentials until login isolation is accepted |
+| Xiaomi, REDMI, POCO | Xiaomi | Separate browser sign-in or a Cookie file on desktop; native web sign-in on Android and HarmonyOS; a Cookie file on iOS |
+| vivo, iQOO | vivo | Separate browser sign-in or a Cookie file on desktop; native web sign-in on HarmonyOS; a Cookie file on Android and iOS |
+| OPPO, OnePlus, realme | OPPO | Complete official web sign-in on each platform. HarmonyOS stops safely and issues no credentials until login isolation is accepted |
 
 Desktop web sign-in requires Chrome, Edge, or Chromium. Complete authentication on the official website, then return to PicFerry to confirm. Cookie files and saved sessions are credentials: keep them in trusted storage and sign in again or reimport them when they expire. See each provider's guide for details.
 
@@ -33,7 +33,7 @@ Open the account's batch download page and check the destination. Keep the defau
 | Windows / Linux | Local folders, separated by account by default; select or open the save folder in the app |
 | Android | System photo library by default; grant permissions when prompted |
 | iOS | System Photos library by default; full photo library access is required |
-| OHOS | System photo library by default; keep the app in the foreground and confirm the system save dialog, with up to 100 items per batch |
+| HarmonyOS | System photo library by default; keep the app in the foreground and confirm the system save dialog, with up to 100 items per batch |
 
 Desktop batch downloads use **UTC year/month/day** folders (`YYYY/MM/DD`) inside the account directory by default, so dates may differ from your local timezone. Individual gallery downloads go directly into the account directory. Mobile saves use PicFerry organization and **do not recreate cloud albums**. Browsing cloud albums also does not mean batch downloads are organized into album folders.
 

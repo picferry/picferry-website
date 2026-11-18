@@ -7,7 +7,7 @@ Last updated: 2026-11-03
 
 ## Scope and developer
 
-This policy describes data handling for the **PicFerry (Chinese name: 相册摆渡) Android app** and this website. It does not extend Android password storage or other implementation details into promises for every platform. PicFerry is an unofficial cloud photo tool developed by **jqknono**. The privacy contact is [jqknono@gmail.com](mailto:jqknono@gmail.com). The Chinese policy address is [https://picferry.jqknono.com/privacy/](https://picferry.jqknono.com/privacy/); see also the [中文版本](/privacy/).
+This policy describes data handling for the **PicFerry Android app** and this website. It does not extend Android password storage or other implementation details into promises for every platform. PicFerry is an unofficial cloud photo tool developed by **jqknono**. The privacy contact is [jqknono@gmail.com](mailto:jqknono@gmail.com). The Chinese policy address is [https://picferry.jqknono.com/privacy/](https://picferry.jqknono.com/privacy/).
 
 The app is free, has no ads or in-app purchases, and has no account system of its own. An “account” in the app is a connection you add to a third-party cloud service, not an account registered with PicFerry. The current ordinary add-account flow on Android offers iCloud, Xiaomi, vivo, and OPPO; HUAWEI and HONOR are not part of that flow. PicFerry is not provided or endorsed by these vendors.
 

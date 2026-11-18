@@ -10,7 +10,7 @@ PicFerry enables new vivo accounts, cloud album browsing, image previews, and co
 1. Choose **Add account**, then **vivo** or **iQOO**. Name the account and open the vivo connection page.
 2. Authenticate using the method for your platform:
 	- **Desktop:** use web sign-in, complete vivo's official authentication in the separate Chrome, Edge, or Chromium browser, enter the album, and return to PicFerry to confirm completion. Cookie file import is also supported.
-	- **OHOS:** use the native web sign-in page opened by the app and confirm after completing official authentication.
+	- **HarmonyOS:** use the native web sign-in page opened by the app and confirm after completing official authentication.
 	- **Android / iOS:** use a Cookie file.
 3. Wait for session validation and saving, then open **Photos** to check your media.
 
@@ -20,7 +20,7 @@ Web sign-in saves the validated session and persists subsequent Cookie rotations
 
 ## Copy and move
 
-Preview and save a few photos first, then use batch download with the default **Download only** (`copy`) mode. Desktop saves use account directories; Android, iOS, and OHOS default to the system photo library. See the [GUI guide](/en/guides/gui/) for permissions, date folders, and OHOS save confirmation. Download videos to play them locally; vivo inline video playback is not supported.
+Preview and save a few photos first, then use batch download with the default **Download only** (`copy`) mode. Desktop saves use account directories; Android, iOS, and HarmonyOS default to the system photo library. See the [GUI guide](/en/guides/gui/) for permissions, date folders, and HarmonyOS save confirmation. Download videos to play them locally; vivo inline video playback is not supported.
 
 With a suite session, you can choose download-and-delete (`move`). The app checks capabilities at runtime. Only originals downloaded and integrity-verified in the current run qualify; mobile saves also require a successful system-library save receipt. Missing verification, unverified compound resources, or a same-named existing file cannot justify moving an item merely because it “already exists.” Eligible originals go to vivo's Recently Deleted; vivo's official recovery periods apply.
 

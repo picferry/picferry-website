@@ -7,7 +7,7 @@ This page is the reference capability matrix, distinguishing **app entry points,
 
 ## Verified public availability
 
-Official packages are available on [Download](/en/download/). Current packages cover Linux x64, Windows x64, and Android. macOS, iOS, and OHOS currently ship through app stores or other independent channels. Actual availability follows the list on that page.
+Official packages are available on [Download](/en/download/). Current packages cover Linux x64, Windows x64, and Android. macOS, iOS, and HarmonyOS currently ship through app stores or other independent channels. Actual availability follows the list on that page.
 
 You do not need source access to download official packages. Source access and public releases are verified separately; see [Build from source](/en/install/) if you already have source access. Store listings and website downloads are verified separately.
 
@@ -15,7 +15,7 @@ You do not need source access to download official packages. Source access and p
 
 Desktop authentication below refers to Windows / Linux. Web login requires **Chrome, Edge, or Chromium** installed locally. REDMI and POCO use Xiaomi, iQOO uses vivo, and OnePlus and realme use OPPO. A sub-brand changes only the add-account entry; the account, authentication, and cloud service remain those of the parent provider.
 
-| Vendor | Add account | Desktop authentication | Android | iOS | OHOS | Download and move |
+| Vendor | Add account | Desktop authentication | Android | iOS | HarmonyOS | Download and move |
 | --- | --- | --- | --- | --- | --- | --- |
 | iCloud | Enabled | In-app Apple ID, password, and 2FA | Same as desktop | Same as desktop | Same as desktop | Copy and move; supports the China mainland account region |
 | Xiaomi | Enabled, including REDMI and POCO | Separate browser login or Cookie file | Native web login or Cookie file | Cookie file | Native web login or Cookie file | Copy and move |
@@ -34,7 +34,7 @@ For authentication, see [iCloud](/en/guides/icloud/), [Xiaomi](/en/guides/xiaomi
 | Linux | x64 installer available | Local folder |
 | Android | universal APK available | System photo library, with permissions required by the OS |
 | iOS | App stores or other independent channels | System photo library; requires full photo-library access |
-| OHOS | App stores or other independent channels | System photo library; keep the app in the foreground and confirm the system save dialog, with at most 100 items per batch |
+| HarmonyOS | App stores or other independent channels | System photo library; keep the app in the foreground and confirm the system save dialog, with at most 100 items per batch |
 | macOS | App stores or other independent channels | Local folder |
 | Web | UI preview only | No real cloud-service connection or download capability |
 
@@ -63,4 +63,4 @@ Migration and explicit deletion can affect other devices using the same cloud se
 - Account configuration, Cookie/session files, and preview/metadata caches are stored locally, without a uniform encryption guarantee.
 - Removing an account removes only its in-app configuration. It does not clear sessions, caches, downloaded media, or cloud content, or revoke vendor authorization.
 
-See the [GUI guide](/en/guides/gui/) for the workflow and [Architecture](/en/architecture/) for how the app is organized.
+See the [GUI guide](/en/guides/gui/) for the workflow.

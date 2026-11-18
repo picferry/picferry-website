@@ -7,7 +7,7 @@ See the [Privacy Policy](/en/privacy/) (last updated: 2026-11-03) for Android au
 
 ## Unofficial status and network boundaries
 
-PicFerry (Chinese name: 相册摆渡) is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
+PicFerry is not an official Apple, HUAWEI, Xiaomi, vivo, OPPO, or HONOR product and is not supported by those vendors. Changes to vendor websites, APIs, risk controls, and session rules can affect authentication and downloads.
 
 The current app connects directly from the local device to vendor services. No PicFerry-operated relay has been observed in authentication or media transfer. Real cloud services still require a vendor account: signing in, browsing cloud media, downloading, and cloud deletion require network access and remain subject to vendor rules. The app also has a public offline sample entry for browsing bundled synthetic media with no sign-in. That entry does not stand in for vendor authentication. This description is not a comprehensive security audit or a privacy guarantee for every dependency.
 
@@ -15,7 +15,7 @@ The current app connects directly from the local device to vendor services. No P
 
 - **iCloud**: the Apple ID and password enter the app's authentication flow, followed by two-factor authentication when prompted. The China mainland account region is supported. It would be inaccurate to say that the password never enters the app.
 - **Xiaomi and vivo**: use official web authentication or import a Cookie file, depending on the platform. Cookies and sessions can confer account access and should be treated as credentials. See [Status](/en/status/#vendors-and-authentication) for available entry points.
-- **OPPO**: enabled platforms complete official web sign-in, after which the app reads and saves cookies/sessions. OnePlus and realme use the same OPPO cloud service. OHOS issues no credentials until login isolation is accepted.
+- **OPPO**: enabled platforms complete official web sign-in, after which the app reads and saves cookies/sessions. OnePlus and realme use the same OPPO cloud service. HarmonyOS issues no credentials until login isolation is accepted.
 - **HUAWEI and HONOR**: not part of the current ordinary add-account flow.
 
 Use devices and authentication pages you trust. Enter passwords and verification codes yourself through the app or vendor authentication interface, and use sanitized information when reporting issues.
@@ -36,7 +36,7 @@ The default **`copy`** mode keeps cloud originals. Copy a few items first and ve
 
 **Explicit deletion from the gallery is a separate action. It requires no prior download or backup and does not use migration's save-verification flow.** Review selected items in the confirmation dialog. vivo deletion also requires suite-session capabilities. Cloud deletion may affect other devices using the same service; recovery methods and retention periods are controlled by the vendor.
 
-System-library saving has platform prerequisites: iOS needs full photo-library access, and OHOS requires the app to remain in the foreground and the user to confirm the system save dialog, with at most 100 items per batch. See [Status](/en/status/) for the complete capability boundaries.
+System-library saving has platform prerequisites: iOS needs full photo-library access, and HarmonyOS requires the app to remain in the foreground and the user to confirm the system save dialog, with at most 100 items per batch. See [Status](/en/status/) for the complete capability boundaries.
 
 ## Cancellation and starting again
 

@@ -6,7 +6,7 @@ import { test } from 'node:test';
 const site = 'https://picferry.jqknono.com';
 const locales = [
   {
-    lang: 'zh-CN', prefix: '', other: '/en/privacy/', title: '隐私政策',
+    lang: 'zh-CN', prefix: '', title: '隐私政策',
     sections: ['适用范围与开发者', '登录与认证信息', '本地配置、媒体与网络请求',
       '保留期限与清理方式', '网站访问与邮箱支持', '您的选择与隐私联系', '安全与未成年人', '政策更新'],
     facts: [
@@ -33,12 +33,12 @@ const locales = [
     ],
   },
   {
-    lang: 'en', prefix: '/en', other: '/privacy/', title: 'Privacy Policy',
+    lang: 'en', prefix: '/en', title: 'Privacy Policy',
     sections: ['Scope and developer', 'Sign-in and authentication information',
       'Local configuration, media, and network requests', 'Retention and cleanup',
       'Website visits and email support', 'Your choices and privacy contact', 'Security and minors', 'Policy updates'],
     facts: [
-      /PicFerry \(Chinese name: 相册摆渡\) Android app/, /free, has no ads or in-app purchases, and has no account system of its own/,
+      /PicFerry Android app/, /free, has no ads or in-app purchases, and has no account system of its own/,
       /offers iCloud, Xiaomi, vivo, and OPPO; HUAWEI and HONOR are not part of that flow/,
       /browse 8 bundled composite images and 2 short videos with no sign-in/,
       /synthetic samples are not real people, private albums, or a vendor cloud library/,
@@ -100,7 +100,6 @@ for (const locale of locales) {
     const content = body(html);
     hasLink(content, 'mailto:jqknono@gmail.com');
     hasLink(content, `${site}/privacy/`);
-    hasLink(content, locale.other);
     assert.match(text(content), /jqknono/);
     for (const domain of ['fonts.googleapis.com', 'fonts.gstatic.com']) {
       assert.ok(content.includes(domain), `披露网站字体请求 ${domain}`);
