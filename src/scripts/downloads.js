@@ -4,13 +4,8 @@ import { downloadCopy } from '../lib/download-copy.js';
 const PLATFORMS = { linux: 'Linux', windows: 'Windows', android: 'Android' };
 
 export function mountDownloads(root) {
-  if (root.dataset.mounted) return;
-  root.dataset.mounted = 'true';
   const locale = root.dataset.locale === 'en' ? 'en' : 'zh-CN';
   const text = downloadCopy(locale);
-  const status = root.querySelector('[data-status]');
-  const content = root.querySelector('[data-release]');
-  const refresh = root.querySelector('button');
   const document = root.ownerDocument;
 
   function element(tag, value, className) {
@@ -56,32 +51,46 @@ export function mountDownloads(root) {
       list.append(card);
     }
     fragment.append(list);
-    content.replaceChildren(fragment);
+    root.querySelector('[data-release]').replaceChildren(fragment);
   }
 
   async function load() {
-    if (root.dataset.state === 'loading') return;
+    root._downloadRequest?.abort();
+    const request = new AbortController();
+    root._downloadRequest = request;
+    const status = root.querySelector('[data-status]');
+    const content = root.querySelector('[data-release]');
+    const refresh = root.querySelector('button');
     root.dataset.state = 'loading';
-    refresh.setAttribute('aria-disabled', 'true');
+    refresh.hidden = false;
+    refresh.setAttribute('aria-busy', 'true');
     content.setAttribute('aria-busy', 'true');
-    content.replaceChildren();
     status.textContent = text.loading;
     try {
-      const result = await fetchManifest();
+      const result = await fetchManifest(request.signal);
+      if (request.signal.aborted) return;
       if (result.manifest) render(result.manifest);
+      else content.replaceChildren();
       root.dataset.state = result.state;
       status.textContent = text[result.state];
     } catch (error) {
+      if (request.signal.aborted || (error instanceof ManifestError && error.kind === 'aborted')) return;
       const kind = error instanceof ManifestError ? error.kind : 'network';
       root.dataset.state = kind;
       status.textContent = text[kind];
     } finally {
-      content.setAttribute('aria-busy', 'false');
-      refresh.setAttribute('aria-disabled', 'false');
+      if (root._downloadRequest === request) {
+        content.setAttribute('aria-busy', 'false');
+        refresh.removeAttribute('aria-busy');
+      }
     }
   }
 
-  refresh.hidden = false;
-  refresh.addEventListener('click', load);
+  const refresh = root.querySelector('button');
+  if (refresh && refresh.dataset.bound !== 'true') {
+    refresh.dataset.bound = 'true';
+    refresh.hidden = false;
+    refresh.addEventListener('click', load);
+  }
   void load();
 }

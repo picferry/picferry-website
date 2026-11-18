@@ -67,10 +67,17 @@ export function validateManifest(value) {
   return { version: value.version, publishedAt: value.publishedAt, releaseUrl, assets };
 }
 
-export async function fetchManifest() {
+export async function fetchManifest(signal) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  let timedOut = false;
+  const timer = setTimeout(() => {
+    timedOut = true;
+    controller.abort();
+  }, FETCH_TIMEOUT_MS);
+  const abortFromCaller = () => controller.abort();
+  signal?.addEventListener('abort', abortFromCaller, { once: true });
   try {
+    if (signal?.aborted) throw new ManifestError('aborted');
     const response = await fetch(MANIFEST_URL, {
       signal: controller.signal, mode: 'cors', credentials: 'omit',
       cache: 'no-store', redirect: 'error',
@@ -81,16 +88,19 @@ export async function fetchManifest() {
     try {
       data = await response.json();
     } catch (error) {
-      if (controller.signal.aborted) throw error;
+      if (signal?.aborted) throw new ManifestError('aborted');
+      if (timedOut || controller.signal.aborted) throw new ManifestError('timeout');
       throw new ManifestError(error instanceof SyntaxError ? 'invalid' : 'network');
     }
     const manifest = validateManifest(data);
     return { state: manifest.assets.length ? 'ready' : 'empty', manifest };
   } catch (error) {
-    if (controller.signal.aborted) throw new ManifestError('timeout');
     if (error instanceof ManifestError) throw error;
+    if (signal?.aborted) throw new ManifestError('aborted');
+    if (timedOut || controller.signal.aborted) throw new ManifestError('timeout');
     throw new ManifestError('network');
   } finally {
     clearTimeout(timer);
+    signal?.removeEventListener('abort', abortFromCaller);
   }
 }

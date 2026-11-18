@@ -47,7 +47,7 @@ const text = downloadCopy(locale);
     background: var(--sl-color-accent-low); color: var(--sl-color-text-accent);
     cursor: pointer;
   }
-  .downloads button[aria-disabled='true'] { cursor: progress; }
+  .downloads button[aria-busy='true'] { cursor: progress; }
   .downloads :global(a:focus-visible), .downloads button:focus-visible {
     outline: 3px solid var(--sl-color-text-accent); outline-offset: 4px;
   }
