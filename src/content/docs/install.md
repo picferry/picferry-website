@@ -3,7 +3,7 @@ title: 从源码构建
 description: 面向已有源码访问权限的开发者，准备标准 Flutter 与隔离 HarmonyOS 构建环境。
 ---
 
-本页面向**已取得应用源码访问权限**的开发者。网站仓库承载公开网站与文档。源码访问受限不影响官方安装包下载；普通使用者请先到 [下载页](/download/) 选择适合设备的安装包。
+本页面向**已取得应用源码访问权限**的开发者。网站仓库承载公开网站与文档。官方安装包可在下载页获取；普通使用者请先到 [下载页](/download/) 选择适合设备的安装包。
 
 当前官方安装包覆盖 Linux x64、Windows x64 和 Android；macOS、iOS、HarmonyOS 走应用市场或其他独立渠道。源码访问核实见 [状态页](/status/)，自行构建仍需先取得源码权限。
 
@@ -20,7 +20,7 @@ description: 面向已有源码访问权限的开发者，准备标准 Flutter �
     └── picferry-website/     # 可选：公开网站
 ```
 
-原始 GUI/Core 使用**标准 Flutter SDK 及其配套 Dart**。根据当前源码、依赖解析结果和平台插件选择兼容的工具链，先运行 `flutter --version`、`dart --version` 和 `flutter doctor -v` 检查环境。`pubspec.yaml` 中较早的 SDK 下限只是声明，不能视为当前依赖和原生工程都已验证兼容的保证。
+原始 GUI/Core 使用**标准 Flutter SDK 及其配套 Dart**。根据当前源码、依赖解析结果和平台插件选择兼容的工具链，先运行 `flutter --version`、`dart --version` 和 `flutter doctor -v` 检查环境。`pubspec.yaml` 中较早的 SDK 下限只是声明；当前依赖和原生工程的兼容性以实际验证结果为准。
 
 以下 Core 与 GUI 命令块各自从 `picferry-org/` 开始；请在执行前确认终端工作目录。
 
@@ -36,7 +36,7 @@ dart run melos run analyze
 dart run melos run test
 ```
 
-厂商包包含 Dart 库和 CLI 入口；GUI 直接调用这些库，CLI 不是使用应用的前置步骤。
+厂商包包含 Dart 库和 CLI 入口；GUI 直接调用这些库。使用应用时直接打开图形界面。
 
 ## GUI：标准 Flutter
 
@@ -50,7 +50,7 @@ flutter test
 flutter run -d linux
 ```
 
-`flutter run` 会构建并启动应用，不会生成公开发布记录或部署网站。运行应用前请参考 [安全说明](/security/)，测试使用的凭据由开发者在本机安全管理。
+`flutter run` 会构建并启动应用，仅用于本地运行。公开发布记录与网站部署另行进行。运行应用前请参考 [安全说明](/security/)，测试使用的凭据由开发者在本机安全管理。
 
 ### 其他原生平台前提
 
@@ -58,10 +58,10 @@ flutter run -d linux
 | --- | --- |
 | Windows | 在 Windows 主机配置 Flutter 桌面支持和 Visual Studio C++ 工具链，再选择 Windows 设备运行 |
 | Android | 配置 Android SDK、构建工具及设备/模拟器，按系统要求授予图库权限 |
-| iOS | 在 macOS 主机配置 Xcode、依赖及签名环境；系统图库保存需要完整照片访问权限。macOS 构建主机不等于支持 macOS 应用目标 |
+| iOS | 在 macOS 主机配置 Xcode、依赖及签名环境；系统图库保存需要完整照片访问权限。macOS 构建主机用于编译 iOS；macOS 应用目标另行核实 |
 | HarmonyOS | 使用兼容的 HarmonyOS Flutter SDK、原生工具链、设备与签名配置，并按下节隔离依赖 |
 
-macOS 已有 `macos/` 原生工程，使用 Apple Silicon 主机、Xcode 和 CocoaPods。源码构建可按 GUI `RELEASING.md` 准备固定 MDK podspec 后编译；官网直链当前不提供 macOS 包，后续经应用市场或其他独立渠道发布。Web 仅供 UI 预览，不连接真实云服务。完整平台与认证矩阵见 [状态页](/status/)。
+macOS 已有 `macos/` 原生工程，使用 Apple Silicon 主机、Xcode 和 CocoaPods。源码构建可按 GUI `RELEASING.md` 准备固定 MDK podspec 后编译；官网直链当前覆盖 Linux、Windows 和 Android；macOS 后续经应用市场或其他独立渠道发布。Web 仅供 UI 预览，真实云服务连接以已发布客户端为准。完整平台与认证矩阵见 [状态页](/status/)。
 
 ## HarmonyOS：隔离准备
 
@@ -71,8 +71,8 @@ macOS 已有 `macos/` 原生工程，使用 Apple Silicon 主机、Xcode 和 Coc
 python3 tool/build_ohos.py --flutter-root "$OHOS_FLUTTER_ROOT" --prepare-only
 ```
 
-`--prepare-only` 用于准备和检查隔离副本，不执行完整应用构建。后续构建按已获授权源码中的 HarmonyOS 工具说明进行，并使用相同的 SDK 与隔离目录。
+`--prepare-only` 用于准备和检查隔离副本。完整应用构建使用后续构建步骤。后续构建按已获授权源码中的 HarmonyOS 工具说明进行，并使用相同的 SDK 与隔离目录。
 
 原始 GUI/Core 的依赖、锁文件和 `.dart_tool` 保持标准 SDK 归属；HarmonyOS 的依赖解析、锁文件、原生依赖和产物留在隔离副本中。共享源码及覆盖配置在源工作区维护，再通过入口同步生成副本。依赖升级单独确认后再使用 `--update-lock`。
 
-HarmonyOS 保存媒体时仍需应用在前台，确认系统保存对话框，每批最多 100 项；源码构建成功不替代设备上的保存流程验证。
+HarmonyOS 保存媒体时仍需应用在前台，确认系统保存对话框，每批最多 100 项；源码构建成功后，仍需在设备上验证保存流程。

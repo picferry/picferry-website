@@ -37,8 +37,8 @@ export function downloadCopy(locale) {
     version: '版本', published: '发布时间（UTC）', release: '版本说明', size: '大小', bytes: '字节',
     primary: '下载', backup: '备用下载',
     architectures: {
-      x64: 'x64 · Intel / AMD 64 位处理器；不是原生 ARM64 包。',
-      arm64: 'arm64 · ARM 64 位处理器；不是 Intel / AMD x64 包。',
+      x64: 'x64 · Intel / AMD 64 位处理器；面向 x64，ARM64 请选择对应架构。',
+      arm64: 'arm64 · ARM 64 位处理器；面向 ARM64，Intel / AMD x64 请选择对应架构。',
       universal: 'universal · 包含多种 ABI 的 Android APK；仍需确认设备和系统兼容性。',
     },
     integrity: '下载后可将文件的 SHA256 与下方值比较，确认文件完整。',
